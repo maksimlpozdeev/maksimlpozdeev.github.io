@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Максим Поздеев">
+<meta name="description" content="Описано использование библиографического менеджера Zotero и облачных сервисов для организации совместной работы с использованием протокола WebDAV и связанных вложенных файлов.">
+
+<title>Zotero и облачные сервисы для совместной работы с литературой</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fa564a48743d9dfb67961b8a48b6010c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-c5aad31f5de05bb562bb152d0d129c1b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-fa564a48743d9dfb67961b8a48b6010c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../assets/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Поиск"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Переключить навигацию" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../papers/index.html"> 
+<span class="menu-text">Публикации</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blogs/index.html"> 
+<span class="menu-text">Блог</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects/index.html"> 
+<span class="menu-text">Проекты</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../apps/index.html"> 
+<span class="menu-text">Приложения</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://t.me/maksimlpozdeev" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-telegram"></i></a>
+    <a href="mailto:maksim.leon.pz@yandex.ru" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope-fill"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Переключить темный режим"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#организация-данных-в-zotero" id="toc-организация-данных-в-zotero" class="nav-link active" data-scroll-target="#организация-данных-в-zotero">Организация данных в Zotero</a></li>
+  <li><a href="#регистрация-в-zotero-и-создание-групп" id="toc-регистрация-в-zotero-и-создание-групп" class="nav-link" data-scroll-target="#регистрация-в-zotero-и-создание-групп">Регистрация в Zotero и создание групп</a>
+  <ul class="collapse">
+  <li><a href="#установка-и-настройка-приложения" id="toc-установка-и-настройка-приложения" class="nav-link" data-scroll-target="#установка-и-настройка-приложения">Установка и настройка приложения</a></li>
+  <li><a href="#zotero-groups" id="toc-zotero-groups" class="nav-link" data-scroll-target="#zotero-groups">Настройка групповых библиотек</a></li>
+  </ul></li>
+  <li><a href="#настройка-webdav-на-примере-облако-mail.ru" id="toc-настройка-webdav-на-примере-облако-mail.ru" class="nav-link" data-scroll-target="#настройка-webdav-на-примере-облако-mail.ru">Настройка WebDAV на примере Облако Mail.ru</a>
+  <ul class="collapse">
+  <li><a href="#создание-пароля" id="toc-создание-пароля" class="nav-link" data-scroll-target="#создание-пароля">Создание пароля</a></li>
+  <li><a href="#настройка-в-zotero" id="toc-настройка-в-zotero" class="nav-link" data-scroll-target="#настройка-в-zotero">Настройка в Zotero</a></li>
+  </ul></li>
+  <li><a href="#настройка-linked-file-с-использованием-google-drive" id="toc-настройка-linked-file-с-использованием-google-drive" class="nav-link" data-scroll-target="#настройка-linked-file-с-использованием-google-drive">Настройка Linked File с использованием Google Drive</a>
+  <ul class="collapse">
+  <li><a href="#регистрация-и-настройка-google-drive" id="toc-регистрация-и-настройка-google-drive" class="nav-link" data-scroll-target="#регистрация-и-настройка-google-drive">Регистрация и настройка Google Drive</a></li>
+  <li><a href="#настройка-связанных-вложенных-файлов" id="toc-настройка-связанных-вложенных-файлов" class="nav-link" data-scroll-target="#настройка-связанных-вложенных-файлов">Настройка связанных вложенных файлов</a></li>
+  </ul></li>
+  <li><a href="#дополнительные-расширения-и-настройки" id="toc-дополнительные-расширения-и-настройки" class="nav-link" data-scroll-target="#дополнительные-расширения-и-настройки">Дополнительные расширения и настройки</a></li>
+  <li><a href="#видео-демонстрация-работы-в-zotero" id="toc-видео-демонстрация-работы-в-zotero" class="nav-link" data-scroll-target="#видео-демонстрация-работы-в-zotero">Видео-демонстрация работы в Zotero</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Zotero и облачные сервисы для совместной работы с литературой</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Автоматизация</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Описано использование библиографического менеджера Zotero и облачных сервисов для организации совместной работы с использованием протокола WebDAV и связанных вложенных файлов.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Автор</div>
+    <div class="quarto-title-meta-contents">
+             <p>Максим Поздеев </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Дата публикации</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">23 января 2026 г.</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="images/cover.png" class="img-fluid"></p>
+</div></div><p><a href="https://www.zotero.org/">Zotero</a> — бесплатное программное обеспечение с открытым исходным кодом для управления библиографическими данными и сопутствующими исследовательскими материалами, такими как файлы PDF и ePUB. Среди функций — интеграция с веб-браузером, онлайн-синхронизация, создание внутритекстовых ссылок, сносок и библиографий, встроенные средства чтения PDF, ePUB и HTML с возможностью добавления аннотаций, редактор заметок, а также интеграция с текстовыми редакторами.</p>
+<div class="page-columns page-full">
+<div id="fig-zotero" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-zotero-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="images/paste-14.png" class="img-fluid figure-img column-page-right">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig" id="fig-zotero-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;1&nbsp;– Основное окно программы Zotero
+</figcaption>
+</figure>
+</div>
+</div>
+<section id="организация-данных-в-zotero" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="организация-данных-в-zotero">Организация данных в Zotero</h2>
+<p>Перед тем, как перейти к практическому описанию организации совместной работы над литературой внутри исследовательской группы, рассмотрим, как Zotero организует библиографические данные.</p>
+<p>Доступно два типа библиотек (см. левую панель на <a href="#fig-zotero" class="quarto-xref">рис.&nbsp;1</a>):</p>
+<ul>
+<li><strong>Моя библиотека (My Library)</strong> – личная библиотека каждого пользователя. Источники из этой библиотеки не доступны другим пользователям.</li>
+<li><strong>Групповые библиотеки (Group Libraries)</strong> – библиотеки, созданные для совместной работы над литературой внутри исследовательской группы. Источники из этих библиотек видны всем участникам внутри группы.</li>
+</ul>
+<p>Все источники <em>Item</em> в каждой библиотеке могут быть организованы в коллекции и подколлекции. Коллекции <em>Collection</em> – это просто способ организации источников, в отличие от классических папок один и тот же источник может находиться в нескольких коллекциях одновременно без дублирования данных. Например, на <a href="#fig-0" class="quarto-xref">рис.&nbsp;2</a> источник <em>Item 4</em> находится одновременно в двух коллекциях: <em>Collection 1</em> и <em>Collection 3</em>.</p>
+<div id="fig-0" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/diagram.svg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;2&nbsp;– Организация данных в Zotero и доступные типы данных в Моей библиотеке (My Library) и Групповых библиотеках (Group Libraries)
+</figcaption>
+</figure>
+</div>
+<p>В Zotero данные каждого источника состоят из двух частей:</p>
+<ul>
+<li><strong>Метаданные</strong> — информация об источнике, такая как автор, название, год издания, журнал, том, номер страницы и т.д.</li>
+<li><strong>Вложенные файлы</strong> — файлы, связанные с источником, такие как PDF-версии статей, изображения и другие документы.</li>
+</ul>
+<p>Все метаданные источников (в том числе <em>Info, Abstract, Notes, Tags, Related</em> — ccылки на другие источники в библиотеке) хранятся в базе данных на сервере Zotero и синхронизируются между всеми вашими устройствами, где установлена программа. Объем хранения метаданных неограничен и бесплатен как в Моей библиотеке, так и в Групповых библиотеках.</p>
+<p>Вложенные файлы могут храниться тремя способами:</p>
+<ul>
+<li><strong>Stored File</strong> — сохраненные файлы, доступны два варианта хранения:
+<ul>
+<li>на сервере Zotero (бесплатно <a href="https://www.zotero.org/storage">300 МБ</a>).</li>
+<li>на стороннем WebDAV-сервере (объем зависит от провайдера WebDAV).</li>
+</ul></li>
+<li><strong>Linked File</strong> — внешние ссылки на файлы на вашем компьютере.</li>
+<li><strong>Web Link</strong> — ссылки на интернет-ресурсы (объем неограничен и бесплатен).</li>
+</ul>
+<p>В <em>Моей библиотеке</em> вы можете использовать все три способа хранения вложенных файлов.</p>
+<p>В <em>Групповых библиотеках</em> Zotero хранит только метаданные источников, а вложенные файлы сохраняет как <em>Stored File</em> на своем сервере или <em>Web Link</em>. Вложенные файлы, сохраненные как <em>Linked File</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> и сохраненные файлы на <em>WebDAV-сервере</em> в <em>Групповых библиотеках</em> не поддерживаются.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Этой проблеме посвящено обсуждение на форуме <a href="https://forums.zotero.org/discussion/128925/linked-files-disabled-in-group-libraries#latest">Linked files disabled in group libraries</a>. На момент чтения статьи такая возможность может быть реализована.</p></div></div><p>Мотивация этой статьи заключается в том, чтобы в <em>Моей библиотеке</em> обойти ограничение в 300 МБ с использованием двух доступных технологий: <em>Stored File c WebDAV-сервером</em> и/или <em>Linked File</em> для хранения вложенных файлов на компьютере с использованием облачного сервиса.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Рекомендуется использовать <em>WebDAV</em>, т.к. при этом файлы синхронизируются автоматически и доступны на всех устройствах без ручной настройки одинаковых путей, также меньше риск «потерять» вложения из-за переименования файлов или смены путей.</p>
+<p>Связанные файлы <em>Linked File</em> дают больше ручного контроля, но требуют внимания, при этом пути к файлам должны быть одинаковыми на всех устройствах, если вы планируете работать с ними на разных компьютерах.</p>
+</div>
+</div>
+</div>
+<p>В <a href="#tbl-data" class="quarto-xref">табл.&nbsp;1</a> для примера приведен неполный перечень облачных сервисов, которые можно использовать для хранения вложенных файлов с указанием бесплатного объема и поддержки протокола <em>WebDAV</em>.</p>
+<div id="tbl-data" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
+<div aria-describedby="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<thead>
+<tr class="header">
+<th>Облачный сервис</th>
+<th>Страна</th>
+<th>Бесплатный объем, ГБ</th>
+<th>Поддержка WebDAV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TeraBox</td>
+<td>en</td>
+<td>1024</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>InfiniCLOUD</td>
+<td>en</td>
+<td>20</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>Google Drive</td>
+<td>en</td>
+<td>15</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>СберДиск</td>
+<td>ru</td>
+<td>15</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Koofr</td>
+<td>en</td>
+<td>10</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Облако Mail.ru</td>
+<td>ru</td>
+<td>8</td>
+<td>✅</td>
+</tr>
+<tr class="odd">
+<td>iCloud Drive</td>
+<td>en</td>
+<td>5</td>
+<td>❌</td>
+</tr>
+<tr class="even">
+<td>OneDrive</td>
+<td>en</td>
+<td>5</td>
+<td>❌</td>
+</tr>
+<tr class="odd">
+<td>Яндекс Диск</td>
+<td>ru</td>
+<td>5</td>
+<td>✅</td>
+</tr>
+<tr class="even">
+<td>Dropbox</td>
+<td>en</td>
+<td>2</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-tbl margin-caption" id="tbl-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;1&nbsp;– Облачные сервисы
+</figcaption>
+</figure>
+</div>
+<p>Далее описана процедура регистрации и настройки Zotero, в том числе настройки для подключения <em>WebDAV-сервера</em> на примере <em>Облако Mail.ru</em> и/или сохранения вложенных файлов <em>Linked File</em> с использованием <em>Google Drive</em>.</p>
+</section>
+<section id="регистрация-в-zotero-и-создание-групп" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="регистрация-в-zotero-и-создание-групп">Регистрация в Zotero и создание групп</h2>
+<p>Создайте аккаунт <a href="https://www.zotero.org/">Zotero</a> для каждого участника исследовательской группы, а также по желанию создайте групповой аккаунт, чтобы расширить объем хранилища для <a href="#zotero-groups">Групповых библиотек</a>.</p>
+<section id="установка-и-настройка-приложения" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="установка-и-настройка-приложения">Установка и настройка приложения</h3>
+<p>Скачайте приложение <a href="https://www.zotero.org/download/">Zotero</a> на свой компьютер.</p>
+<p>Перейдите по пути <em>Правка → Настройки → Синхронизация</em>. В разделе <em>Синхронизация данных</em> войдите в свою учетную запись Zotero.</p>
+<div id="fig-9" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-9.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;3&nbsp;– Zotero. Настройка синхронизации
+</figcaption>
+</figure>
+</div>
+<p>Zotero может автоматически переименовывать файлы (например, pdf-файлы статей) по заданному шаблону. Для этого перейдите по пути <em>Правка → Настройки → Общие</em>, раздел <em>File Renaming</em>, кнопка <em>Customize Filename Format</em>. Например, можно использовать следующий шаблон:</p>
+<p><code>{ firstCreator suffix="_" }{{ year suffix="_" }}{{ title truncate="100" }}</code>.</p>
+<p>Пример имени файла по такому шаблону: <em>Baraldi et al_2021_Laboratory and numerical experimentation for masonry in compression.pdf</em>.</p>
+<div id="fig-16" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-16.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;4&nbsp;– Настройка шаблона имен файлов
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="zotero-groups" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="zotero-groups">Настройка групповых библиотек</h3>
+<p>Для совместной работы с источниками и их цитирования внутри исследовательской группы в Zotero можно создать соответствующие групповые библиотеки и добавить в них участников. Группы можно создавать с аккаунта каждого участника. Для этого в приложении перейдите по пути: <em>Файл → Новая библиотека → Новая группа</em>, вас перебросит на официальный сайт Zotero. Заполните имя группы <em>Choose a name for your group → Group Type → Create Group.</em></p>
+<div id="fig-7" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-7.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;5&nbsp;– Создание групп в Zotero
+</figcaption>
+</figure>
+</div>
+<p>Доступно три варианта групп:</p>
+<ul>
+<li><strong>Public, Open Membership</strong> — любой желающий может просмотреть вашу группу онлайн и мгновенно присоединиться к ней.</li>
+<li><strong>Public, Closed Membership</strong> — любой желающий может просмотреть вашу группу онлайн, но участники должны подать заявку или быть приглашены.</li>
+<li><strong>Private Membership</strong> — только участники могут просматривать вашу группу онлайн и должны быть приглашены присоединиться к ней.</li>
+</ul>
+<p>Далее добавьте участников в группу. Для этого во вкладке <em>Groups</em> у созданной группы перейдите в <em>Manage Members</em>, затем в разделе <em>Member Invitations</em> нажмите <em>Send More Invitations</em> и внесите список адресов электронной почты или имена пользователей Zotero, разделяя их запятыми или записывая с новой строки. После этого нажмите <em>Invite Members</em>.</p>
+<div id="fig-8" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-8.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;6&nbsp;– Приглашение участников в группу Zotero
+</figcaption>
+</figure>
+</div>
+<p>Каждому участнику придет приглашение на электронную почту. Требуется подтвердить свое согласие на вступление в группу. После этого в главном окне программы Zotero отобразятся <em>Групповые библиотеки</em> (см. левую панель на <a href="#fig-zotero" class="quarto-xref">рис.&nbsp;1</a>).</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Если у вас не отображаются <em>Групповые библиотеки</em>, проверьте добавили ли вас в группу и подтвердили ли вы свое вступление в нее.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="настройка-webdav-на-примере-облако-mail.ru" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="настройка-webdav-на-примере-облако-mail.ru">Настройка WebDAV на примере Облако Mail.ru</h2>
+<p>Для использования WebDAV-сервера в Zotero требуется зарегистрироваться на стороннем сервисе, предоставляющем такую услугу. В нашем случае мы используем <a href="https://cloud.mail.ru/">Облако Mail.ru</a>, предоставляющее 8 ГБ бесплатного дискового пространства.</p>
+<section id="создание-пароля" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="создание-пароля">Создание пароля</h3>
+<p>В параметрах аккаунта Mail.ru перейдите в раздел <a href="https://id.mail.ru/security"><em>Безопасность</em></a> <em>→ Пароли для внешних приложений</em>.</p>
+<div id="fig-11" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-11.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;7&nbsp;– Создание пароля для WebDAV в Облако Mail.ru
+</figcaption>
+</figure>
+</div>
+<p>Укажите название для пароля, например, <code>Zotero-WebDAV</code>, затем в качестве типа протокола выберите <em>Полный доступ к Облаку</em> и нажмите <em>Продолжить</em>.</p>
+<div class="page-columns page-full">
+<div id="fig-12" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<img src="images/paste-12.png" class="img-fluid figure-img column-page-right">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig" id="fig-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;8&nbsp;– Создание пароля для WebDAV в Облако Mail.ru
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Потребуется подтвердить действие паролем вашего аккаунта, после чего будет сгенерирован пароль для доступа к WebDAV-серверу — <em>скопируйте его</em>.</p>
+</section>
+<section id="настройка-в-zotero" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="настройка-в-zotero">Настройка в Zotero</h3>
+<p>Перейдите в Zotero по пути <em>Правка → Настройки → Синхронизация</em>. В разделе <em>Синхронизация файлов</em> в пункте <em>«Синхронизировать вложенные файлы в&nbsp;Моей библиотеке, используя»</em> выберите <em>WebDAV</em>.</p>
+<p>Укажите <em>URL-адрес сервера WebDAV</em>: <code>webdav.cloud.mail.ru</code> → <em>Имя пользователя</em>: ваш адрес электронной почты на Mail.ru → <em>Пароль</em>: вставьте скопированный ранее пароль для внешних приложений → <em>Проверить сервер</em>.</p>
+<p>Оставляем активным чекбокс <em>Синхронизировать вложенные файлы в групповых библиотеках, используя хранилище Zotero</em>.</p>
+<div id="fig-13" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-13.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;9&nbsp;– Настройка в Zotero синхронизации вложенных файлов через WebDAV
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Переключатели <em>Загрузить файлы</em> позволяют настроить тип синхронизации вложенных файлов:</p>
+<ul>
+<li><strong>во время синхронизации</strong> с загрузкой всех вложенных файлов.</li>
+<li><strong>по мере необходимости</strong> с загрузкой вложенных файлов при первой попытке их открытия, что полезно для экономии места на диске.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="настройка-linked-file-с-использованием-google-drive" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="настройка-linked-file-с-использованием-google-drive">Настройка Linked File с использованием Google Drive</h2>
+<p>Альтернативой технологии <em>WebDAV</em> является использование внешних ссылок <em>Linked File</em>. В этом разделе описан способ сохранения файлов как внешних ссылок в папку на компьютере, синхронизированную с Google Drive, предоставляющего 15 ГБ бесплатного дискового пространства.</p>
+<section id="регистрация-и-настройка-google-drive" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="регистрация-и-настройка-google-drive">Регистрация и настройка Google Drive</h3>
+<p>Создайте Google-аккаунт и перейдите в Google Drive. Далее в корне диска создайте папку References, в которой будут храниться все источники.</p>
+<div id="fig-1" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;10&nbsp;– Папка <em>References</em> в каталоге <em>Мой диск</em>
+</figcaption>
+</figure>
+</div>
+<p>Далее установите на свой рабочий компьютер приложение <a href="https://workspace.google.com/intl/ru/products/drive/?from=gafb-drive-global_nav-ru#download">Google Drive</a> и войти в свой аккаунт. В проводнике среди физических дисков должен появиться виртуальный диск <em>(G:)</em>, в котором по пути <em>G:\Мой диск</em> будет находиться папка <em>References</em>.</p>
+<div id="fig-6" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-6.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;11&nbsp;– Отображение виртуального Google-диска в проводнике
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="настройка-связанных-вложенных-файлов" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="настройка-связанных-вложенных-файлов">Настройка связанных вложенных файлов</h3>
+<p>В Zotero перейдите по пути <em>Правка → Настройки → Расширенные</em>. В разделе <em>Базовая папка связанных вложений</em> укажите в качестве <em>Базовой папки</em> ссылку на папку <em>References</em>. Zotero будет использовать значения относительных путей для связанных вложенных файлов в базовой папке, обеспечивая доступ к файлам на других компьютерах.</p>
+<div id="fig-15" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-15.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;12&nbsp;– Настройка базовой папки для связанных вложений
+</figcaption>
+</figure>
+</div>
+<p>Чтобы все файлы сохранялись по умолчанию в нужную нам папку на диске, требуется скачать расширение <a href="https://github.com/wileyyugioh/zotmoov">ZotMoov</a>. Скачайте файл с расширением .xpi. Далее перейдите в Zotero в меню <em>Инструменты → Плагины → Шестеренка → Install Plugin From File</em>, далее выберите скачанный файл с расширением .xpi.</p>
+<p>В настройках расширения (<em>Правка → Настройки → ZotMoov</em>) в разделе <em>Directory to Move/Copy Files To</em> укажите путь на созданную ранее папку <em>References</em> (<a href="#fig-10" class="quarto-xref">рис.&nbsp;13</a>, 1). Также можете активировать чек-бокс <em>Automatically Delete External Linked Files in the ZotMoov Directory</em> (<a href="#fig-10" class="quarto-xref">рис.&nbsp;13</a>, 2), чтобы при удалении источника в Zotero автоматически удалялся связанный файл в указанной папке.</p>
+<div id="fig-10" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/paste-10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;13&nbsp;– Настройка расширения ZotMoov
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="дополнительные-расширения-и-настройки" class="level2">
+<h2 class="anchored" data-anchor-id="дополнительные-расширения-и-настройки">Дополнительные расширения и настройки</h2>
+<p>Скачайте и установите <a href="https://bibliostyle.ru/stiles/">стили цитирования по ГОСТ</a>. Рекомендуется скачивать файлы при открытом приложении Zotero, тогда они автоматически установятся программой. Иначе вы можете перейти по пути <em>Правка → Настройки → Цитирование</em>, нажать на кнопку <code>+</code> и выбрать скаченный файл стиля для установки.</p>
+<p>Скачайте и установите расширение <a href="https://www.zotero.org/download/">Zotero Connector</a> для вашего браузера. Это позволит вам быстро сохранять источники в библиотеку с метаданными и вложенными файлами непосредственно из браузера.</p>
+<p>Скачайте и установите плагин <a href="https://github.com/windingwind/zotero-pdf-translate">Translate for Zotero</a>, который позволяет переводить тексты статей на разные языки. Для этого скачайте файл с расширением .xpi. Далее перейдите в Zotero в меню <em>Инструменты → Плагины → Шестеренка → Install Plugin From File</em>, далее выберите скачанный файл с расширением .xpi.</p>
+</section>
+<section id="видео-демонстрация-работы-в-zotero" class="level2">
+<h2 class="anchored" data-anchor-id="видео-демонстрация-работы-в-zotero">Видео-демонстрация работы в Zotero</h2>
+<p>Ниже представлена демонстрация работы в Zotero, в том числе:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=168s">02:48</a> Добавление ссылок в Zotero вручную</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=218s">03:38</a> Добавление ссылок с идентификатором</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=294s">04:54</a> Добавление ссылок с помощью Zotero Connector</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=328s">05:28</a> Как удалить дубликаты ссылок</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=361s">06:01</a> Как создавать коллекции</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=409s">06:49</a> Как добавлять теги</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=466s">07:46</a> Как добавить связанные ссылки</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=491s">08:11</a> Как добавлять заметки</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=512s">08:32</a> Как использовать Zotero в Microsoft Word</li>
+<li><a href="https://www.youtube.com/watch?v=JG7Uq_JFDzE&amp;t=672s">11:12</a> Как добавить и редактировать стили цитирования</li>
+</ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/JG7Uq_JFDzE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+
+
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
