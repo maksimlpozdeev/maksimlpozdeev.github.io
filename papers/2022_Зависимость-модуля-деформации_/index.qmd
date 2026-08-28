@@ -1,0 +1,45 @@
+---
+title: "Зависимость модуля деформации каменных кладок от возникающих напряжений"
+
+description: "Поздеев М. Л. Зависимость модуля деформации каменных кладок от возникающих напряжений // XII Всероссийский Фестиваль науки : Сборник докладов, Нижний Новгород, 18–19 октября 2022 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2022. С. 1217-1219. EDN WYRQLA."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+
+date: 2022-12-29
+
+abstract: ""
+
+keywords: ""  
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN WYRQLA
+        icon: box-arrow-up-right
+        href: "https://elibrary.ru/item.asp?id=49998493"
+      - text: PDF
+        icon: file-pdf
+        href: "https://elibrary.ru/download/elibrary_49998153_97757089.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович">
+  <meta name="citation_title" content="Зависимость модуля деформации каменных кладок от возникающих напряжений">
+  <meta name="citation_date" content="2022">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XII Всероссийский Фестиваль науки : Сборник докладов, Нижний Новгород, 18–19 октября 2022 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет">
+  <meta name="citation_firstpage" content="1217">
+  <meta name="citation_lastpage" content="1219">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://elibrary.ru/item.asp?id=49998493">
+  <meta name="citation_pdf_url" content="https://elibrary.ru/download/elibrary_49998153_97757089.pdf">
+  <meta name="citation_doi" content="">
+---

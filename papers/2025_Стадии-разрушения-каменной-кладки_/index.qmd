@@ -1,0 +1,55 @@
+---
+title: "Стадии разрушения каменной кладки при одноосном сжатии"
+
+description: "Поздеев М. Л., Смагин И. В., Лобов Д. М., Лихачева С. Ю. Стадии разрушения каменной кладки при одноосном сжатии // XXIX Нижегородская сессия молодых ученых (гуманитарные, технические, естественные науки) : Материалы сессии, Нижний Новгород, 12–15 ноября 2024 года. Нижний Новгород: ООО «Издательство «Перо», 2024. С. 196-199. EDN VMSIYP."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+  - name: "Смагин Илья Васильевич"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0002-5284-2464"  
+  - name: "Лобов Дмитрий Михайлович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-0277-5305"
+  - name: "Лихачева Светлана Юрьевна"
+    affiliation: "ННГАСУ"
+    orcid: "0000-0001-9322-3235"
+
+date: 2025-04-01
+
+abstract: |
+  Описана методика определения стадий разрушения каменной кладки при одноосном сжатии по результатам анализа диаграмм состояния по методике Зиновьева. Картины трещинообразования визуализированы средствами корреляции цифровых изображений.
+
+keywords: [каменная кладка, стадии разрушения, трещинообразование, аппроксимация диаграммы деформирования, корреляция цифровых изображений]  
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN VMSIYP
+        icon: box-arrow-up-right
+        href: "https://www.elibrary.ru/item.asp?id=80519913"
+      - text: PDF
+        icon: file-pdf
+        href: "https://www.elibrary.ru/download/elibrary_80519913_78009164.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович; Смагин, Илья Васильевич; Лобов, Дмитрий Михайлович; Лихачева, Светлана Юрьевна">
+  <meta name="citation_title" content="Стадии разрушения каменной кладки при одноосном сжатии">
+  <meta name="citation_date" content="2024">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XXIX Нижегородская сессия молодых ученых (гуманитарные, технические, естественные науки)">
+  <meta name="citation_firstpage" content="196">
+  <meta name="citation_lastpage" content="199">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://www.elibrary.ru/item.asp?id=80519913">
+  <meta name="citation_pdf_url" content="https://www.elibrary.ru/download/elibrary_80519913_78009164.pdf">
+  <meta name="citation_doi" content="">
+---

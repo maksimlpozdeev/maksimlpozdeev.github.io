@@ -1,0 +1,52 @@
+---
+title: "Сравнительный анализ феноменологических критериев прочности каменной кладки при двуосном сжатии"
+
+description: "Лихачева, С. Ю. Поздеев М. Л., Смагин И. В. Сравнительный анализ феноменологических критериев прочности каменной кладки при двуосном сжатии // Приволжский научный журнал. 2021. № 4(60). С. 40-47. EDN FKPZUH."
+
+author:
+  - name: "Лихачева Светлана Юрьевна"
+    affiliation: "ННГАСУ"
+    orcid: "0000-0001-9322-3235"
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+  - name: "Смагин Илья Васильевич"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0002-5284-2464"  
+
+date: 2022-01-18
+
+abstract: |
+  Описаны феноменологические критерии прочности каменных кладок как ортотропных композитов. Проведено сравнение применимости первого и второго критериев прочности для описания экспериментальных данных двух опытов на двуосное сжатие образцов каменных кладок, для этого написан алгоритм на языке Python. Дается качественная оценка применимости каждого из двух критериев.
+
+keywords: [каменная кладка, двуосное сжатие, плоское напряженное состояние, критерий прочности, фигура прочности, ортотропный материал]  
+
+categories: "Статья ВАК К2"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN FKPZUH
+        icon: box-arrow-up-right
+        href: "https://www.elibrary.ru/item.asp?id=47565210"
+      - text: PDF
+        icon: file-pdf
+        href: "https://www.elibrary.ru/download/elibrary_47565210_68766915.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Лихачева, Светлана Юрьевна; Поздеев, Максим Леонидович; Смагин, Илья Васильевич">
+  <meta name="citation_title" content="Сравнительный анализ феноменологических критериев прочности каменной кладки при двуосном сжатии">
+  <meta name="citation_date" content="2021">
+  <meta name="citation_journal_title" content="Приволжский научный журнал">
+  <meta name="citation_conference_title" content="">
+  <meta name="citation_firstpage" content="40">
+  <meta name="citation_lastpage" content="47">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="4(60)">
+  <meta name="citation_public_url" content="https://www.elibrary.ru/item.asp?id=47565210">
+  <meta name="citation_pdf_url" content="https://www.elibrary.ru/download/elibrary_47565210_68766915.pdf">
+  <meta name="citation_doi" content="">
+---

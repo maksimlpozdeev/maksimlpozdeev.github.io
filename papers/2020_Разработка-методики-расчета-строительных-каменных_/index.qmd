@@ -1,0 +1,45 @@
+---
+title: "Разработка методики расчета строительных каменных конструкций диаграммным методом на основе нелинейной деформационной модели"
+
+description: "Поздеев, М. Л. Разработка методики расчета строительных каменных конструкций диаграммным методом на основе нелинейной деформационной модели // X Всероссийский фестиваль науки : Сборник докладов, Нижний Новгород, 14–15 октября 2020 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2020. С. 252-256. EDN NVZFCU."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+
+date: 2020-12-29
+
+abstract: ""
+
+keywords: ""
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN NVZFCU
+        icon: box-arrow-up-right
+        href: "https://www.elibrary.ru/item.asp?id=44431186"
+      - text: PDF
+        icon: file-pdf
+        href: "https://www.elibrary.ru/download/elibrary_44431103_22599618.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович">
+  <meta name="citation_title" content="Разработка методики расчета строительных каменных конструкций диаграммным методом на основе нелинейной деформационной модели">
+  <meta name="citation_date" content="2020">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="X Всероссийский фестиваль науки : Сборник докладов, Нижний Новгород, 14–15 октября 2020 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет">
+  <meta name="citation_firstpage" content="252">
+  <meta name="citation_lastpage" content="256">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://www.elibrary.ru/item.asp?id=44431186">
+  <meta name="citation_pdf_url" content="https://www.elibrary.ru/download/elibrary_44431103_22599618.pdf">
+  <meta name="citation_doi" content="">
+---

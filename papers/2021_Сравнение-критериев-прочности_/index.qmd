@@ -1,0 +1,48 @@
+---
+title: "Сравнение критериев прочности неармированной каменной кладки в области двуосного сжатия"
+
+description: "Поздеев М. Л., Смагин И. В. Сравнение критериев прочности неармированной каменной кладки в области двуосного сжатия // XI Всероссийский Фестиваль науки : Сборник докладов, Нижний Новгород, 20–21 октября 2021 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2021. С. 200-204. EDN SCSIDZ."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+  - name: "Смагин Илья Васильевич"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0002-5284-2464"  
+
+date: 2021-12-14
+
+abstract: ""
+
+keywords: "" 
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN SCSIDZ
+        icon: box-arrow-up-right
+        href: "https://www.elibrary.ru/item.asp?id=47328107"
+      - text: PDF
+        icon: file-pdf
+        href: "https://www.elibrary.ru/download/elibrary_47328023_33156106.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович; Смагин, Илья Васильевич">
+  <meta name="citation_title" content="Сравнение критериев прочности неармированной каменной кладки в области двуосного сжатия">
+  <meta name="citation_date" content="2021">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XI Всероссийский Фестиваль науки : Сборник докладов, Нижний Новгород, 20–21 октября 2021 года">
+  <meta name="citation_firstpage" content="200">
+  <meta name="citation_lastpage" content="204">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://www.elibrary.ru/item.asp?id=47328107">
+  <meta name="citation_pdf_url" content="https://www.elibrary.ru/download/elibrary_47328023_33156106.pdf">
+  <meta name="citation_doi" content="">
+---

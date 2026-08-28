@@ -1,0 +1,51 @@
+---
+title: "Моделирование НДС и разрушения каменной кладки в расчетном комплексе SCAD Office с использованием деформационной теории пластичности"
+
+description: " Поздеев М. Л., Лихачева С. Ю., Смагин И. В. Моделирование НДС и разрушения каменной кладки в расчетном комплексе SCAD Office с использованием деформационной теории пластичности // Актуальные проблемы компьютерного моделирования конструкций и сооружений : Тезисы докладов VIII-го международного симпозиума, Тамбов, 17–21 мая 2023 года. Тамбов: ИП Чеснокова А.В., 2023. С. 202-204. EDN FTMJHZ."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+  - name: "Лихачева Светлана Юрьевна"
+    affiliation: "ННГАСУ"
+    orcid: "0000-0001-9322-3235"
+  - name: "Смагин Илья Васильевич"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0002-5284-2464" 
+
+date: 2023-09-01
+
+abstract: ""
+
+keywords: [каменная кладка, деформационная теория пластичности, диаграмма деформирования, ниспадающая ветвь диаграммы деформирования, метод конечных элементов, статистическая обработка]  
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN FTMJHZ
+        icon: box-arrow-up-right
+        href: "https://elibrary.ru/item.asp?id=54358700"
+      - text: PDF
+        icon: file-pdf
+        href: "http://dn.tstu.ru/images/books/Architecture/Актуальные_проблемы_компьютерного_моделирования_конструкций_и_сооружений_2023.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович; Лихачева, Светлана Юрьевна; Смагин, Илья Васильевич">
+  <meta name="citation_title" content="Моделирование НДС и разрушения каменной кладки в расчетном комплексе SCAD Office с использованием деформационной теории пластичности">
+  <meta name="citation_date" content="2023">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="Актуальные проблемы компьютерного моделирования конструкций и сооружений : Тезисы докладов VIII-го международного симпозиума, Тамбов, 17–21 мая 2023 года. Тамбов">
+  <meta name="citation_firstpage" content="202">
+  <meta name="citation_lastpage" content="204">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://elibrary.ru/item.asp?id=54358700">
+  <meta name="citation_pdf_url" content="http://dn.tstu.ru/images/books/Architecture/Актуальные_проблемы_компьютерного_моделирования_конструкций_и_сооружений_2023.pdf">
+  <meta name="citation_doi" content="">
+---

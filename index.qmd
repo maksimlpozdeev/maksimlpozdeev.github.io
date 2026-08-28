@@ -1,0 +1,43 @@
+---
+title: "Максим Поздеев"
+subtitle: "maksimlpozdeev"
+about:
+  template: broadside
+  image: assets/cover.png
+  links:
+    - icon: telegram
+      text: Telegram
+      href: https://t.me/maksimlpozdeev
+    - icon: envelope-fill
+      text: Email
+      href: "mailto:maksim.leon.pz@yandex.ru"
+    - text: "SPIN-код 6024-5837"
+      href: https://www.elibrary.ru/author_profile.asp?authorid=1195645
+    - text: ORCID 0009-0009-4388-9966
+      href: https://orcid.org/0009-0009-4388-9966
+    - text: ResearchGate
+      href: https://www.researchgate.net/profile/Maksim-Pozdeev?ev=prf_overview
+format:
+  html:
+    toc: false
+---
+
+Привет! Это интернет-журнал, посвященный событиям моей профессиональной деятельности. Здесь я публикую и систематизирую портфолио своих работ, а также делюсь интересными находками и материалами, связанными с моей академической деятельностью и инженерной практикой.
+
+## Научная деятельность
+
+[Диссертация](https://kgeu.ru/struktura-vuza/dissertatsionnye-sovety/dissertatsionnyy-sovet-24-2-310-04/soiskatel-pozdeev-maksim-leonidovich/) «Расчет стен из неармированных каменных кладок при плоском напряженном состоянии с учетом физической нелинейности и анизотропии» на соискание ученой степени кандидата технических наук, 2025
+
+## Образование
+
+Аспирантура --- Строительные конструкции, здания и сооружения, [ННГАСУ](https://nngasu.ru/), Нижний Новгород, 2022 -- 2026
+
+Специалитет --- Строительство уникальных зданий и сооружений, [ННГАСУ](https://nngasu.ru/), Нижний Новгород, 2016 -- 2022
+
+## Опыт
+
+[ГК SCAD Soft](https://scadhelp.ru/), инженер-исследователь, 2024 -- сейчас
+
+[MARKS GROUP](https://marksgroup.ru/), инженер-конструктор, 2023 -- 2024
+
+[НПО Олимпроект](https://olimproekt.ru/), инженер-конструктор, 2022 -- 2023

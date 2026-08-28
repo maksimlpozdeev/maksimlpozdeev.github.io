@@ -1,0 +1,19 @@
+---
+title: Публикации
+listing:
+    contents: /
+    sort:
+        - date desc
+    sort-ui: [date]
+    filter-ui: [description]
+    categories: true
+    type: table
+    field-links:
+        - description
+    fields: [description]
+    table-hover: true
+    field-display-names:
+        description: "Перечень публикаций"
+---
+
+Здесь содержится список публикаций, связанных с моей работой в академической среде и посвященных вопросам механики каменных конструкций.

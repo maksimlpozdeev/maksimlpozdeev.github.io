@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: docs/
+
+lang: ru
+
+website:
+  favicon: assets/favicon.png
+  navbar:
+    logo: assets/logo.png
+    left:
+      - text: Публикации
+        href: papers/index.qmd        
+      - text: Блог
+        href: blogs/index.qmd        
+      - text: Проекты
+        href: projects/index.qmd
+      - text: Приложения
+        href: apps/index.qmd
+    tools:
+      - icon: telegram
+        href: https://t.me/maksimlpozdeev
+      - icon: envelope-fill
+        href: "mailto:maksim.leon.pz@yandex.ru"
+
+format:
+  html:
+    image-lazy-loading: true
+    respect-user-color-scheme: true
+    theme:
+      light: 
+        - litera
+        - styles/styles-light.scss
+      dark:
+        - darkly
+        - styles/styles-dark.scss
+    toc: true
+    toc-location: left
+
+crossref:
+  fig-prefix: "рис."
+  tbl-prefix: "табл."
+  title-delim: "\u00A0--"
+
+cap-location: margin
+reference-location: margin
+citation-location: margin
+
+csl: citation_style/ieee.csl

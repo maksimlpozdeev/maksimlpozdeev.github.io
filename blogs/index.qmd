@@ -1,0 +1,11 @@
+---
+title: Блог
+listing:
+    contents: /
+    sort: "date desc"
+    categories: true
+    type: default
+    image-align: left    
+---
+
+Здесь рассказываю об интересных находках в моей профессиональной деятельности.

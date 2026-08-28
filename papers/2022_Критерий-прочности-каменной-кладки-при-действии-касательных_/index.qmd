@@ -1,0 +1,49 @@
+---
+title: "Критерий прочности каменной кладки при действии касательных напряжений"
+
+description: "Лихачева С. Ю., Поздеев М. Л. Критерий прочности каменной кладки при действии касательных напряжений // Приволжский научный журнал. 2022. № 1(61). С. 19-23. EDN KGRKOC."
+
+author:
+  - name: "Лихачева Светлана Юрьевна"
+    affiliation: "ННГАСУ"
+    orcid: "0000-0001-9322-3235"
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+
+date: 2022-04-24
+
+abstract: |
+  Описан критерий прочности каменных кладок в области среза по перевязанному и неперевязанному сечению. Проведено обобщение подходов к описанию прочности кладки на действие касательных напряжений по результатам опытных данных и предложенных авторских и нормативных методик. Проведен анализ их применимости в инженерной практике.
+
+keywords: [каменная кладка, плоское напряженное состояние, касательные напряжения, критерий прочности, фигура прочности, ортотропный материал]  
+
+categories: "Статья ВАК К2"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN KGRKOC
+        icon: box-arrow-up-right
+        href: "https://elibrary.ru/item.asp?id=48294537"
+      - text: PDF
+        icon: file-pdf
+        href: "https://elibrary.ru/download/elibrary_48294537_32451608.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Лихачева, Светлана Юрьевна; Поздеев, Максим Леонидович">
+  <meta name="citation_title" content="Критерий прочности каменной кладки при действии касательных напряжений">
+  <meta name="citation_date" content="2022">
+  <meta name="citation_journal_title" content="Приволжский научный журнал">
+  <meta name="citation_conference_title" content="">
+  <meta name="citation_firstpage" content="19">
+  <meta name="citation_lastpage" content="23">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="№ 1(61)">
+  <meta name="citation_public_url" content="https://elibrary.ru/item.asp?id=48294537">
+  <meta name="citation_pdf_url" content="https://elibrary.ru/download/elibrary_48294537_32451608.pdf">
+  <meta name="citation_doi" content="">
+---

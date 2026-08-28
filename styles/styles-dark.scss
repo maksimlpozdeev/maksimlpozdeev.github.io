@@ -1,0 +1,66 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Fonts */
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+$font-family-serif: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+/* Типографика */
+$font-size-base: 0.9rem;
+$line-height-base: 1.5;
+
+/* Основной фон страницы */
+$body-bg: #151515;
+$navbar-bg: #202022;
+$body-color: #e6e6e6;
+
+/* Ссылки */
+$red-color: #d6705c;
+$link-color: $red-color;
+$link-hover-color: $red-color;
+$navbar-hl: $red-color;
+
+
+/*-- scss:rules --*/
+
+/* Navbar */
+.navbar {
+  font-size: $font-size-base;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Логотип */
+.navbar-brand {
+  img {
+    height: 36px;
+    max-height: none;
+  }
+}
+
+
+/* Таблицы */
+table {
+  caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  th,
+  td {
+    text-align: left;
+  }
+}
+
+
+/* Ссылки в тексте */
+a { 
+  text-decoration: none;  
+}
+
+/* ссылки в listing type: table */
+.quarto-listing table a {
+  color: $body-color;
+}

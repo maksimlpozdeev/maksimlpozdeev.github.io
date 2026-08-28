@@ -1,0 +1,46 @@
+---
+title: "Критерий прочности каменной кладки при плоском напряженном состоянии"
+
+description: "Поздеев М. Л. Критерий прочности каменной кладки при плоском напряженном состоянии // XXVI Нижегородская сессия молодых ученых (технические, естественные науки) : Материалы конференции, Нижний Новгород, 25–28 мая 2021 года. Нижний Новгород: Издательство «Перо», 2021. С. 154-158. EDN XFETSA."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+
+date: 2021-09-19
+
+abstract: |
+  В статье приводится анализ критерия прочности кладки при плоском напряженном состоянии, разработанного Г. А. Гениевым. В работе проведена его гармонизация с действующими нормами проектирования каменных конструкций и приведены альтернативные критерии в областях сдвига кладки. В результате работы модифицирован критерий Гениева и создан расчетный модуль в MS Excel, позволяющий проводить конструктивные расчеты плоского НДС кладки по результатам конечно-элементного расчета моделей зданий и сооружений.
+
+keywords: [каменная кладка, плоское напряженное состояние, критерий прочности, фигура прочности]  
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN XFETSA
+        icon: box-arrow-up-right
+        href: "https://elibrary.ru/item.asp?id=46551689"
+      - text: PDF
+        icon: file-pdf
+        href: ""
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович">
+  <meta name="citation_title" content="Критерий прочности каменной кладки при плоском напряженном состоянии">
+  <meta name="citation_date" content="2021">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XXVI Нижегородская сессия молодых ученых (технические, естественные науки) : Материалы конференции, Нижний Новгород, 25–28 мая 2021 года">
+  <meta name="citation_firstpage" content="154">
+  <meta name="citation_lastpage" content="158">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://elibrary.ru/item.asp?id=46551689">
+  <meta name="citation_pdf_url" content="">
+  <meta name="citation_doi" content="">
+---

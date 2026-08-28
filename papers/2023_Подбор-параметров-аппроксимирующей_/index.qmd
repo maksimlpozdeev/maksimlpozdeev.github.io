@@ -1,0 +1,49 @@
+---
+title: "Подбор параметров аппроксимирующей кривой диаграммы сжатия каменной кладки"
+
+description: "Поздеев М. Л., Лихачева С. Ю. Подбор параметров аппроксимирующей кривой диаграммы сжатия каменной кладки // Приволжский научный журнал. 2023. № 3(67). С. 34-41. EDN LEMXML."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+  - name: "Лихачева Светлана Юрьевна"
+    affiliation: "ННГАСУ"
+    orcid: "0000-0001-9322-3235"
+
+date: 2023-10-08
+
+abstract: |
+  Описана методика определения параметров аппроксимирующей кривой диаграммы сжатия неармированной каменной кладки с учетом разупрочнения на основе экспериментальных данных для использования в нелинейных расчетах методом конечных элементов. В качестве аппроксимирующей кривой выбрана модель диаграммы сжатия железобетона, используемая в программном комплексе SCAD++ для нелинейных расчетов в рамках деформационной теории пластичности.
+
+keywords: [каменная кладка, диаграмма деформирования, разупрочнение, аппроксимация экспериментальных данных, метод градиентного спуска]  
+
+categories: "Статья ВАК К2"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN LEMXML
+        icon: box-arrow-up-right
+        href: "https://elibrary.ru/item.asp?id=54633285"
+      - text: PDF
+        icon: file-pdf
+        href: "https://elibrary.ru/download/elibrary_54633285_49558694.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович; Лихачева, Светлана Юрьевна">
+  <meta name="citation_title" content="Подбор параметров аппроксимирующей кривой диаграммы сжатия каменной кладки">
+  <meta name="citation_date" content="2023">
+  <meta name="citation_journal_title" content="Приволжский научный журнал">
+  <meta name="citation_conference_title" content="">
+  <meta name="citation_firstpage" content="34">
+  <meta name="citation_lastpage" content="41">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="3(67)">
+  <meta name="citation_public_url" content="https://elibrary.ru/item.asp?id=54633285">
+  <meta name="citation_pdf_url" content="https://elibrary.ru/download/elibrary_54633285_49558694.pdf">
+  <meta name="citation_doi" content="">
+---

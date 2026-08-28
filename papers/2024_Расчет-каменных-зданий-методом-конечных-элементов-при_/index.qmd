@@ -1,0 +1,45 @@
+---
+title: "Расчет каменных зданий методом конечных элементов при плоском напряженном состоянии в программных комплексах с использованием деформационной теории пластичности"
+
+description: "Поздеев М. Л. Расчет каменных зданий методом конечных элементов при плоском напряженном состоянии в программных комплексах с использованием деформационной теории пластичности // Сборник тезисов Онищиковских чтений : Материалы I конференции по каменным конструкциям, Москва, 16–17 мая 2024 года. Москва: Акционерное общество «Научно-исследовательский центр «Строительство», 2024. С. 59-63. EDN DWLNRS."
+
+author:
+  - name: "Поздеев Максим Леонидович"
+    affiliation: "ННГАСУ"
+    orcid: "0009-0009-4388-9966"
+
+date: 2025-02-01
+
+abstract: ""
+
+keywords: [каменная кладка, деформационная теория пластичности, критерий прочности, диаграмма деформирования, ортотропия, плоское напряженное состояние]
+
+categories: "Конф. РИНЦ"
+
+doi: ""
+
+format:
+  html:
+    toc: true
+    other-links:
+      - text: EDN DWLNRS
+        icon: box-arrow-up-right
+        href: "https://www.elibrary.ru/item.asp?id=80244992"
+      - text: PDF
+        icon: file-pdf
+        href: "https://www.elibrary.ru/download/elibrary_80244992_41967141.pdf"
+
+header-includes: |
+  <meta name="citation_authors" content="Поздеев, Максим Леонидович">
+  <meta name="citation_title" content="Расчет каменных зданий методом конечных элементов при плоском напряженном состоянии в программных комплексах с использованием деформационной теории пластичности">
+  <meta name="citation_date" content="2024">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="Сборник тезисов Онищиковских чтений : Материалы I конференции по каменным конструкциям, Москва, 16–17 мая 2024 года. Москва: Акционерное общество «Научно-исследовательский центр «Строительство»">
+  <meta name="citation_firstpage" content="59">
+  <meta name="citation_lastpage" content="63">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://www.elibrary.ru/item.asp?id=80244992">
+  <meta name="citation_pdf_url" content="https://www.elibrary.ru/download/elibrary_80244992_41967141.pdf">
+  <meta name="citation_doi" content="">
+---
