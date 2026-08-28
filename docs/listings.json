@@ -1,13 +1,13 @@
 [
   {
-    "listing": "/apps/index.html",
-    "items": []
-  },
-  {
     "listing": "/blogs/index.html",
     "items": [
       "/blogs/post_01/index.html"
     ]
+  },
+  {
+    "listing": "/apps/index.html",
+    "items": []
   },
   {
     "listing": "/papers/index.html",
