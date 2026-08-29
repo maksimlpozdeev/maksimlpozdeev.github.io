@@ -9,7 +9,7 @@ author:
     orcid: "0009-0009-4388-9966"
   - name: "Smagin I. V."
     affiliation: "NNGASU"
-    orcid: "0009-0002-5284-2464"  
+    orcid: "0009-0002-5284-2464"
   - name: "Lobov D. M."
     affiliation: "NNGASU"
     orcid: "0009-0009-0277-5305"
@@ -22,7 +22,7 @@ date: 2025-02-20
 abstract: |
   The paper describes the methodology of constructing the complete deformation diagram (stress-strain curve) of masonry using hydraulic presses without a tracking system (displacement control) and fast feedback. The technique of equilibrium tests is used, when during deformation of the tested specimen an additional element of increased stiffness is introduced, which allows redistributing the forces when realizing the downward branch of the deformation diagram of the masonry specimen. The paper presents a methodology for selecting the required stiffness taking into account the convexity of the deformation diagram on the downward section. This allows selecting optimal parameters of the loading system, which is especially important in case of a large nomenclature of stone products and variation of their deformation characteristics. The method is tested on thickened silicate bricks with hollowness. According to the results of experimental studies with the developed installation, complete deformation diagrams of masonry under uniaxial compression are successfully obtained.
 
-keywords: [Masonry, Stress-Strain Curve, Deformation Diagram, Softening]  
+keywords: [Masonry, Stress-Strain Curve, Deformation Diagram, Softening]
 
 categories: "Конф. Scopus"
 
@@ -31,10 +31,6 @@ doi: "10.1007/978-3-031-82938-3_12"
 format:
   html:
     toc: true
-    other-links:
-      - text: PDF
-        icon: file-pdf
-        href: "2024_Method-of-Experimentally-Obtaining_.pdf"
 
 header-includes: |
   <meta name="citation_authors" content="Pozdeev, M.L.; Smagin, I.V.; Lobov, D.M.; Likhacheva, S.Y.">

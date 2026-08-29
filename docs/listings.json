@@ -1,17 +1,18 @@
 [
   {
+    "listing": "/apps/index.html",
+    "items": []
+  },
+  {
     "listing": "/blogs/index.html",
     "items": [
       "/blogs/post_01/index.html"
     ]
   },
   {
-    "listing": "/apps/index.html",
-    "items": []
-  },
-  {
     "listing": "/papers/index.html",
     "items": [
+      "/papers/2026_Калибровка-модели-пластического-течения_/index.html",
       "/papers/2026_Проектирование-реляционной-базы-данных_/index.html",
       "/papers/2025_Обзор-критериев-прочности-каменной-кладки/index.html",
       "/papers/2025_Ортотропный-критерий-прочности_/index.html",
