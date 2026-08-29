@@ -1,0 +1,46 @@
+---
+title: "Anisotropic strength surfaces of masonry"
+
+description: "Svetlana Yurievna Likhacheva, Ilya Vasilyevich Smagin, Maxim Leonidovich Pozdeev; Anisotropic strength surfaces of masonry. AIP Conf. Proc. 23 March 2026; 3247 (1): 030021. https://doi.org/10.1063/5.0306799"
+
+author:
+  - name: "Likhacheva S. Yu."
+    affiliation: "NNGASU"
+    orcid: "0000-0001-9322-3235"
+  - name: "Smagin I. V."
+    affiliation: "NNGASU"
+    orcid: "0009-0002-5284-2464"
+  - name: "Pozdeev M. L."
+    affiliation: "NNGASU"
+    orcid: "0009-0009-4388-9966"
+
+
+date: 2026-03-23
+
+abstract: |
+  The place of the material strength surfaces in the theory of plastic flow is determined. The features of the strength properties of masonry as a material with anisotropic strength are described. The conditions of strength of masonry during crushing and cutting are considered. The necessity of taking into account the angle of anisotropy of masonry in marginal surfaces is shown. An invariant method of describing the surface of the strength resistance of masonry is considered. An anisotropic combined ultimate strength surface for masonry is proposed for the theory of plastic flow.
+
+keywords: []
+
+categories: "Конф. Scopus"
+
+doi: "10.1063/5.0306799"
+
+format:
+  html:
+    toc: true
+
+header-includes: |
+  <meta name="citation_authors" content="Likhacheva, S.Y.; Smagin, I.V.; Pozdeev, M.L.">
+  <meta name="citation_title" content="Anisotropic strength surfaces of masonry">
+  <meta name="citation_date" content="2026">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XXVII International Scientific Conference on Advances in Civil Engineering: Construction, The Formation of The Living Environment (FORM2024). 25–27 April 2024. Yerevan, Armenia">
+  <meta name="citation_firstpage" content="">
+  <meta name="citation_lastpage" content="">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://pubs.aip.org/aip/acp/article-abstract/3247/1/030021/3384470/Anisotropic-strength-surfaces-of-masonry?redirectedFrom=fulltext">
+  <meta name="citation_pdf_url" content="">
+  <meta name="citation_doi" content="10.1007/978-3-031-82938-3_12">
+---
