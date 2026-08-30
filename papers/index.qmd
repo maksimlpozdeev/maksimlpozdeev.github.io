@@ -8,12 +8,11 @@ listing:
     filter-ui: [description]
     categories: true
     type: table
-    field-links:
-        - description
+    field-links: [description]
     fields: [description]
     table-hover: true
     field-display-names:
         description: "Перечень публикаций"
 ---
 
-Здесь содержится список публикаций, связанных с моей работой в академической среде и посвященных вопросам механики каменных конструкций.
+Список публикаций, связанных с моей работой в академической среде.

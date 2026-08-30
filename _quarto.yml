@@ -10,9 +10,11 @@ website:
     logo: assets/logo.png
     left:
       - text: Публикации
-        href: papers/index.qmd        
+        href: papers/index.qmd
       - text: Блог
-        href: blogs/index.qmd        
+        href: blogs/index.qmd
+      - text: Курсы
+        href: courses/index.qmd
       - text: Проекты
         href: projects/index.qmd
       - text: Приложения

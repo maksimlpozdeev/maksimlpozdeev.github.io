@@ -1,0 +1,12 @@
+---
+title: Курсы
+listing:
+    contents: /*/index.qmd
+    sort: "date desc"
+    categories: true
+    type: default
+    image-align: left
+
+---
+
+Материалы по образовательным курсам.

@@ -1,12 +1,24 @@
 [
   {
+    "listing": "/courses/sapr/index.html",
+    "items": [
+      "/courses/sapr/01/index.html"
+    ]
+  },
+  {
+    "listing": "/courses/index.html",
+    "items": [
+      "/courses/sapr/index.html"
+    ]
+  },
+  {
     "listing": "/apps/index.html",
     "items": []
   },
   {
     "listing": "/blogs/index.html",
     "items": [
-      "/blogs/post_01/index.html"
+      "/blogs/2026-01-23/index.html"
     ]
   },
   {
