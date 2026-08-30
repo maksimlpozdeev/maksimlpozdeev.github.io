@@ -42,5 +42,5 @@ header-includes: |
   <meta name="citation_issue" content="">
   <meta name="citation_public_url" content="https://pubs.aip.org/aip/acp/article-abstract/3247/1/030021/3384470/Anisotropic-strength-surfaces-of-masonry?redirectedFrom=fulltext">
   <meta name="citation_pdf_url" content="">
-  <meta name="citation_doi" content="10.1007/978-3-031-82938-3_12">
+  <meta name="citation_doi" content="10.1063/5.0306799">
 ---

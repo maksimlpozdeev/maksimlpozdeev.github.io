@@ -1,0 +1,45 @@
+---
+title: "Directions for the development of the deformation theory of plasticity of masonry"
+
+description: "Maksim Pozdeev, Svetlana Likhachyova, Il’ya Smagin; Directions for the development of the deformation theory of plasticity of masonry. AIP Conf. Proc. 23 March 2026; 3247 (1): 030023. https://doi.org/10.1063/5.0306049"
+
+author:
+  - name: "Pozdeev M. L."
+    affiliation: "NNGASU"
+    orcid: "0009-0009-4388-9966"
+  - name: "Likhacheva S. Yu."
+    affiliation: "NNGASU"
+    orcid: "0000-0001-9322-3235"
+  - name: "Smagin I. V."
+    affiliation: "NNGASU"
+    orcid: "0009-0002-5284-2464"
+
+date: 2026-03-23
+
+abstract: |
+  The article reviews the existing deformation theories of plasticity for masonry and concrete. The directions of development of deformation theory for masonry are outlined. The methodology of transformation of masonry stress-strain curves in the invariant record for use in calculations on the deformation theory of plasticity is described. The change of the stress-strain curve parameters from the type of stress state and the angle of rotation of the principal axes relative to the orthotropy axes is described in the region up to the onset of the ultimate strength. To describe the change in the value of bearing capacity from the type of stress state, the failure surface of masonry under plane stress state is described.
+
+keywords: []
+
+categories: "Конф. Scopus"
+
+doi: "10.1063/5.0306049"
+
+format:
+  html:
+    toc: true
+
+header-includes: |
+  <meta name="citation_authors" content="Pozdeev, M.L.; Likhacheva, S.Y.; Smagin, I.V.">
+  <meta name="citation_title" content="Directions for the development of the deformation theory of plasticity of masonry">
+  <meta name="citation_date" content="2026">
+  <meta name="citation_journal_title" content="">
+  <meta name="citation_conference_title" content="XXVII International Scientific Conference on Advances in Civil Engineering: Construction, The Formation of The Living Environment (FORM2024). 25–27 April 2024. Yerevan, Armenia">
+  <meta name="citation_firstpage" content="">
+  <meta name="citation_lastpage" content="">
+  <meta name="citation_volume" content="">
+  <meta name="citation_issue" content="">
+  <meta name="citation_public_url" content="https://pubs.aip.org/aip/acp/article-abstract/3247/1/030023/3384468/Directions-for-the-development-of-the-deformation?redirectedFrom=fulltext">
+  <meta name="citation_pdf_url" content="">
+  <meta name="citation_doi" content="10.1063/5.0306049">
+---
