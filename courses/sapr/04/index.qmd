@@ -1,0 +1,10 @@
+---
+title: "4 Создание опалубочной модели"
+description: ""
+date: "2026-09-01"
+categories: [Revit]
+bibliography: references.bib
+---
+
+В разработке.
+

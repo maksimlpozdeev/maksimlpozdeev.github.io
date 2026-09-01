@@ -2,13 +2,28 @@
   {
     "listing": "/courses/sapr/index.html",
     "items": [
-      "/courses/sapr/01/index.html"
+      "/courses/sapr/01/index.html",
+      "/courses/sapr/02/index.html",
+      "/courses/sapr/03/index.html",
+      "/courses/sapr/04/index.html",
+      "/courses/sapr/05/index.html",
+      "/courses/sapr/06/index.html",
+      "/courses/sapr/07/index.html",
+      "/courses/sapr/08/index.html",
+      "/courses/sapr/09/index.html",
+      "/courses/sapr/10/index.html",
+      "/courses/sapr/11/index.html",
+      "/courses/sapr/12/index.html",
+      "/courses/sapr/13/index.html",
+      "/courses/sapr/14/index.html",
+      "/courses/sapr/15/index.html",
+      "/courses/sapr/16/index.html"
     ]
   },
   {
-    "listing": "/courses/index.html",
+    "listing": "/blogs/index.html",
     "items": [
-      "/courses/sapr/index.html"
+      "/blogs/2026-01-23/index.html"
     ]
   },
   {
@@ -16,9 +31,9 @@
     "items": []
   },
   {
-    "listing": "/blogs/index.html",
+    "listing": "/courses/index.html",
     "items": [
-      "/blogs/2026-01-23/index.html"
+      "/courses/sapr/index.html"
     ]
   },
   {

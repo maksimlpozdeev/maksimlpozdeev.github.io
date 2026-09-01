@@ -1,0 +1,10 @@
+---
+title: "12 Физическая нелинейность"
+description: ""
+date: "2026-09-01"
+categories: [ЛИРА-САПР, SCAD]
+bibliography: references.bib
+---
+
+В разработке.
+

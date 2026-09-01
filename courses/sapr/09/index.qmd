@@ -1,0 +1,10 @@
+---
+title: "9 Расчет и анализ конечно-элементной модели"
+description: ""
+date: "2026-09-01"
+categories: [ЛИРА-САПР, SCAD]
+bibliography: references.bib
+---
+
+В разработке.
+

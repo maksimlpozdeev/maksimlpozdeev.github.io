@@ -1,0 +1,10 @@
+---
+title: "5 Корректировка аналитики и моделирование нагрузок"
+description: ""
+date: "2026-09-01"
+categories: [Revit]
+bibliography: references.bib
+---
+
+В разработке.
+

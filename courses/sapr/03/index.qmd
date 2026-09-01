@@ -1,0 +1,10 @@
+---
+title: "3 Расчет ветровых нагрузок и веса грунта"
+description: ""
+date: "2026-09-01"
+categories: [Word, Excel, SMath Solver]
+bibliography: references.bib
+---
+
+В разработке.
+

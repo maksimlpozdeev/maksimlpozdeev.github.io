@@ -1,0 +1,10 @@
+---
+title: "6 Передача модели в расчетные комплексы"
+description: ""
+date: "2026-09-01"
+categories: [Revit, ЛИРА-САПР, SCAD]
+bibliography: references.bib
+---
+
+В разработке.
+

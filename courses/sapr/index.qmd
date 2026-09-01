@@ -1,19 +1,16 @@
 ---
 title: Системы автоматизированного расчета и проектирования в строительстве
 description: |
-    Рассматриваются вопросы моделирования строительных конструкций, анализа их прочности и устойчивости, а также проектирования с использованием специализированного программного обеспечения.
+    Рассматриваются вопросы проектирования несущих конструкций зданий из монолитного железобетона с использованием специализированного программного обеспечения.
 author: Максим Поздеев
 image: cover.png
 categories: [САПР, ЖБК, ЛБ]
 listing:
     contents: /
     sort: "date desc"
-    categories: false
-    type: table
-    fields: [title, reading-time]
-    field-display-names:
-        title: "Тема"
-        reading-time: "Время чтения"
+    categories: true
+    type: grid
+    fields: [title, categories, reading-time]
 ---
 
 ::: column-margin

@@ -1,0 +1,10 @@
+---
+title: "11 Огнестойкость, монтаж"
+description: ""
+date: "2026-09-01"
+categories: [ЛИРА-САПР, SCAD]
+bibliography: references.bib
+---
+
+В разработке.
+

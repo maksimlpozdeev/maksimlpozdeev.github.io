@@ -1,0 +1,10 @@
+---
+title: "2 Расчет полезных и снеговых нагрузок"
+description: ""
+date: "2026-09-01"
+categories: [Word, Excel]
+bibliography: references.bib
+---
+
+В разработке.
+
