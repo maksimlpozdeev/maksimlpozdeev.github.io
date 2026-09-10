@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -73,11 +93,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,6 +328,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#материалы-для-прохождения-курса" id="toc-материалы-для-прохождения-курса" class="nav-link active" data-scroll-target="#материалы-для-прохождения-курса">Материалы для прохождения курса</a></li>
+  <li><a href="#стадии-проектирования" id="toc-стадии-проектирования" class="nav-link" data-scroll-target="#стадии-проектирования">Стадии проектирования</a>
+  <ul class="collapse">
+  <li><a href="#предпроектная-документация" id="toc-предпроектная-документация" class="nav-link" data-scroll-target="#предпроектная-документация">Предпроектная документация</a></li>
+  <li><a href="#проектная-документация" id="toc-проектная-документация" class="nav-link" data-scroll-target="#проектная-документация">Проектная документация</a></li>
+  <li><a href="#рабочая-документация" id="toc-рабочая-документация" class="nav-link" data-scroll-target="#рабочая-документация">Рабочая документация</a></li>
+  </ul></li>
+  <li><a href="#тим-модель-раздела-кр-на-стадии-пд-и-его-увязка-с-другими-разделами" id="toc-тим-модель-раздела-кр-на-стадии-пд-и-его-увязка-с-другими-разделами" class="nav-link" data-scroll-target="#тим-модель-раздела-кр-на-стадии-пд-и-его-увязка-с-другими-разделами">ТИМ-модель раздела КР на стадии ПД и его увязка с другими разделами</a></li>
+  <li><a href="#особенности-разработки-тим-моделей-кж-с-учетом-стадийности-проектирования" id="toc-особенности-разработки-тим-моделей-кж-с-учетом-стадийности-проектирования" class="nav-link" data-scroll-target="#особенности-разработки-тим-моделей-кж-с-учетом-стадийности-проектирования">Особенности разработки ТИМ-моделей КЖ с учетом стадийности проектирования</a></li>
+  <li><a href="#источники" id="toc-источники" class="nav-link" data-scroll-target="#источники">Источники</a></li>
   </ul>
 </nav>
 </nav>
@@ -313,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -344,16 +376,260 @@ ul.task-list li input[type="checkbox"] {
 <section id="материалы-для-прохождения-курса" class="level2">
 <h2 class="anchored" data-anchor-id="материалы-для-прохождения-курса">Материалы для прохождения курса</h2>
 <p>Нормативные документы:</p>
-<p><a href="documents\ГОСТ_27751.2014_Надежность_строительных_конструкций_и_оснований_.pdf">📄 ГОСТ 27751-2014</a></p>
+<p><a href="documents\ПП_N_87_О_составе_разделов_проектной_документации_.pdf">📄 Постановление Правительства РФ от 16 февраля 2008 г. N 87</a></p>
+<p><a href="documents\ГОСТ_Р_21.101-2026_Основные_требования_к_проектной_и_рабочей_документации_.pdf">📄 ГОСТ Р 21.101-2026</a></p>
+<p><a href="documents\ГОСТ_27751-2014_Надежность_строительных_конструкций_и_оснований_.pdf">📄 ГОСТ 27751-2014</a></p>
 <p><a href="documents\СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">📄 СП 20.13330.2016</a></p>
 <p><a href="documents\СП_63.13330.2018_с_Изм_1-2_Бетонные_и_железобетонные_конструкции_.pdf">📄 СП 63.13330.2018</a></p>
 <p><a href="documents\СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">📄 СП 430.1325800.2018</a></p>
 <p><a href="documents\СП_468.1325800.2019_с_Изм_1_Правила_обеспечения_огнестойкости_и_огнесохранности_.pdf">📄 СП 468.1325800.2019</a></p>
+</section>
+<section id="стадии-проектирования" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="стадии-проектирования">Стадии проектирования</h2>
+<p>Проектирование объектов капитального строительства производственного и непроизводственного назначения проходит несколько стадий, каждая из которых имеет свои цели и задачи. В <a href="#tbl-stages" class="quarto-xref">табл.&nbsp;1</a> представлены основные стадии проектирования и соответствующие им наборы комплектов чертежей.</p>
+<div id="tbl-stages" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
+<div aria-describedby="tbl-stages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Укрупненные дисциплины</th>
+<th>Предпроектная документация</th>
+<th>Проектная документация</th>
+<th>Рабочая документация</th>
+<th>Документация на изделия</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Архитектура и генплан</strong></td>
+<td>АГО<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>/АГР<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, АГК<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, ЭП<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></td>
+<td>ПЗ<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, ПЗУ<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, АР<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></td>
+<td>ГП<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, АР<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td><strong>Несущие конструкции</strong></td>
+<td>ЭП<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, консультирование</td>
+<td>КР<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></td>
+<td>КЖ<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, КМ<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>, КД<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></td>
+<td>КМД<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>, КЖИ<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>, НВФ<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>, КДД<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></td>
+</tr>
+<tr class="odd">
+<td><strong>Инженерные системы</strong></td>
+<td>ЭП<a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>, консультирование</td>
+<td>ИОС 1-6<a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a>, ТР<a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a></td>
+<td>ЭОМ<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>, ВК<a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>, ОВиК<a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a>, СС<a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a>, ГС<a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>, ТХ<a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a></td>
+<td>–</td>
+</tr>
+<tr class="even">
+<td><strong>Специальные разделы</strong></td>
+<td>–</td>
+<td>ПОС<a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a>, ООС<a href="#fn29" class="footnote-ref" id="fnref29" role="doc-noteref"><sup>29</sup></a>, ПБ<a href="#fn30" class="footnote-ref" id="fnref30" role="doc-noteref"><sup>30</sup></a>, ОДИ<a href="#fn31" class="footnote-ref" id="fnref31" role="doc-noteref"><sup>31</sup></a>, ТБЭ<a href="#fn32" class="footnote-ref" id="fnref32" role="doc-noteref"><sup>32</sup></a>, СМ<a href="#fn33" class="footnote-ref" id="fnref33" role="doc-noteref"><sup>33</sup></a> и др.</td>
+<td>АС<a href="#fn34" class="footnote-ref" id="fnref34" role="doc-noteref"><sup>34</sup></a>, АИ<a href="#fn35" class="footnote-ref" id="fnref35" role="doc-noteref"><sup>35</sup></a>, НВК<a href="#fn36" class="footnote-ref" id="fnref36" role="doc-noteref"><sup>36</sup></a>, ТС<a href="#fn37" class="footnote-ref" id="fnref37" role="doc-noteref"><sup>37</sup></a>, ЭС<a href="#fn38" class="footnote-ref" id="fnref38" role="doc-noteref"><sup>38</sup></a>, ИТП<a href="#fn39" class="footnote-ref" id="fnref39" role="doc-noteref"><sup>39</sup></a>, УУТ<a href="#fn40" class="footnote-ref" id="fnref40" role="doc-noteref"><sup>40</sup></a>, ОС<a href="#fn41" class="footnote-ref" id="fnref41" role="doc-noteref"><sup>41</sup></a>, ПС<a href="#fn42" class="footnote-ref" id="fnref42" role="doc-noteref"><sup>42</sup></a>, АК<a href="#fn43" class="footnote-ref" id="fnref43" role="doc-noteref"><sup>43</sup></a> и др.</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-tbl margin-caption" id="tbl-stages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;1&nbsp;– Стадии проектирования и соответствующие им наборы комплектов чертежей
+</figcaption>
+</figure>
+</div>
+<section id="предпроектная-документация" class="level3">
+<h3 class="anchored" data-anchor-id="предпроектная-документация">Предпроектная документация</h3>
+<p>Разработка предпроектной документации слабо регламентирована, поэтому в ней могут быть представлены различные варианты комплектов чертежей, в частности, в нее могут входить:</p>
+<ul>
+<li><p><em>архитектурно-градостроительный облик</em> (<em>АГО</em>) или <em>архитектурно-градостроительное решение</em> (<em>АГР</em>) – регламентируются региональными нормативными документами;</p></li>
+<li><p><em>архитектурно-градостроительная концепция</em> (<em>АГК</em>) и <em>эскизный проект</em> (<em>ЭП</em>) – инициативные документы для презентации инвесторам, расчета технико-экономических показателей.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><em>Эскизные проекты несущих конструкций и инженерных систем</em> разрабатываются отдельно или в составе вышеописанных комплектов, при этом профильные специалисты проводят консультационное сопровождение.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="проектная-документация" class="level3">
+<h3 class="anchored" data-anchor-id="проектная-документация">Проектная документация</h3>
+<p>Разработка проектной документации регламентируется Постановлением Правительства РФ № 87 <span class="citation" data-cites="pp-87"><a href="#ref-pp-87" role="doc-biblioref">[1]</a></span> (в части состава) и ГОСТ Р 21.101-2026 <span class="citation" data-cites="gost-21101-2026"><a href="#ref-gost-21101-2026" role="doc-biblioref">[2]</a></span> (в части оформления).</p>
+<p>В состав проектной документации для строительства объектов капитального строительства производственного и непроизводственного назначения входят:</p>
+<p>а) <em>раздел 1 “Пояснительная записка”</em> (<em>ПЗ</em>);</p>
+<p>б) <em>раздел 2 “Схема планировочной организации земельного участка”</em> (<em>ПЗУ</em>);</p>
+<p>в) <em>раздел 3 “Объемно-планировочные и архитектурные решения”</em> (<em>АР</em>);</p>
+<p>г) <em>раздел 4 “Конструктивные решения”</em> (<em>КР</em>);</p>
+<p>д) <em>раздел 5 “Сведения об инженерном оборудовании, о сетях и системах инженерно-технического обеспечения”</em> (<em>ИОС</em>);</p>
+<p>е) <em>раздел 6 “Технологические решения”</em> (<em>ТР</em>) (для объектов капитального строительства непроизводственного назначения разрабатывается в случае наличия требования о его разработке в задании на проектирование);</p>
+<p>ж) <em>раздел 7 “Проект организации строительства”</em> (<em>ПОС</em>), содержащий в том числе проект организации работ по сносу объектов капитального строительства, их частей (при необходимости сноса объектов капитального строительства, их частей для строительства, реконструкции других объектов капитального строительства);</p>
+<p>з) <em>раздел 8 “Мероприятия по охране окружающей среды”</em> (<em>ООС</em>);</p>
+<p>и) <em>раздел 9 “Мероприятия по обеспечению пожарной безопасности”</em> (<em>ПБ</em>);</p>
+<p>к) <em>раздел 10 “Требования к обеспечению безопасной эксплуатации объектов капитального строительства”</em> (<em>ТБЭ</em>);</p>
+<p>л) <em>раздел 11 “Мероприятия по обеспечению доступа инвалидов к объекту капитального строительства”</em> (<em>ОДИ</em>);</p>
+<p>м) <em>раздел 12 “Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства”</em> (<em>СМ</em>);</p>
+<p>н) <em>раздел 13 “Иная документация в случаях, предусмотренных законодательными и иными нормативными правовыми актами Российской Федерации”</em>.</p>
+<hr>
+<p><strong>Согласно п. 14 Раздел 4 “Конструктивные решения” содержит:</strong></p>
+<p><strong>в текстовой части:</strong></p>
+<p>а) сведения о топографических, инженерно-геологических, гидрогеологических, метеорологических и климатических условиях земельного участка, предоставленного для размещения объекта капитального строительства;</p>
+<p>б) сведения об особых природных климатических условиях территории, на которой располагается земельный участок, предоставленный для размещения объекта капитального строительства;</p>
+<p>в) сведения о прочностных и деформационных характеристиках грунта в основании объекта капитального строительства;</p>
+<p>г) уровень грунтовых вод, их химический состав, агрессивность грунтовых вод и грунта по отношению к материалам, используемым при строительстве, реконструкции, капитальном ремонте подземной части объекта капитального строительства;</p>
+<p>д) описание и обоснование конструктивных решений зданий и сооружений, включая их пространственные схемы, принятые при выполнении расчетов строительных конструкций;</p>
+<p>е) описание и обоснование технических решений, обеспечивающих необходимую прочность, устойчивость, пространственную неизменяемость зданий и сооружений объекта капитального строительства в целом, а также их отдельных конструктивных элементов, узлов, деталей в процессе изготовления, перевозки, строительства, реконструкции, капитального ремонта и эксплуатации объекта капитального строительства;</p>
+<p>ж) описание конструктивных и технических решений подземной части объекта капитального строительства;</p>
+<p>з-к) утратили силу с 1 сентября 2022 г.</p>
+<p>л) обоснование проектных решений и мероприятий, обеспечивающих:</p>
+<ul>
+<li>соблюдение требуемых теплозащитных характеристик ограждающих конструкций;</li>
+<li>снижение шума и вибраций;</li>
+<li>гидроизоляцию и пароизоляцию помещений;</li>
+<li>снижение загазованности помещений;</li>
+<li>удаление избытков тепла;</li>
+<li>соблюдение безопасного уровня электромагнитных и иных излучений;</li>
+<li>пожарную безопасность;</li>
+<li>соответствие зданий, строений и сооружений требованиям энергетической эффективности и требованиям оснащенности их приборами учета используемых энергетических ресурсов (за исключением зданий, строений, сооружений, на которые требования энергетической эффективности и требования оснащенности их приборами учета используемых энергетических ресурсов не распространяются);</li>
+</ul>
+<p>м) характеристику и обоснование конструкций полов, кровли, потолков, перегородок;</p>
+<p>н) перечень мероприятий по защите строительных конструкций и фундаментов от разрушения;</p>
+<p>о) описание инженерных решений и сооружений, обеспечивающих защиту территории объекта капитального строительства, отдельных зданий и сооружений объекта капитального строительства, а также персонала (жителей) от опасных природных и техногенных процессов;</p>
+<p>о<sup>1</sup>) перечень мероприятий по обеспечению соблюдения установленных требований энергетической эффективности к конструктивным решениям, влияющим на энергетическую эффективность зданий, строений и сооружений;</p>
+<p>о<sup>2</sup>) описание и обоснование принятых конструктивных, функционально-технологических и инженерно-технических решений, направленных на повышение энергетической эффективности объекта капитального строительства, в том числе в отношении наружных и внутренних систем электроснабжения, отопления, вентиляции, кондиционирования воздуха помещений (включая обоснование оптимальности размещения отопительного оборудования, решений в отношении тепловой изоляции теплопроводов, характеристик материалов для изготовления воздуховодов), горячего водоснабжения, оборотного водоснабжения и повторного использования тепла подогретой воды;</p>
+<p><strong>в графической части:</strong></p>
+<p>п) поэтажные планы зданий и сооружений с указанием размеров и экспликации помещений;</p>
+<p>р) чертежи разрезов зданий, строений и сооружений с изображением несущих и ограждающих конструкций, указанием размерной привязки осей или поверхностей элементов конструкций к координационным осям здания (строения, сооружения) или в необходимых случаях к другим элементам конструкций, отметок наиболее характерных уровней элементов конструкций, позиций (марок) элементов конструкций, а также с изображением линий геологических разрезов, разграничивающих слои грунта с различными геологическими характеристиками, для фундаментов и свайных оснований;</p>
+<p>с) чертежи фрагментов планов и разрезов, требующих детального изображения;</p>
+<p>т) схемы каркасов и узлов строительных конструкций;</p>
+<p>у) планы перекрытий, покрытий, кровли;</p>
+<p>ф) схемы расположения ограждающих конструкций и перегородок;</p>
+<p>х) план и сечения фундаментов. :::</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Помимо текстовой части, как правило, отдельно оформляется расчетно-пояснительная записка (РПЗ), в которой приводятся обоснования выполненных расчетов несущих конструкций.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="рабочая-документация" class="level3">
+<h3 class="anchored" data-anchor-id="рабочая-документация">Рабочая документация</h3>
+<p>Разработка <strong>рабочей документации</strong> регламентируется ГОСТ Р 21.101-2026 <span class="citation" data-cites="gost-21101-2026"><a href="#ref-gost-21101-2026" role="doc-biblioref">[2]</a></span> (в части оформления). В состав рабочей документации для строительства объектов капитального строительства производственного и непроизводственного назначения входят:</p>
+</section>
+</section>
+<section id="тим-модель-раздела-кр-на-стадии-пд-и-его-увязка-с-другими-разделами" class="level2">
+<h2 class="anchored" data-anchor-id="тим-модель-раздела-кр-на-стадии-пд-и-его-увязка-с-другими-разделами">ТИМ-модель раздела КР на стадии ПД и его увязка с другими разделами</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    B[Базовый]
+    AR[АР]
+    KR[КР]
+    OV[ОВ]
+    VK[ВК]
+    R[Разбивочный]
+
+    B --&gt;|координаты| AR
+    B --&gt;|координаты| KR
+    B --&gt;|координаты| OV
+    B --&gt;|координаты| VK
+    B --&gt;|координаты| R
+
+    R --&gt;|оси и уровни| AR
+    R --&gt;|оси и уровни| KR
+    R --&gt;|оси и уровни| OV
+    R --&gt;|оси и уровни| VK
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>В разработке.</p>
+</section>
+<section id="особенности-разработки-тим-моделей-кж-с-учетом-стадийности-проектирования" class="level2">
+<h2 class="anchored" data-anchor-id="особенности-разработки-тим-моделей-кж-с-учетом-стадийности-проектирования">Особенности разработки ТИМ-моделей КЖ с учетом стадийности проектирования</h2>
+<p>В разработке.</p>
+</section>
+<section id="источники" class="level2">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Источники</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-pp-87" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Постановление Правительства РФ от 16 февраля 2008 г. N 87, <em>О составе разделов проектной документации и требованиях к их содержанию</em>. 2008.</div>
+</div>
+<div id="ref-gost-21101-2026" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline"><span>«Система проектной документации для строительства. Основные требования к проектной и рабочей документации»</span>, Федеральное агентство по техническому регулированию и метрологии, ГОСТ Р 21.101-2026, 2026.</div>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Сноски</h2>
+
+<ol>
+<li id="fn1"><p>АГО – Архитектурно-градостроительный облик<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>АГР – Архитектурно-градостроительное решение<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>АГК – Архитектурно-градостроительная концепция<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>ЭП – Эскизный проект<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>ПЗ – Пояснительная записка<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>ПЗУ – Схема планировочной организации земельного участка<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>АР – Объемно-планировочные и архитектурные решения<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>ГП – Генеральный план<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>АР – Объемно-планировочные и архитектурные решения<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>ЭП – Эскизный проект<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>КР – Конструктивные решения<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>КЖ – Конструкции железобетонные<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>КМ – Конструкции металлические<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>КД – Конструкции деревянные<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>КМД – Конструкции металлические, деталировочные чертежи<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn16"><p>КЖИ – Конструкции железобетонные, изделия<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn17"><p>НВФ – Навесные вентилируемые фасады<a href="#fnref17" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn18"><p>КДД – Конструкции деревянные, деталировочные чертежи<a href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn19"><p>ЭП – Эскизный проект<a href="#fnref19" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn20"><p>ИОС – Сведения об инженерном оборудовании, о сетях и системах инженерно-технического обеспечения: а) подраздел “Система электроснабжения”; б) подраздел “Система водоснабжения”; в) подраздел “Система водоотведения”; г) подраздел “Отопление, вентиляция и кондиционирование воздуха, тепловые сети”; д) подраздел “Сети связи”; е) подраздел “Система газоснабжения”;<a href="#fnref20" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn21"><p>ТР – Технологические решения<a href="#fnref21" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn22"><p>ЭОМ – Электрооборудование и электрическое освещение<a href="#fnref22" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn23"><p>ВК – Внутренние системы водоснабжения и канализации<a href="#fnref23" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn24"><p>ОВиК – Отопление, вентиляция и кондиционирование воздуха<a href="#fnref24" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn25"><p>СС – Сети связи (слаботочные системы)<a href="#fnref25" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn26"><p>ГС – Газоснабжение (внутренние устройства)<a href="#fnref26" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn27"><p>ТХ – Технология производства<a href="#fnref27" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn28"><p>ПОС – Проект организации строительства<a href="#fnref28" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn29"><p>ООС – Мероприятия по охране окружающей среды<a href="#fnref29" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn30"><p>ПБ – Мероприятия по обеспечению пожарной безопасности<a href="#fnref30" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn31"><p>ОДИ – Мероприятия по обеспечению доступа инвалидов<a href="#fnref31" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn32"><p>ТБЭ – Требования к обеспечению безопасной эксплуатации объекта капитального строительства<a href="#fnref32" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn33"><p>СМ – Смета на строительство, реконструкцию, капитальный ремонт, снос объекта капитального строительства<a href="#fnref33" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn34"><p>АС – Архитектурно-строительные решения<a href="#fnref34" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn35"><p>АИ – Интерьеры<a href="#fnref35" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn36"><p>НВК – Наружные сети водоснабжения и канализации<a href="#fnref36" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn37"><p>ТС – Тепломеханические решения тепловых сетей<a href="#fnref37" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn38"><p>ЭС – Электроснабжение<a href="#fnref38" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn39"><p>ИТП – Индивидуальный тепловой пункт<a href="#fnref39" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn40"><p>УУТ – Узел учёта тепловой энергии<a href="#fnref40" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn41"><p>ОС – Охранная и охранно-пожарная сигнализация<a href="#fnref41" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn42"><p>ПС – Пожарная сигнализация<a href="#fnref42" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn43"><p>АК – Автоматизация комплексная<a href="#fnref43" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

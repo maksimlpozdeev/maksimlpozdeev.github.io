@@ -1,5 +1,5 @@
 ---
-title: "3 Расчет ветровых нагрузок и веса грунта"
+title: "3 Моделирование вертикальных несущих конструкций"
 description: ""
 date: "2026-09-01"
 categories: [Word, Excel, SMath Solver]
