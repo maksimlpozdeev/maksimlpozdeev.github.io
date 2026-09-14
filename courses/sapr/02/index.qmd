@@ -2,7 +2,7 @@
 title: "2 Координация, моделирование горизонтальных несущих конструкций"
 description: ""
 date: "2026-09-01"
-categories: [Word, Excel]
+categories: [Revit]
 bibliography: references.bib
 ---
 

@@ -38,6 +38,8 @@ format:
         - styles/styles-dark.scss
     toc: true
     toc-location: left
+    mermaid:
+      theme: neutral
 
 crossref:
   fig-prefix: "рис."
