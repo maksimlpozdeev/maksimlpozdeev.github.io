@@ -1,17 +1,10 @@
 ---
 title: "1 Стратегии проектирования несущих конструкций в программных комплексах"
 description: ""
+author: Максим Поздеев
 date: "2026-09-01"
 categories: []
 ---
-
-## Материалы для прохождения курса
-
-[📂 Подложки dwg](https://drive.google.com/drive/folders/1lvqIEKKp65o3doPOLLFQmRiuYWNaf9R7?usp=sharing) 
-
-[📂 Шаблоны ADSK для Revit](https://drive.google.com/drive/folders/1urp6XP3p_rVFpvAxUZ2Guz0EVpHC-3ZF?usp=sharing)
-
-[📂 Нормативные документы](https://drive.google.com/drive/folders/1cktCt5I-9055cHwKIP5o7Nt8kRdYCd5a?usp=drive_link)
 
 ## Стадии проектирования
 
