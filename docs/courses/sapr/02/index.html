@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>2 Координация, моделирование горизонтальных несущих конструкций</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -34,19 +40,18 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../../assets/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-fa564a48743d9dfb67961b8a48b6010c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-c5aad31f5de05bb562bb152d0d129c1b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-fa564a48743d9dfb67961b8a48b6010c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-00ec2dac8b7320f79bdd5fe51af54ed4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-98f0b2833e3e36b87bb1013d8b9794d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-00ec2dac8b7320f79bdd5fe51af54ed4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -306,7 +311,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#план-занятия" id="toc-план-занятия" class="nav-link active" data-scroll-target="#план-занятия">План занятия</a></li>
-  <li><a href="#исходные-файлы" id="toc-исходные-файлы" class="nav-link" data-scroll-target="#исходные-файлы">Исходные файлы</a></li>
+  <li><a href="#теоретический-блок" id="toc-теоретический-блок" class="nav-link" data-scroll-target="#теоретический-блок">Теоретический блок</a>
+  <ul class="collapse">
+  <li><a href="#структура-файлов" id="toc-структура-файлов" class="nav-link" data-scroll-target="#структура-файлов">Структура файлов</a></li>
+  <li><a href="#конструктивные-системы" id="toc-конструктивные-системы" class="nav-link" data-scroll-target="#конструктивные-системы">Конструктивные системы</a></li>
+  <li><a href="#типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" id="toc-типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" class="nav-link" data-scroll-target="#типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит">Типы и основные конструктивные параметры плоских фундаментных плит</a></li>
+  <li><a href="#типы-и-основные-конструктивные-параметры-плит-перекрытий" id="toc-типы-и-основные-конструктивные-параметры-плит-перекрытий" class="nav-link" data-scroll-target="#типы-и-основные-конструктивные-параметры-плит-перекрытий">Типы и основные конструктивные параметры плит перекрытий</a></li>
+  </ul></li>
   <li><a href="#вопросы-для-самоконтроля" id="toc-вопросы-для-самоконтроля" class="nav-link" data-scroll-target="#вопросы-для-самоконтроля">Вопросы для самоконтроля</a></li>
   </ul>
 </nav>
@@ -316,7 +327,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -357,7 +368,11 @@ ul.task-list li input[type="checkbox"] {
   <iframe src="https://vkvideo.ru/video_ext.php?oid=-241507062&amp;id=456239017&amp;hash=1ecf1c2062ba0516&amp;hd=3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen="">
   </iframe>
 </div>
-<section id="план-занятия" class="level2">
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲ Скачать материалы курса</a></p>
+<p><a href="https://bim2b.ru/">🌏︎ Источник Revit-шаблонов</a></p>
+</div></div><section id="план-занятия" class="level2">
 <h2 class="anchored" data-anchor-id="план-занятия">План занятия</h2>
 <p><a href="https://vkvideo.ru/video-241507062_456239017?t=0h0m0s">0:00:00</a> – Структура файлов информационной модели здания<br>
 <a href="https://vkvideo.ru/video-241507062_456239017?t=0h1m36s">0:01:36</a> – Обзор проектируемого объекта<br>
@@ -373,9 +388,177 @@ ul.task-list li input[type="checkbox"] {
 <a href="https://vkvideo.ru/video-241507062_456239017?t=1h14m40s">1:14:40</a> – Моделирование плит покрытия<br>
 <a href="https://vkvideo.ru/video-241507062_456239017?t=1h23m5s">1:23:05</a> – Моделирование отверстий</p>
 </section>
-<section id="исходные-файлы" class="level2">
-<h2 class="anchored" data-anchor-id="исходные-файлы">Исходные файлы</h2>
-<p><a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">📂 Скачать материалы для курса</a></p>
+<section id="теоретический-блок" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="теоретический-блок">Теоретический блок</h2>
+<section id="структура-файлов" class="level3">
+<h3 class="anchored" data-anchor-id="структура-файлов">Структура файлов</h3>
+<p>Скачайте <a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲&nbsp;материалы курса</a> и разместите их внутри своей папки. Создайте внутри структуру папок согласно следующей схеме:</p>
+<pre><code>Группа_ФамилияИО/
+├── Литература/
+├── Проект/
+│   ├── 01_Входящее/
+│   ├── 02_Разработка/
+│   │   ├── 00_Base/
+│   │   ├── 01_AxesAndLevels/
+│   │   │   └── School-9_AxesAndLevels_RVT2019.rvt
+│   │   ├── AR/
+│   │   └── KR/
+│   │       └── School-9_KR_RVT2019.rvt
+│   └── 03_Исходящее/
+└── РевитШаблоны/
+    ├── ADSK_RU_ШаблонПроекта_АР_r2019_v1.2.1.rte
+    └── ADSK_RU_ШаблонПроекта_КЖ_r2019_v1.2.1.rte</code></pre>
+</section>
+<section id="конструктивные-системы" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="конструктивные-системы">Конструктивные системы</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_каркасная.png" class="img-fluid figure-img"></p>
+<figcaption>Каркасная конструктивная система</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_стеновая.png" class="img-fluid figure-img"></p>
+<figcaption>Стеновая конструктивная система</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_смешанная.png" class="img-fluid figure-img"></p>
+<figcaption>Смешанная конструктивная система</figcaption>
+</figure>
+</div>
+</div></div><p>Конструктивные системы монолитных железобетонных зданий и сооружений описаны в разделе 5.1 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<p>В зависимости от типа вертикальных несущих элементов (колонн, пилонов и стен) различают следующие <strong>монолитные конструктивные системы</strong>:</p>
+<ul>
+<li>Каркасная – колонны или пилоны</li>
+<li>Стеновая – стены</li>
+<li>Каркасно-стеновая (смешанная) – колонны, пилоны и стены</li>
+<li>Комбинированная – несколько конструктивных систем в здании</li>
+</ul>
+<p>По способу <strong>сопротивления горизонтальным нагрузкам</strong> различают схемы:</p>
+<ul>
+<li>Связевая – работа вертикальных несущих элементов (стен, ядер жесткости) как консолей, защемленных в фундаменте</li>
+<li>Рамная – работа рам, образуемых колоннами, пилонами и ригелями (условными ригелями), с жесткими узлами сопряжения</li>
+<li>Рамно-связевая – совместная работа связей (стен, ядер жесткости) и рам, образуемых колоннами и ригелями (условными ригелями), с жесткими узлами сопряжения</li>
+</ul>
+</section>
+<section id="типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" class="level3">
+<h3 class="anchored" data-anchor-id="типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит">Типы и основные конструктивные параметры плоских фундаментных плит</h3>
+<p>Типы фундаментов из монолитного железобетона описаны в п. 5.1.7 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<p>Для зданий (сооружений) применяют различные <strong>типы фундаментов из монолитного железобетона</strong>:</p>
+<ul>
+<li>отдельные (столбчатые)</li>
+<li>ленточные</li>
+<li>плитные</li>
+<li>свайные</li>
+<li>свайно-плитные (комбинированные)</li>
+<li>ребристые</li>
+<li>коробчатые и пр.</li>
+</ul>
+<p>Основные конструктивные параметры плоских фундаментных плит описаны в п. 5.2.7 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 29%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Толщина</th>
+<th>Класс по прочности</th>
+<th>Продольное армирование</th>
+<th>Марка по водонепроницаемости</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0,5 м ≤ t ≤ 3,0 м</td>
+<td>не менее В20</td>
+<td>не менее 0,3%</td>
+<td>не менее W6</td>
+</tr>
+</tbody>
+</table>
+<p>В первом приближении допускается толщину плоской фундаментной плиты на естественном основании назначать равной 1/65 ÷ 1/50 <em>h</em><sub>зд</sub>, где <em>h</em><sub>зд</sub> – строительная высота здания (сооружения), равная расстоянию от верха фундамента до срединной плоскости плиты покрытия.</p>
+</section>
+<section id="типы-и-основные-конструктивные-параметры-плит-перекрытий" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="типы-и-основные-конструктивные-параметры-плит-перекрытий">Типы и основные конструктивные параметры плит перекрытий</h3>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_плоская.png" class="img-fluid figure-img"></p>
+<figcaption>Плита плоская</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_с_капителями.png" class="img-fluid figure-img"></p>
+<figcaption>Плита с капителями</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_с_балками.png" class="img-fluid figure-img"></p>
+<figcaption>Плита с балками</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_ребристая.png" class="img-fluid figure-img"></p>
+<figcaption>Плита ребристая</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_кессонная.png" class="img-fluid figure-img"></p>
+<figcaption>Плита кессонная</figcaption>
+</figure>
+</div>
+</div></div><p>Типы плит перекрытий из монолитного железобетона описаны в п. 5.1.10 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a></p>
+<p>К плитам относят элементы, с соотношениями размеров <em>а</em> &gt; 5<em>t</em>, (<em>а</em> – наименьший размер рядовой ячейки плиты в плане, <em>t</em> – толщина плиты). К балкам относят элементы, с соотношением размеров <em>l</em> &gt; 3<em>h</em> (<em>l</em> – размер пролета балки, <em>h</em> – высота элемента. В противном случае такие балки относят к балкам-стенкам (или к высоким балкам).</p>
+<p>Конструкцию <strong>безбалочных перекрытий</strong> принимают в виде:</p>
+<ul>
+<li>плит плоских (в том числе с контурными балками по свободным краям перекрытия)</li>
+<li>плит с капителями</li>
+</ul>
+<p>Конструкцию <strong>балочных перекрытий</strong> принимают в виде:</p>
+<ul>
+<li>плит с балками (в одном или нескольких перекрестных направлениях)</li>
+<li>плит ребристых (с главными и второстепенными балками)</li>
+<li>плит кессонных</li>
+</ul>
+<p>Ширину балок принимают преимущественно не более габаритного размера колонны и пилона, высоту балок – не менее толщины плитной части перекрытий.</p>
+<p>Допускается для размещения инженерных сетей и звукоизоляции, устройства гладких потолков и т.п. принимать размещение балок в перекрытиях ребрами вверх. Конструкции балочных перекрытий с частым шагом балок (кессонные) следует применять преимущественно в регулярных конструктивных системах.</p>
+<p>Основные конструктивные параметры плит перекрытий описаны в п. 5.2.14 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Тип плиты</th>
+<th>Толщина</th>
+<th>Класс по прочности</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Плоская</td>
+<td>160 мм ≤ t</td>
+<td>не менее В20</td>
+</tr>
+<tr class="even">
+<td>Ребристая и кесонная</td>
+<td>250 мм ≤ t ≤ 500 мм</td>
+<td>не менее В25</td>
+</tr>
+</tbody>
+</table>
+<p>В первом приближении толщину плоских плит перекрытия в каркасных и смешанных <a href="#конструктивные-системы">конструктивных системах</a> рекомендуется назначать не менее <em>l</em>/30, в стеновых конструктивных системах - не менее <em>l</em>/35, где <em>l</em> – длина наибольшего пролета плиты.</p>
+</section>
 </section>
 <section id="вопросы-для-самоконтроля" class="level2">
 <h2 class="anchored" data-anchor-id="вопросы-для-самоконтроля">Вопросы для самоконтроля</h2>
