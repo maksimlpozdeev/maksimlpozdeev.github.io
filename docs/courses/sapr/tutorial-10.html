@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Максим Поздеев">
-<meta name="description" content="Рассматриваются вопросы проектирования несущих конструкций зданий из монолитного железобетона с&nbsp;использованием специализированного программного обеспечения.">
 
-<title>Системы автоматизированного расчета и проектирования в строительстве</title>
+<title>10 Подбор армирования</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -39,8 +37,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../assets/favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -82,65 +78,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -371,38 +309,32 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Категории</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Все <span class="quarto-category-count">(16)</span></div><div class="category" data-category="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA==">ЛИРА-САПР <span class="quarto-category-count">(7)</span></div><div class="category" data-category="QXV0b0NBRA==">AutoCAD <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RXhjZWw=">Excel <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UmV2aXQ=">Revit <span class="quarto-category-count">(8)</span></div><div class="category" data-category="U0NBRA==">SCAD <span class="quarto-category-count">(7)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Системы автоматизированного расчета и проектирования в строительстве</h1>
+<h1 class="title">10 Подбор армирования</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">САПР</div>
-    <div class="quarto-category">ЖБК</div>
-    <div class="quarto-category">ЛБ</div>
+    <div class="quarto-category">ЛИРА-САПР</div>
+    <div class="quarto-category">SCAD</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    <p>Рассматриваются вопросы проектирования несущих конструкций зданий из монолитного железобетона с&nbsp;использованием специализированного программного обеспечения.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Автор</div>
-    <div class="quarto-title-meta-contents">
-             <p>Максим Поздеев </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Дата публикации</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 сентября 2026 г.</p>
+    </div>
+  </div>
   
     
   </div>
@@ -412,296 +344,11 @@ window.Quarto = {
 </header>
 
 
+<p>В разработке.</p>
 
 
 
-
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="cover.png" class="img-fluid"></p>
-</div></div><div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865791443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1317">
-<a href="../../courses/sapr/tutorial-01.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-1 Стратегии проектирования несущих конструкций в программных комплексах
-</h5>
-<div class="listing-reading-time card-text text-muted">7 минут</div>
-<div class="listing-categories">
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865344732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="739">
-<a href="../../courses/sapr/tutorial-02.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-2 Координация, моделирование горизонтальных несущих конструкций
-</h5>
-<div class="listing-reading-time card-text text-muted">4 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865435779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../courses/sapr/tutorial-03.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-3 Моделирование вертикальных несущих конструкций
-</h5>
-<div class="listing-reading-time card-text text-muted">2 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789869143149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="593">
-<a href="../../courses/sapr/tutorial-04.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-4 Расчет и моделирование вертикальных нагрузок
-</h5>
-<div class="listing-reading-time card-text text-muted">3 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-05.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-5 Расчет и моделирование горизонтальных нагрузок
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="UmV2aXQlMkNBdXRvQ0FEJTJDJUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-06.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-6 Передача модели в расчетные комплексы
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-07.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-7 Особенности построения расчетных конечно-элементных моделей
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-08.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-8 Загружения, комбинации и расчетные сочетания усилий
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-09.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-9 Расчет и анализ конечно-элементной модели
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-10.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-10 Подбор армирования
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-11.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-11 Расчеты на продавливание
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-12.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-12 Огнестойкость
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-13.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-13 Оформление чертежей
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="13" data-categories="UmV2aXQlMkNBdXRvQ0FE" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-14.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-14 Армирование
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="14" data-categories="UmV2aXQlMkNBdXRvQ0FE" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-15.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-15 Спецификации
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="15" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-16.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-16 Защиты проектов
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">Нет подходящих элементов</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

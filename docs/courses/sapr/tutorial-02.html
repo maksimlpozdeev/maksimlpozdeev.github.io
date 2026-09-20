@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Максим Поздеев">
-<meta name="description" content="Рассматриваются вопросы проектирования несущих конструкций зданий из монолитного железобетона с&nbsp;использованием специализированного программного обеспечения.">
 
-<title>Системы автоматизированного расчета и проектирования в строительстве</title>
+<title>2 Координация, моделирование горизонтальных несущих конструкций</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -39,8 +38,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../assets/favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -82,69 +79,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -367,31 +306,38 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#план-занятия" id="toc-план-занятия" class="nav-link active" data-scroll-target="#план-занятия">План занятия</a></li>
+  <li><a href="#теоретический-блок" id="toc-теоретический-блок" class="nav-link" data-scroll-target="#теоретический-блок">Теоретический блок</a>
+  <ul class="collapse">
+  <li><a href="#структура-файлов" id="toc-структура-файлов" class="nav-link" data-scroll-target="#структура-файлов">Структура файлов</a></li>
+  <li><a href="#конструктивные-системы" id="toc-конструктивные-системы" class="nav-link" data-scroll-target="#конструктивные-системы">Конструктивные системы</a></li>
+  <li><a href="#типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" id="toc-типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" class="nav-link" data-scroll-target="#типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит">Типы и основные конструктивные параметры плоских фундаментных плит</a></li>
+  <li><a href="#типы-и-основные-конструктивные-параметры-плит-перекрытий" id="toc-типы-и-основные-конструктивные-параметры-плит-перекрытий" class="nav-link" data-scroll-target="#типы-и-основные-конструктивные-параметры-плит-перекрытий">Типы и основные конструктивные параметры плит перекрытий</a></li>
+  </ul></li>
+  <li><a href="#вопросы-для-самоконтроля" id="toc-вопросы-для-самоконтроля" class="nav-link" data-scroll-target="#вопросы-для-самоконтроля">Вопросы для самоконтроля</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Категории</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Все <span class="quarto-category-count">(16)</span></div><div class="category" data-category="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA==">ЛИРА-САПР <span class="quarto-category-count">(7)</span></div><div class="category" data-category="QXV0b0NBRA==">AutoCAD <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RXhjZWw=">Excel <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UmV2aXQ=">Revit <span class="quarto-category-count">(8)</span></div><div class="category" data-category="U0NBRA==">SCAD <span class="quarto-category-count">(7)</span></div></div></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Системы автоматизированного расчета и проектирования в строительстве</h1>
+<h1 class="title">2 Координация, моделирование горизонтальных несущих конструкций</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">САПР</div>
-    <div class="quarto-category">ЖБК</div>
-    <div class="quarto-category">ЛБ</div>
+    <div class="quarto-category">Revit</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    <p>Рассматриваются вопросы проектирования несущих конструкций зданий из монолитного железобетона с&nbsp;использованием специализированного программного обеспечения.</p>
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -403,6 +349,12 @@ window.Quarto = {
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Дата публикации</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 сентября 2026 г.</p>
+    </div>
+  </div>
   
     
   </div>
@@ -413,295 +365,219 @@ window.Quarto = {
 
 
 
-
-
-
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="../../courses/sapr/index.html">← К списку уроков</a></p>
+<p><a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲ Скачать материалы курса</a></p>
+<hr>
+<p>Другие полезные ссылки:</p>
+<p><a href="https://bim2b.ru/">🌏︎ Источник Revit-шаблонов</a></p>
+</div></div><div style="position: relative; width: 100%; padding-top: 56.25%; margin: 1em 0;">
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-241507062&amp;id=456239017&amp;hash=1ecf1c2062ba0516&amp;hd=3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen="">
+  </iframe>
+</div>
+<section id="план-занятия" class="level2">
+<h2 class="anchored" data-anchor-id="план-занятия">План занятия</h2>
+<p><a href="https://vkvideo.ru/video-241507062_456239017?t=0h0m0s">0:00:00</a> – Структура файлов информационной модели здания<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h1m36s">0:01:36</a> – Обзор проектируемого объекта<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h3m5s">0:03:05</a> – Структура папок<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h5m18s">0:05:18</a> – Создание разбивочного файла<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h10m35s">0:10:35</a> – Моделирование уровней<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h13m33s">0:13:33</a> – Моделирование осей<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h29m21s">0:29:21</a> – Создание файла раздела КР, импорт связанного файла<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h34m9s">0:34:09</a> – Копирование и мониторинг осей и уровней<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h42m40s">0:42:40</a> – Создание планов несущих конструкций<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h45m30s">0:45:30</a> – Моделирование фундаментной плиты<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=0h55m31s">0:55:31</a> – Моделирование плит перекрытий<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=1h14m40s">1:14:40</a> – Моделирование плит покрытия<br>
+<a href="https://vkvideo.ru/video-241507062_456239017?t=1h23m5s">1:23:05</a> – Моделирование отверстий</p>
+</section>
+<section id="теоретический-блок" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="теоретический-блок">Теоретический блок</h2>
+<section id="структура-файлов" class="level3">
+<h3 class="anchored" data-anchor-id="структура-файлов">Структура файлов</h3>
+<p>Скачайте <a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲&nbsp;материалы курса</a> и разместите их внутри своей папки. Создайте внутри структуру папок согласно следующей схеме:</p>
+<pre><code>Группа_ФамилияИО/
+├── Литература/
+├── Проект/
+│   ├── 01_Входящее/
+│   ├── 02_Разработка/
+│   │   ├── 00_Base/
+│   │   ├── 01_AxesAndLevels/
+│   │   │   └── School-9_AxesAndLevels_RVT2019.rvt
+│   │   ├── AR/
+│   │   └── KR/
+│   │       └── School-9_KR_RVT2019.rvt
+│   └── 03_Исходящее/
+└── РевитШаблоны/
+    ├── ADSK_RU_ШаблонПроекта_АР_r2019_v1.2.1.rte
+    └── ADSK_RU_ШаблонПроекта_КЖ_r2019_v1.2.1.rte</code></pre>
+</section>
+<section id="конструктивные-системы" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="конструктивные-системы">Конструктивные системы</h3>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="cover.png" class="img-fluid"></p>
-</div></div><div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865791443" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1317">
-<a href="../../courses/sapr/tutorial-01.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-1 Стратегии проектирования несущих конструкций в программных комплексах
-</h5>
-<div class="listing-reading-time card-text text-muted">7 минут</div>
-<div class="listing-categories">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_каркасная.png" class="img-fluid figure-img"></p>
+<figcaption>Каркасная конструктивная система</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_стеновая.png" class="img-fluid figure-img"></p>
+<figcaption>Стеновая конструктивная система</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кс_смешанная.png" class="img-fluid figure-img"></p>
+<figcaption>Смешанная конструктивная система</figcaption>
+</figure>
+</div>
+</div></div><p>Конструктивные системы монолитных железобетонных зданий и сооружений описаны в разделе 5.1 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<p>В зависимости от типа вертикальных несущих элементов (колонн, пилонов и стен) различают следующие <strong>монолитные конструктивные системы</strong>:</p>
+<ul>
+<li>Каркасная – колонны или пилоны</li>
+<li>Стеновая – стены</li>
+<li>Каркасно-стеновая (смешанная) – колонны, пилоны и стены</li>
+<li>Комбинированная – несколько конструктивных систем в здании</li>
+</ul>
+<p>По способу <strong>сопротивления горизонтальным нагрузкам</strong> различают схемы:</p>
+<ul>
+<li>Связевая – работа вертикальных несущих элементов (стен, ядер жесткости) как консолей, защемленных в фундаменте</li>
+<li>Рамная – работа рам, образуемых колоннами, пилонами и ригелями (условными ригелями), с жесткими узлами сопряжения</li>
+<li>Рамно-связевая – совместная работа связей (стен, ядер жесткости) и рам, образуемых колоннами и ригелями (условными ригелями), с жесткими узлами сопряжения</li>
+</ul>
+</section>
+<section id="типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит" class="level3">
+<h3 class="anchored" data-anchor-id="типы-и-основные-конструктивные-параметры-плоских-фундаментных-плит">Типы и основные конструктивные параметры плоских фундаментных плит</h3>
+<p>Типы фундаментов из монолитного железобетона описаны в п. 5.1.7 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<p>Для зданий (сооружений) применяют различные <strong>типы фундаментов из монолитного железобетона</strong>:</p>
+<ul>
+<li>отдельные (столбчатые)</li>
+<li>ленточные</li>
+<li>плитные</li>
+<li>свайные</li>
+<li>свайно-плитные (комбинированные)</li>
+<li>ребристые</li>
+<li>коробчатые и пр.</li>
+</ul>
+<p>Основные конструктивные параметры плоских фундаментных плит описаны в п. 5.2.7 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 23%">
+<col style="width: 29%">
+<col style="width: 35%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Толщина</th>
+<th>Класс по прочности</th>
+<th>Продольное армирование</th>
+<th>Марка по водонепроницаемости</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0,5 м ≤ t ≤ 3,0 м</td>
+<td>не менее В20</td>
+<td>не менее 0,3%</td>
+<td>не менее W6</td>
+</tr>
+</tbody>
+</table>
+<p>В первом приближении допускается толщину плоской фундаментной плиты на естественном основании назначать равной 1/65 ÷ 1/50 <em>h</em><sub>зд</sub>, где <em>h</em><sub>зд</sub> – строительная высота здания (сооружения), равная расстоянию от верха фундамента до срединной плоскости плиты покрытия.</p>
+</section>
+<section id="типы-и-основные-конструктивные-параметры-плит-перекрытий" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="типы-и-основные-конструктивные-параметры-плит-перекрытий">Типы и основные конструктивные параметры плит перекрытий</h3>
 
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_плоская.png" class="img-fluid figure-img"></p>
+<figcaption>Плита плоская</figcaption>
+</figure>
 </div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_с_капителями.png" class="img-fluid figure-img"></p>
+<figcaption>Плита с капителями</figcaption>
+</figure>
 </div>
-</div></a>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_с_балками.png" class="img-fluid figure-img"></p>
+<figcaption>Плита с балками</figcaption>
+</figure>
 </div>
-<div class="g-col-1" data-index="1" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865344732" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="739">
-<a href="../../courses/sapr/tutorial-02.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-2 Координация, моделирование горизонтальных несущих конструкций
-</h5>
-<div class="listing-reading-time card-text text-muted">4 минут</div>
-<div class="listing-categories">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_ребристая.png" class="img-fluid figure-img"></p>
+<figcaption>Плита ребристая</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/пп_кессонная.png" class="img-fluid figure-img"></p>
+<figcaption>Плита кессонная</figcaption>
+</figure>
+</div>
+</div></div><p>Типы плит перекрытий из монолитного железобетона описаны в п. 5.1.10 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a></p>
+<p>К плитам относят элементы, с соотношениями размеров <em>а</em> &gt; 5<em>t</em>, (<em>а</em> – наименьший размер рядовой ячейки плиты в плане, <em>t</em> – толщина плиты). К балкам относят элементы, с соотношением размеров <em>l</em> &gt; 3<em>h</em> (<em>l</em> – размер пролета балки, <em>h</em> – высота элемента. В противном случае такие балки относят к балкам-стенкам (или к высоким балкам).</p>
+<p>Конструкцию <strong>безбалочных перекрытий</strong> принимают в виде:</p>
+<ul>
+<li>плит плоских (в том числе с контурными балками по свободным краям перекрытия)</li>
+<li>плит с капителями</li>
+</ul>
+<p>Конструкцию <strong>балочных перекрытий</strong> принимают в виде:</p>
+<ul>
+<li>плит с балками (в одном или нескольких перекрестных направлениях)</li>
+<li>плит ребристых (с главными и второстепенными балками)</li>
+<li>плит кессонных</li>
+</ul>
+<p>Ширину балок принимают преимущественно не более габаритного размера колонны и пилона, высоту балок – не менее толщины плитной части перекрытий.</p>
+<p>Допускается для размещения инженерных сетей и звукоизоляции, устройства гладких потолков и т.п. принимать размещение балок в перекрытиях ребрами вверх. Конструкции балочных перекрытий с частым шагом балок (кессонные) следует применять преимущественно в регулярных конструктивных системах.</p>
+<p>Основные конструктивные параметры плит перекрытий описаны в п. 5.2.14 <a href="documents/СП_430.1325800.2018_с_Изм_1_Монолитные_конструктивные_системы_.pdf">⇲&nbsp;СП&nbsp;430.1325800.2018</a>.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Тип плиты</th>
+<th>Толщина</th>
+<th>Класс по прочности</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Плоская</td>
+<td>160 мм ≤ t</td>
+<td>не менее В20</td>
+</tr>
+<tr class="even">
+<td>Ребристая и кесонная</td>
+<td>250 мм ≤ t ≤ 500 мм</td>
+<td>не менее В25</td>
+</tr>
+</tbody>
+</table>
+<p>В первом приближении толщину плоских плит перекрытия в каркасных и смешанных <a href="#конструктивные-системы">конструктивных системах</a> рекомендуется назначать не менее <em>l</em>/30, в стеновых конструктивных системах - не менее <em>l</em>/35, где <em>l</em> – длина наибольшего пролета плиты.</p>
+</section>
+</section>
+<section id="вопросы-для-самоконтроля" class="level2">
+<h2 class="anchored" data-anchor-id="вопросы-для-самоконтроля">Вопросы для самоконтроля</h2>
+<ol type="1">
+<li>Создана структура папок проекта?</li>
+<li>Создан разбивочный файл School-9_AxesAndLevels_RVT2019 с уровнями и осями?</li>
+<li>Создан файл раздела КР School-9_KR_RVT2019?</li>
+<li>Уровни и оси скопированы и мониторятся из разбивочного файла?</li>
+<li>Смоделированы фундаментная плита и плиты перекрытия и покрытия?</li>
+<li>Есть понимание, как назначать толщину плит согласно рекомендациям СП 430.1325800.2018?</li>
+</ol>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
 
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789865435779" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="230">
-<a href="../../courses/sapr/tutorial-03.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-3 Моделирование вертикальных несущих конструкций
-</h5>
-<div class="listing-reading-time card-text text-muted">2 минут</div>
-<div class="listing-categories">
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789869143149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="593">
-<a href="../../courses/sapr/tutorial-04.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-4 Расчет и моделирование вертикальных нагрузок
-</h5>
-<div class="listing-reading-time card-text text-muted">3 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-05.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-5 Расчет и моделирование горизонтальных нагрузок
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="UmV2aXQlMkNBdXRvQ0FEJTJDJUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547702" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-06.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-6 Передача модели в расчетные комплексы
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-07.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-7 Особенности построения расчетных конечно-элементных моделей
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="7" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-08.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-8 Загружения, комбинации и расчетные сочетания усилий
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="8" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-09.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-9 Расчет и анализ конечно-элементной модели
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="9" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-10.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-10 Подбор армирования
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="10" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-11.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-11 Расчеты на продавливание
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="11" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-12.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-12 Огнестойкость
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('U0NBRA=='); return false;">SCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="12" data-categories="UmV2aXQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-13.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-13 Оформление чертежей
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="13" data-categories="UmV2aXQlMkNBdXRvQ0FE" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-14.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-14 Армирование
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="14" data-categories="UmV2aXQlMkNBdXRvQ0FE" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-15.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-15 Спецификации
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QXV0b0NBRA=='); return false;">AutoCAD</div>
-
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="15" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1789867547697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
-<a href="../../courses/sapr/tutorial-16.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-16 Защиты проектов
-</h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
-<div class="listing-categories">
-
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">Нет подходящих элементов</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

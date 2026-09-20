@@ -1,0 +1,9 @@
+---
+title: "15 Спецификации"
+description: ""
+date: "2026-09-01"
+categories: [Revit, AutoCAD]
+---
+
+В разработке.
+
