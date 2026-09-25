@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4 Расчет и моделирование вертикальных нагрузок</title>
+<title>4 Расчет вертикальных нагрузок</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -78,7 +78,40 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -311,6 +344,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#план-занятия" id="toc-план-занятия" class="nav-link active" data-scroll-target="#план-занятия">План занятия</a></li>
   <li><a href="#исходные-данные" id="toc-исходные-данные" class="nav-link" data-scroll-target="#исходные-данные">Исходные данные</a></li>
+  <li><a href="#теоретический-блок" id="toc-теоретический-блок" class="nav-link" data-scroll-target="#теоретический-блок">Теоретический блок</a>
+  <ul class="collapse">
+  <li><a href="#классификация-нагрузок" id="toc-классификация-нагрузок" class="nav-link" data-scroll-target="#классификация-нагрузок">Классификация нагрузок</a></li>
+  <li><a href="#вес-строительных-конструкций" id="toc-вес-строительных-конструкций" class="nav-link" data-scroll-target="#вес-строительных-конструкций">Вес строительных конструкций</a></li>
+  <li><a href="#полезные-равномерно-распределенные-нагрузки" id="toc-полезные-равномерно-распределенные-нагрузки" class="nav-link" data-scroll-target="#полезные-равномерно-распределенные-нагрузки">«Полезные» равномерно распределенные нагрузки</a></li>
+  <li><a href="#снеговая-нагрузка" id="toc-снеговая-нагрузка" class="nav-link" data-scroll-target="#снеговая-нагрузка">Снеговая нагрузка</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -324,7 +364,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">4 Расчет и моделирование вертикальных нагрузок</h1>
+<h1 class="title">4 Расчет вертикальных нагрузок</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Excel</div>
     <div class="quarto-category">Revit</div>
@@ -364,135 +404,745 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="исходные-данные" class="level2">
 <h2 class="anchored" data-anchor-id="исходные-данные">Исходные данные</h2>
-<p>Сбор снеговой и ветровой нагрузки осуществлять для района строительства, приведенного справа. Вариант задания определяется по номеру в списке группы.</p>
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">None</span>Районы строительства по вариантам
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<p>Сбор снеговой и ветровой нагрузки осуществлять для района строительства согласно варианту. Вариант соответствует порядковому номеру в списке группы.</p>
 <table class="table">
+<caption>Районы строительства по вариантам</caption>
+<colgroup>
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 14%">
+<col style="width: 19%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>Номер варианта</th>
-<th>Район строительства</th>
+<th style="text-align: center;">Номер варианта</th>
+<th style="text-align: left;">Район строительства</th>
+<th style="text-align: center;">Номер варианта</th>
+<th style="text-align: left;">Район строительства</th>
+<th style="text-align: center;">Номер варианта</th>
+<th style="text-align: left;">Район строительства</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>Астрахань</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Астрахань</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Калуга</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">Пенза</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>Белгород</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Белгород</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Кемерово</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Пермь</td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>Благовещенск</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Благовещенск</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Красноярск</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">Псков</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>Великий Новгород</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Великий Новгород</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Липецк</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Рязань</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>Волгоград</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Волгоград</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Нижний Новгород</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">Саратов</td>
 </tr>
 <tr class="even">
-<td>6</td>
-<td>Воронеж</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Воронеж</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Новосибирск</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Тамбов</td>
 </tr>
 <tr class="odd">
-<td>7</td>
-<td>Ижевск</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Ижевск</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Омск</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">Томск</td>
 </tr>
 <tr class="even">
-<td>8</td>
-<td>Казань</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Казань</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">Оренбург</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Тюмень</td>
 </tr>
+</tbody>
+</table>
+</section>
+<section id="теоретический-блок" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="теоретический-блок">Теоретический блок</h2>
+<section id="классификация-нагрузок" class="level3">
+<h3 class="anchored" data-anchor-id="классификация-нагрузок">Классификация нагрузок</h3>
+<p>Классификация нагрузок изложена в разделе 5 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20.13330.2016</a></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    T[Нагрузки]
+
+    T --&gt; L1[Постоянные]
+    T --&gt; L2[Временные]
+    T --&gt; L3[Особые]
+
+    L2 --&gt; L21[Кратковременные]
+    L2 --&gt; L22[Длительные]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="вес-строительных-конструкций" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="вес-строительных-конструкций">Вес строительных конструкций</h3>
+<p>Вес постоянных строительных конструкций относится к постоянным нагрузкам. Коэффициенты надежности по нагрузке <span class="math inline">\(\gamma_f\)</span> для веса строительных конструкций и грунтов приведены в таблице 7.1 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<p>Вес несущих конструкций (заданных в расчетной конечно-элементной модели) учитывается автоматически в программном комплексе.</p>
+<p>Вес прочих строительных конструкций рассчитывается на основании данных о составах полов, кровли, ограждающих конструкций.</p>
+<p>Нагрузки от веса полов и кровли рассчитываются как равномерно распределенные по площади. В запас при переходе из <span class="math inline">\(кг\)</span> в <span class="math inline">\(Н\)</span> можно использовать значение ускорения свободного падения <span class="math inline">\(g=10 м/c^2\)</span>.</p>
+<div class="column-page-right page-columns page-full">
+<table class="table">
+<caption>Пример сбора нагрузки от веса конструкции полов</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 14%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Плотность, кг/м<sup>3</sup></th>
+<th style="text-align: left;">Толщина, мм</th>
+<th style="text-align: left;">Норм. значение, кН/м<sup>2</sup></th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Расч. значение, кН/м<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td>9</td>
-<td>Калуга</td>
+<td style="text-align: left;">Плитка керамогранитная на клею</td>
+<td style="text-align: left;">2400</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">0,36</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,43</td>
 </tr>
 <tr class="even">
-<td>10</td>
-<td>Кемерово</td>
+<td style="text-align: left;">Стяжка армированная</td>
+<td style="text-align: left;">1800</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">1,53</td>
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">1,99</td>
 </tr>
 <tr class="odd">
-<td>11</td>
-<td>Красноярск</td>
+<td style="text-align: left;">Пленка полиэтиленовая<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,01</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,01</td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>Липецк</td>
+<td style="text-align: left;">Плиты минераловатные</td>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">0,01</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,01</td>
 </tr>
 <tr class="odd">
-<td>13</td>
-<td>Нижний Новгород</td>
+<td style="text-align: left;"><strong>Итого тип пола {1}:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">1,91</td>
+<td style="text-align: left;">1,28(0,781)</td>
+<td style="text-align: left;">2,45</td>
 </tr>
 <tr class="even">
-<td>14</td>
-<td>Новосибирск</td>
+<td style="text-align: left;">Плитка керамогранитная на клею</td>
+<td style="text-align: left;">2400</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">0,36</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,43</td>
 </tr>
 <tr class="odd">
-<td>15</td>
-<td>Омск</td>
+<td style="text-align: left;">Рулонная гидроизоляция</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,02</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,02</td>
 </tr>
 <tr class="even">
-<td>16</td>
-<td>Оренбург</td>
+<td style="text-align: left;">Стяжка армированная</td>
+<td style="text-align: left;">1800</td>
+<td style="text-align: left;">85</td>
+<td style="text-align: left;">1,53</td>
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">1,99</td>
 </tr>
 <tr class="odd">
-<td>17</td>
-<td>Пенза</td>
+<td style="text-align: left;">Пленка полиэтиленовая</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,01</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,01</td>
 </tr>
 <tr class="even">
-<td>18</td>
-<td>Пермь</td>
+<td style="text-align: left;">Плиты минераловатные</td>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">0,01</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,01</td>
 </tr>
 <tr class="odd">
-<td>19</td>
-<td>Псков</td>
+<td style="text-align: left;"><strong>Итого тип пола {2}:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">1,93</td>
+<td style="text-align: left;">1,28(0,782)</td>
+<td style="text-align: left;">2,47</td>
+</tr>
+</tbody>
+</table>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Для тонких и/или рулонных материалов, для которых указана масса 1 м<sup>2</sup> слоя, сразу указывается нормативное значение.</p></div></div></div>
+<p>Нагрузки от веса перегородок и фасадных стен рассчитываются как равномерно распределенные по длине. Для этого можно произвести расчет удельного веса на 1 м<sup>2</sup> площади, а затем выполнить расчет с учетом фактической высоты перегородок на этажах. При этом расчет веса внутренних перегородок в запас выполняется, как правило, без учета наличия дверных проемов.</p>
+<div class="column-page-right">
+<table class="table">
+<caption>Пример сбора нагрузки от веса конструкции перегородок на 1 м<sup>2</sup> площади</caption>
+<colgroup>
+<col style="width: 26%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Плотность, кг/м<sup>3</sup></th>
+<th style="text-align: left;">Толщина, мм</th>
+<th style="text-align: left;">Норм. значение, кН/м<sup>2</sup></th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Расч. значение, кН/м<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Газобетонные блоки</td>
+<td style="text-align: left;">600</td>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">1,20</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">1,44</td>
 </tr>
 <tr class="even">
-<td>20</td>
-<td>Рязань</td>
+<td style="text-align: left;">Штукатурка, 2 стороны</td>
+<td style="text-align: left;">1800</td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;">0,72</td>
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">0,94</td>
 </tr>
 <tr class="odd">
-<td>21</td>
-<td>Саратов</td>
+<td style="text-align: left;"><strong>Итого перегородки из газоблока:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">240</td>
+<td style="text-align: left;">1,92</td>
+<td style="text-align: left;">1,24(0,808)</td>
+<td style="text-align: left;">2,38</td>
 </tr>
 <tr class="even">
-<td>22</td>
-<td>Тамбов</td>
+<td style="text-align: left;">Обшивка из ГСП 2x12,5</td>
+<td style="text-align: left;">1250</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">0,31</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,38</td>
 </tr>
 <tr class="odd">
-<td>23</td>
-<td>Томск</td>
+<td style="text-align: left;">Несущая подсистема</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">0,05</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,06</td>
 </tr>
 <tr class="even">
-<td>24</td>
-<td>Тюмень</td>
+<td style="text-align: left;">Минераловатная звукоизоляция</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">0,03</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,03</td>
 </tr>
 <tr class="odd">
-<td>25</td>
-<td>Ульяновск</td>
+<td style="text-align: left;">Обшивка из ГСП 2x12,5</td>
+<td style="text-align: left;">1250</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">0,31</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,38</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Итого перегородки из ГСП:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">125</td>
+<td style="text-align: left;">0,34</td>
+<td style="text-align: left;">1,20(0,833)</td>
+<td style="text-align: left;">0,41</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>Пример сбора нагрузки от веса конструкции перегородок на 1 м длины</caption>
+<colgroup>
+<col style="width: 31%">
+<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 17%">
+<col style="width: 20%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Этаж</th>
+<th style="text-align: left;">Высота, мм</th>
+<th style="text-align: left;">Норм. значение, кН/м</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Норм. значение, кН/м</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Итого перегородки из газоблока:</strong></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4120</td>
+<td style="text-align: left;">7,91</td>
+<td style="text-align: left;">1,24(0,808)</td>
+<td style="text-align: left;">9,79</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">3700</td>
+<td style="text-align: left;">7,10</td>
+<td style="text-align: left;">1,24(0,808)</td>
+<td style="text-align: left;">8,79</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Итого перегородки из ГСП:</strong></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">4120</td>
+<td style="text-align: left;">1,39</td>
+<td style="text-align: left;">1,20(0,833)</td>
+<td style="text-align: left;">1,67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">3700</td>
+<td style="text-align: left;">1,25</td>
+<td style="text-align: left;">1,20(0,833)</td>
+<td style="text-align: left;">1,50</td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>Нагрузки от веса наружных стен рассчитываются с учетом фактического расположения и геометрии оконных проемов. При этом нагрузки на уровне перекрытий либо сводятся к эквивалентным равномерно распределенным по длине (с учетом наличия проемов и веса окон) или задаются участками с соответствующими значениями нагрузки под глухими участками стен и участками с оконными проемами.</p>
+<div class="column-page-right">
+<table class="table">
+<caption>Пример сбора нагрузки от веса конструкции наружных стен на 1 м<sup>2</sup> площади</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Плотность, кг/м<sup>3</sup></th>
+<th style="text-align: left;">Толщина, мм</th>
+<th style="text-align: left;">Норм. значение, кН/м<sup>2</sup></th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Расч. значение, кН/м<sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Штукатурный слой</td>
+<td style="text-align: left;">1800</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">0,36</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ячеистобетонный блок</td>
+<td style="text-align: left;">600</td>
+<td style="text-align: left;">300</td>
+<td style="text-align: left;">1,80</td>
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">2,34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Минераловатный плиты</td>
+<td style="text-align: left;">90</td>
+<td style="text-align: left;">150</td>
+<td style="text-align: left;">0,14</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,16</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ветровлагозащитная мембрана</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,02</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,02</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Металлическая подсистема</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,05</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,06</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Плитка керамогранитная</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">2400</td>
+<td style="text-align: left;">0,36</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Итого глухая часть наружных стен:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2870</td>
+<td style="text-align: left;">2,73</td>
+<td style="text-align: left;">1,27(0,790)</td>
+<td style="text-align: left;">3,45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Стеклопакет (3*4мм)</td>
+<td style="text-align: left;">2500</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">0,30</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,36</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Рама</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,075</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">0,09</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Итого остекленная часть наружных стен:</strong></td>
+<td style="text-align: left;">2500</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0,38</td>
+<td style="text-align: left;">1,20(0,833)</td>
+<td style="text-align: left;">0,45</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/фасад_размеры.png" class="img-fluid figure-img"></p>
+<figcaption>Размеры оконных проемов</figcaption>
+</figure>
+</div>
+</div></div><table class="table">
+<caption>Пример сбора нагрузки от веса конструкции наружных стен на 1 м длины</caption>
+<colgroup>
+<col style="width: 35%">
+<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Этаж</th>
+<th style="text-align: left;">Высота, мм</th>
+<th style="text-align: left;">Норм. значение, кН/м</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Норм. значение, кН/м</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Глухая часть</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1300</td>
+<td style="text-align: left;">3,54</td>
+<td style="text-align: left;">1,27</td>
+<td style="text-align: left;">4,49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Остекленная часть</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2420</td>
+<td style="text-align: left;">0,91</td>
+<td style="text-align: left;">1,20</td>
+<td style="text-align: left;">1,09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Итого остекленная часть наружных стен:</strong></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3720</td>
+<td style="text-align: left;">4,45</td>
+<td style="text-align: left;">1,25(0,798)</td>
+<td style="text-align: left;">5,57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Итого глухая часть наружных стен:</strong></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3720</td>
+<td style="text-align: left;">10,14</td>
+<td style="text-align: left;">1,27(0,790)</td>
+<td style="text-align: left;">12,83</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Глухая часть</td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">880</td>
+<td style="text-align: left;">2,40</td>
+<td style="text-align: left;">1,27</td>
+<td style="text-align: left;">3,04</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Остекленная часть</td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">2420</td>
+<td style="text-align: left;">0,91</td>
+<td style="text-align: left;">1,20</td>
+<td style="text-align: left;">1,09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Итого остекленная часть наружных стен:</strong></td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">3300</td>
+<td style="text-align: left;">3,31</td>
+<td style="text-align: left;">1,25(0,801)</td>
+<td style="text-align: left;">4,13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Итого глухая часть наружных стен:</strong></td>
+<td style="text-align: left;">2-4</td>
+<td style="text-align: left;">3300</td>
+<td style="text-align: left;">8,99</td>
+<td style="text-align: left;">1,27(0,790)</td>
+<td style="text-align: left;">11,39</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="полезные-равномерно-распределенные-нагрузки" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="полезные-равномерно-распределенные-нагрузки">«Полезные» равномерно распределенные нагрузки</h3>
+<p>Нормативные значения равномерно распределенных кратковременных нагрузок на плиты перекрытий, лестницы и полы на грунтах приведены в табл. 8.3 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a></p>
+<p>Нормативные значения нагрузок на ригели и плиты перекрытий от веса временных перегородок следует принимать в зависимости от их конструкции, расположения и характера опирания на перекрытия и стены. Указанные нагрузки допускается учитывать как равномерно распределенные добавочные нагрузки, принимая их нормативные значения на основании расчета для предполагаемых схем размещения перегородок, но не менее 0,5 кПа.</p>
+<p>Пониженные нормативные значения равномерно распределенных кратковременных нагрузок устанавливают с понижающим коэффициентом, принимаемым в действующих документах по стандартизации в области проектирования строительных конструкций и оснований, но не менее 0,35.</p>
+<p>Коэффициенты надежности по нагрузке <span class="math inline">\(\gamma_f\)</span> следует принимать:</p>
+<ul>
+<li>1,3 – при нормативном значении менее 2,0 кПа;</li>
+<li>1,2 – при нормативном значении 2,0 кПа и более.</li>
+</ul>
+<div class="column-page-right">
+<table class="table">
+<caption>Пример сбора полезных равномерно распределенных нагрузок</caption>
+<colgroup>
+<col style="width: 34%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Наименование</th>
+<th style="text-align: left;">Норм. значение, кН/м</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f (1/\gamma_f)\)</span></th>
+<th style="text-align: left;">Расч. значение, кН/м</th>
+<th style="text-align: left;">Доля длительности</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Неэксплуатируемая кровля</td>
+<td style="text-align: left;">0,7</td>
+<td style="text-align: left;">1,3</td>
+<td style="text-align: left;">0,91</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Гардеробные, раздевальные, душевые, уборные</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">2,4</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Кабинеты, служебные помещения</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">2,4</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Технические помещения</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">2,4</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Спортивный зал и снарядная</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">4,8</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Коридор к спортивному залу</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">4,8</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Прочие коридоры и лестницы</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1,2</td>
+<td style="text-align: left;">3,6</td>
+<td style="text-align: left;">0,35</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="снеговая-нагрузка" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="снеговая-нагрузка">Снеговая нагрузка</h3>
+<p>Расчет снеговой нагрузки описан в разделе 10 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/кровля_номера.png" class="img-fluid figure-img"></p>
+<figcaption>Общий вид покрытия здания</figcaption>
+</figure>
+</div>
+</div></div><p>Нормативное значение снеговой нагрузки на горизонтальную проекцию покрытия следует определять по формуле:</p>
+<p><span class="math display">\[
+S_0 = c_e c_t \mu S_g
+\]</span></p>
+<p>где <span class="math inline">\(c_e\)</span> – коэффициент, учитывающий снос снега с покрытий зданий под действием ветра или иных факторов, принимаемый в соответствии с 10.5-10.9;</p>
+<p><span class="math inline">\(c_t\)</span> – термический коэффициент, принимаемый в соответствии с 10.10;</p>
+<p><span class="math inline">\(\mu\)</span> – коэффициент формы, учитывающий переход от веса снегового покрова земли к снеговой нагрузке на покрытие, принимаемый в соответствии с 10.4;</p>
+<p><span class="math inline">\(S_g\)</span> – нормативное значение веса снегового покрова на 1 м<sup>2</sup> горизонтальной поверхности земли.</p>
+<p>Нормативное значение веса снегового покрова <span class="math inline">\(S_g\)</span> на 1 м<sup>2</sup> горизонтальной поверхности земли для отдельных населенных пунктов Российской Федерации принимают в соответствии с приложением К <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>. Для остальной территории Российской Федерации нормативное значение веса снегового покрова <span class="math inline">\(S_g\)</span> на 1 м<sup>2</sup> горизонтальной поверхности земли следует принимать в зависимости от снегового района по данным таблицы 10.1 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>В данном учебном проекте районы строительства по вариантам подобраны так, чтобы они были указаны в прил. К, значение <span class="math inline">\(S_g\)</span> брать оттуда.</p>
 </div>
 </div>
+</div>
+<p>Проектируемое здание имеет кровли на 3 уровнях. Снеговые мешки образуются в зонах:</p>
+<ul>
+<li>перепада высоты;</li>
+<li>возле парапетов.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/кровля_схема_снеговых_мешков.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Схема расположения снеговых мешков</figcaption>
+</figure>
+</div>
+<section id="перепады-высоты" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="перепады-высоты">Перепады высоты</h4>
+<p>Для определения коэффициента формы следует обратиться к приложению Б, раздел Б.8 Здания с перепадом высоты <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<p>Снеговая нагрузка на верхнее покрытие для проектируемого здания школы принимается как для плоских покрытий с <span class="math inline">\(\mu=1\)</span>, а для нижнего по двум схемам:</p>
+<ul>
+<li>равномерно с <span class="math inline">\(\mu=1\)</span>;</li>
+<li>с учетом снегопереноса по трапециевидной эпюре.</li>
+</ul>
+<p>Ниже показан результат расчета снегоотложения в зоне перепада между покрытиями 1, 2 для IV снегового района (<span class="math inline">\(S_g = 2.0\text{ кПа}\)</span>) <a href="documents/sneg_sp20_295472547.pdf">⇲&nbsp;смотреть трассировку расчета</a>. Для расчета использован онлайн-калькулятор <a href="http://webcad.pro/sneg_sp20/sneg_sp20.html">⇲&nbsp;Webcad</a>.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/снеговой_мешок_схема_расчет.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Результат расчета снегоотложения в зоне перепада</figcaption>
+</figure>
+</div>
+</section>
+<section id="парапеты" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="парапеты">Парапеты</h4>
+<p>Для определения коэффициента формы следует обратиться к приложению Б, раздел Б.13 Покрытие с парапетами <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/снеговой_мешок_схема_парапет.png" class="img-fluid figure-img"></p>
+<figcaption>Снеговой мешок около парапета</figcaption>
+</figure>
+</div>
+</div></div><p>Для проектируемого здания школы с высотой парапетов 1,2 м снеговой мешок принимается по трапециевидной эпюре в с наибольшим коэффициентом <span class="math inline">\(\mu = 2h/S_0 = 2 \cdot 1.2/2.0 = 1.2\)</span> c длиной зоны повышенных снегоотложений <span class="math inline">\(b = 2h = 2.4\text{ м}\)</span>.</p>
 
 
 </section>
+</section>
+</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
