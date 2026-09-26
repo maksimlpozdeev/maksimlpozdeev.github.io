@@ -10,9 +10,103 @@ listing:
     sort: "date desc"
     categories: true
     type: grid
-    fields: [title, categories, reading-time]
+    fields: [title, categories]
+resources: [models/School-9_SR.glb, models/School-9_KR.glb]
 ---
 
+В ходе занятий проектируется монолитный каркас одного из блоков общеобразовательной школы -- спортивный зал с примыкающими административно-бытовыми помещениями.
+
 ::: column-margin
-![](cover.png)
+<model-viewer
+  id="mv-arch"
+  src="models/School-9_SR.glb" 
+  alt="3D модель школы АР"
+  camera-controls
+  disable-zoom
+  disable-pan
+  interaction-prompt="none"
+  orbit-sensitivity="0.5"
+  exposure="1.5"
+  shadow-intensity="1"
+  shadow-softness="0.3"
+  environment-image="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_08_1k.hdr"
+  touch-action="pan-y"
+  field-of-view="5deg"
+  camera-orbit="45deg 75deg 250m"
+  max-camera-orbit="auto auto 500m"
+  min-camera-orbit="auto auto 0.1m"
+  style="width: 100%; height: 200px;">
+</model-viewer>
+
+<model-viewer
+  id="mv-kr"
+  src="models/School-9_KR.glb" 
+  alt="3D модель школы КР"
+  camera-controls
+  disable-zoom
+  disable-pan
+  interaction-prompt="none"
+  orbit-sensitivity="0.5"
+  exposure="1.5"
+  shadow-intensity="1"
+  shadow-softness="0.3"
+  environment-image="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_08_1k.hdr"
+  touch-action="pan-y"
+  field-of-view="5deg"
+  camera-orbit="45deg 75deg 250m"
+  max-camera-orbit="auto auto 500m"
+  min-camera-orbit="auto auto 0.1m"
+  style="width: 100%; height: 200px;">
+</model-viewer>
+
+Проектируемое здание (блок) общеобразовательной школы
 :::
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<script type="module">
+  const mv1 = document.getElementById('mv-arch');
+  const mv2 = document.getElementById('mv-kr');
+
+  let leader = mv1;
+  let follower = mv2;
+
+  function setLeader(newLeader) {
+    leader = newLeader;
+    follower = newLeader === mv1 ? mv2 : mv1;
+  }
+
+  mv1.addEventListener('camera-change', (e) => {
+    if (e.detail.source === 'user-interaction') setLeader(mv1);
+  });
+  mv2.addEventListener('camera-change', (e) => {
+    if (e.detail.source === 'user-interaction') setLeader(mv2);
+  });
+
+  const rotationSpeed = 0.002;
+  let userIsInteracting = false;
+
+  function startInteracting() { userIsInteracting = true; }
+  function stopInteracting() { userIsInteracting = false; }
+
+  [mv1, mv2].forEach(mv => {
+    // Основные события удержания курсора/пальца
+    mv.addEventListener('pointerdown', startInteracting);
+    // pointerup/cancel/leave вешаем на window, чтобы поймать отпускание
+    // даже если курсор ушёл за пределы модели перед отпусканием
+  });
+
+  window.addEventListener('pointerup', stopInteracting);
+  window.addEventListener('pointercancel', stopInteracting);
+
+  function syncLoop() {
+    if (!userIsInteracting) {
+      const orbit = leader.getCameraOrbit();
+      leader.cameraOrbit = `${orbit.theta + rotationSpeed}rad ${orbit.phi}rad ${orbit.radius}m`;
+    }
+    const orbit = leader.getCameraOrbit();
+    follower.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+    requestAnimationFrame(syncLoop);
+  }
+  requestAnimationFrame(syncLoop);
+</script>

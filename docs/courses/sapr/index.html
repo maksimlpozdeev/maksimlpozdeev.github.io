@@ -52,9 +52,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-00ec2dac8b7320f79bdd5fe51af54ed4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-98f0b2833e3e36b87bb1013d8b9794d7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-00ec2dac8b7320f79bdd5fe51af54ed4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-327b389e6d31d8d4ba09eb25d30c675f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-63bdfa4aec35452ce78ff7a59d907287.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-327b389e6d31d8d4ba09eb25d30c675f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -412,23 +412,72 @@ window.Quarto = {
 </header>
 
 
-
-
-
-
+<p>В ходе занятий проектируется монолитный каркас одного из блоков общеобразовательной школы – спортивный зал с примыкающими административно-бытовыми помещениями.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p><img src="cover.png" class="img-fluid"></p>
-</div></div><div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<p><model-viewer id="mv-arch" src="models/School-9_SR.glb" alt="3D модель школы АР" camera-controls="" disable-zoom="" disable-pan="" interaction-prompt="none" orbit-sensitivity="0.5" exposure="1.5" shadow-intensity="1" shadow-softness="0.3" environment-image="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_08_1k.hdr" touch-action="pan-y" field-of-view="5deg" camera-orbit="45deg 75deg 250m" max-camera-orbit="auto auto 500m" min-camera-orbit="auto auto 0.1m" style="width: 100%; height: 200px;"> </model-viewer></p>
+<p><model-viewer id="mv-kr" src="models/School-9_KR.glb" alt="3D модель школы КР" camera-controls="" disable-zoom="" disable-pan="" interaction-prompt="none" orbit-sensitivity="0.5" exposure="1.5" shadow-intensity="1" shadow-softness="0.3" environment-image="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_08_1k.hdr" touch-action="pan-y" field-of-view="5deg" camera-orbit="45deg 75deg 250m" max-camera-orbit="auto auto 500m" min-camera-orbit="auto auto 0.1m" style="width: 100%; height: 200px;"> </model-viewer></p>
+<p>Проектируемое здание (блок) общеобразовательной школы</p>
+</div></div><script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<script type="module">
+  const mv1 = document.getElementById('mv-arch');
+  const mv2 = document.getElementById('mv-kr');
+
+  let leader = mv1;
+  let follower = mv2;
+
+  function setLeader(newLeader) {
+    leader = newLeader;
+    follower = newLeader === mv1 ? mv2 : mv1;
+  }
+
+  mv1.addEventListener('camera-change', (e) => {
+    if (e.detail.source === 'user-interaction') setLeader(mv1);
+  });
+  mv2.addEventListener('camera-change', (e) => {
+    if (e.detail.source === 'user-interaction') setLeader(mv2);
+  });
+
+  const rotationSpeed = 0.002;
+  let userIsInteracting = false;
+
+  function startInteracting() { userIsInteracting = true; }
+  function stopInteracting() { userIsInteracting = false; }
+
+  [mv1, mv2].forEach(mv => {
+    // Основные события удержания курсора/пальца
+    mv.addEventListener('pointerdown', startInteracting);
+    // pointerup/cancel/leave вешаем на window, чтобы поймать отпускание
+    // даже если курсор ушёл за пределы модели перед отпусканием
+  });
+
+  window.addEventListener('pointerup', stopInteracting);
+  window.addEventListener('pointercancel', stopInteracting);
+
+  function syncLoop() {
+    if (!userIsInteracting) {
+      const orbit = leader.getCameraOrbit();
+      leader.cameraOrbit = `${orbit.theta + rotationSpeed}rad ${orbit.phi}rad ${orbit.radius}m`;
+    }
+    const orbit = leader.getCameraOrbit();
+    follower.cameraOrbit = `${orbit.theta}rad ${orbit.phi}rad ${orbit.radius}m`;
+    requestAnimationFrame(syncLoop);
+  }
+  requestAnimationFrame(syncLoop);
+</script>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790369296144" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1317">
+<div class="g-col-1" data-index="0" data-categories="" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790384625529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1317">
 <a href="../../courses/sapr/tutorial-01.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 1 Стратегии проектирования несущих конструкций в программных комплексах
 </h5>
-<div class="listing-reading-time card-text text-muted">7 минут</div>
 <div class="listing-categories">
 
 </div>
@@ -442,7 +491,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 2 Координация, моделирование горизонтальных несущих конструкций
 </h5>
-<div class="listing-reading-time card-text text-muted">4 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -460,7 +508,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 3 Моделирование вертикальных несущих конструкций
 </h5>
-<div class="listing-reading-time card-text text-muted">3 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -471,14 +518,13 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790369845681" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="34" data-listing-word-count-sort="6789">
+<div class="g-col-1" data-index="3" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790371068422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="34" data-listing-word-count-sort="6789">
 <a href="../../courses/sapr/tutorial-04.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 4 Расчет вертикальных нагрузок
 </h5>
-<div class="listing-reading-time card-text text-muted">34 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
@@ -489,14 +535,13 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790180046368" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="g-col-1" data-index="4" data-categories="RXhjZWwlMkNSZXZpdA==" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790388114800" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
 <a href="../../courses/sapr/tutorial-05.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 5 Расчет горизонтальных нагрузок
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('RXhjZWw='); return false;">Excel</div>
@@ -514,7 +559,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 6 Аналитическая модель, задание нагрузок
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -529,14 +573,13 @@ window.Quarto = {
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790179925718" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
+<div class="g-col-1" data-index="6" data-categories="JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMCUyQ1NDQUQ=" data-listing-date-sort="1788210000000" data-listing-file-modified-sort="1790388594094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="2">
 <a href="../../courses/sapr/tutorial-07.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-7 Экспорт аналитики в расчетные комплексы, особенности построения МКЭ-моделей
+7 Экспорт аналитики, особенности моделей МКЭ
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -554,7 +597,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 8 Загружения, комбинации и расчетные сочетания усилий
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -572,7 +614,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 9 Расчет и анализ конечно-элементной модели
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -590,7 +631,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 10 Подбор армирования
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -608,7 +648,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 11 Расчеты на продавливание
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -626,7 +665,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 12 Огнестойкость
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('JUQwJTlCJUQwJTk4JUQwJUEwJUQwJTkwLSVEMCVBMSVEMCU5MCVEMCU5RiVEMCVBMA=='); return false;">ЛИРА-САПР</div>
@@ -644,7 +682,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 13 Оформление чертежей
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -660,7 +697,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 14 Армирование
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -678,7 +714,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 15 Спецификации
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 <div class="listing-category" onclick="window.quartoListingCategory('UmV2aXQ='); return false;">Revit</div>
@@ -696,7 +731,6 @@ window.Quarto = {
 <h5 class="no-anchor card-title listing-title">
 16 Защиты проектов
 </h5>
-<div class="listing-reading-time card-text text-muted">1 минут</div>
 <div class="listing-categories">
 
 </div>
