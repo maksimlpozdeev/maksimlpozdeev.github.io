@@ -2,7 +2,7 @@
 title: "6 Аналитическая модель, задание нагрузок"
 description: ""
 date: "2026-09-01"
-categories: [Revit, AutoCAD, ЛИРА-САПР, SCAD]
+categories: [Excel, Revit]
 ---
 
 В разработке.

@@ -78,11 +78,44 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,14 +338,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#исходные-данные" id="toc-исходные-данные" class="nav-link active" data-scroll-target="#исходные-данные">Исходные данные</a></li>
+  <li><a href="#конспект" id="toc-конспект" class="nav-link" data-scroll-target="#конспект">Конспект</a>
+  <ul class="collapse">
+  <li><a href="#классификация-нагрузок" id="toc-классификация-нагрузок" class="nav-link" data-scroll-target="#классификация-нагрузок">Классификация нагрузок</a></li>
+  <li><a href="#ветровое-воздействие" id="toc-ветровое-воздействие" class="nav-link" data-scroll-target="#ветровое-воздействие">Ветровое воздействие</a></li>
+  <li><a href="#давление-грунта-на-стены-подвала" id="toc-давление-грунта-на-стены-подвала" class="nav-link" data-scroll-target="#давление-грунта-на-стены-подвала">Давление грунта на стены подвала</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -344,9 +389,443 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>В разработке.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="../../courses/sapr/index.html">← К списку уроков</a></p>
+<p><a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲ Скачать материалы курса</a></p>
+<hr>
+<p>Другие полезные ссылки:</p>
+<p><a href="http://webcad.pro/rasch.html">🌏︎ Онлайн-калькулятор Webcad</a></p>
+</div></div><div style="position: relative; width: 100%; padding-top: 56.25%; margin: 1em 0;">
+  <iframe src="https://vkvideo.ru/video_ext.php?oid=-241507062&amp;id=456239019&amp;hash=eb28dafcb64fb067&amp;hd=3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;" frameborder="0" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" allowfullscreen="">
+  </iframe>
+</div>
+<p><a href="https://vkvideo.ru/video-241507062_456239019?t=0h0m0s">00:00</a> – Классификация нагрузок<br>
+<a href="https://vkvideo.ru/video-241507062_456239019?t=0h0m38s">00:38</a> – Полы и кровля<br>
+<a href="https://vkvideo.ru/video-241507062_456239019?t=0h7m28s">07:28</a> – Внутренние перегородки и наружные стены<br>
+<a href="https://vkvideo.ru/video-241507062_456239019?t=0h18m42s">18:42</a> – Полезные нагрузки<br>
+<a href="https://vkvideo.ru/video-241507062_456239019?t=0h22m47s">22:47</a> – Снеговая нагрузка</p>
+<section id="исходные-данные" class="level2">
+<h2 class="anchored" data-anchor-id="исходные-данные">Исходные данные</h2>
+<p>Районы строительства принять <a href="../../courses/sapr/tutorial-04.html#исходные-данные">по вариантам</a>.</p>
+</section>
+<section id="конспект" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="конспект">Конспект</h2>
+<section id="классификация-нагрузок" class="level3">
+<h3 class="anchored" data-anchor-id="классификация-нагрузок">Классификация нагрузок</h3>
+<p>Классификация нагрузок изложена в разделе 5 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20.13330.2016</a></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    T[Нагрузки]
+
+    T --&gt; L1[Постоянные]
+    T --&gt; L2[Временные]
+    T --&gt; L3[Особые]
+
+    L2 --&gt; L21[Кратковременные]
+    L2 --&gt; L22[Длительные]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="ветровое-воздействие" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="ветровое-воздействие">Ветровое воздействие</h3>
+<p>Расчет воздействия ветра описан в разделе 11 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<p>Нормативное значение <strong>основной ветровой нагрузки</strong> <span class="math inline">\(w\)</span> следует определять как сумму средней <span class="math inline">\(w_m\)</span> и пульсационной <span class="math inline">\(w_g\)</span> составляющих</p>
+<p><span class="math display">\[
+w = w_m + w_g.
+\]</span></p>
+<section id="средняя-составляющая" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="средняя-составляющая">Средняя составляющая</h4>
+<p>Нормативное значение <strong>средней составляющей</strong> основной ветровой нагрузки <span class="math inline">\(w_m\)</span> в зависимости от эквивалентной высоты <span class="math inline">\(z_e\)</span> над поверхностью земли следует определять по формуле</p>
+<p><span class="math display">\[
+w_m = w_0 k(z_e) c,
+\]</span></p>
+<p>где <span class="math inline">\(w_0\)</span> – нормативное значение ветрового давления;<br>
+<span class="math inline">\(k(z_e)\)</span> – коэффициент, учитывающий изменение ветрового давления для высоты <span class="math inline">\(z_e\)</span>;<br>
+<span class="math inline">\(c\)</span> – аэродинамический коэффициент.</p>
+<p><strong>Нормативное значение ветрового давления <span class="math inline">\(w_0\)</span></strong> определяется по таблице 11.1 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a> в зависимости от ветрового района. Район принимается по карте 2 приложения Е <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<p><strong>Значения аэродинамических коэффициентов <span class="math inline">\(c\)</span></strong> определяются по приложению В.1 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ветер_аэродин_коэф.jpg" class="img-fluid figure-img"></p>
+<figcaption>Типичная эпюра ветрового давления для прямоугольного в плане здания</figcaption>
+</figure>
+</div>
+</div></div><p>Для наветренных, подветренных и различных участков боковых стен зданий и сооружений значения аэродинамических коэффициентов <span class="math inline">\(c\)</span> определяются по таблице В.2 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>. При этом с наветренной стороны здания <span class="math inline">\(c\)</span> положителен (напор), с подветренной и на боковых стенах – отрицателен (отсос).</p>
+<p><strong>Эквивалентная высота</strong> <span class="math inline">\(z_e\)</span> определяется:</p>
+<p>1 Для башенных сооружений, мачт, труб, решетчатых конструкций и т.п. сооружений<br>
+<span class="math inline">\(z_e = z\)</span>.</p>
+<p>2 Для зданий:</p>
+<div class="columns">
+<div class="column" style="width:33%;">
+<p>а) при <span class="math inline">\(h ≤ d\)</span></p>
+<p><span class="math inline">\(z_e = h\)</span>.</p>
+</div><div class="column" style="width:33%;">
+<p>б) при <span class="math inline">\(d &lt; h ≤ 2d\)</span>:</p>
+<p><span class="math inline">\(z ≥ h-d → z_e=h\)</span>;<br>
+<span class="math inline">\(0 &lt; z &lt; h-d → z_e=d\)</span>.</p>
+</div><div class="column" style="width:33%;">
+<p>в) при <span class="math inline">\(h &gt; 2d\)</span>:</p>
+<p><span class="math inline">\(z ≥ h-d → z_e = h\)</span>;<br>
+<span class="math inline">\(d &lt; z &lt; h-d → z_e = z\)</span>;<br>
+<span class="math inline">\(0 &lt; z ≤ d → z_e = d\)</span>.</p>
+</div>
+</div>
+<p>Условия а-в графически можно представить на схеме:</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/ветер_ze_схема.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Схемы выбора эквивалентной высоты <span class="math inline">\(z_e\)</span> для зданий и соответствующие схемы ветрового давления</figcaption>
+</figure>
+</div>
+<p>Здесь <span class="math inline">\(z\)</span> – высота от поверхности земли;<br>
+<span class="math inline">\(d\)</span> – размер здания (без учета его стилобатной части) в направлении, перпендикулярном расчетному направлению ветра (поперечный размер);<br>
+<span class="math inline">\(h\)</span> – высота здания от поверхности земли.</p>
+<p><strong>Коэффициент</strong> <span class="math inline">\(k(z_e)\)</span> для высот <span class="math inline">\(z_e ≤ 300\)</span> м определяется по таблице 11.2 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a> или по формуле</p>
+<p><span class="math display">\[
+k(z_e) = k_{10} (z_e/10)^{2\alpha}, 10 ≤ z_e ≤ 300 \text{ м}
+\]</span></p>
+<p>Значения параметров <span class="math inline">\(k_{10}\)</span> и <span class="math inline">\(\alpha\)</span> для различных <strong>типов местностей</strong> приведены в таблице 11.3 <a href="documents/СП_20.13330.2016_с_Изм_1-6_Нагрузки_и_воздействия_.pdf">⇲&nbsp;СП&nbsp;20</a>.</p>
+<p>Принимаются следующие типы местности:</p>
+<div class="column-page-right">
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ветер_тип_местности_A.jpg" class="img-fluid figure-img"></p>
+<figcaption>А – открытые побережья морей, озер и водохранилищ, сельские местности, в том числе постройками высотой менее 10 м, пустыни, степи, лесостепи, тундра</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ветер_тип_местности_B.jpg" class="img-fluid figure-img"></p>
+<figcaption>В – городские территории, лесные массивы и другие местности, равномерно покрытые препятствиями высотой более 10 м</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:33%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ветер_тип_местности_C.jpg" class="img-fluid figure-img"></p>
+<figcaption>С – городские районы с плотной застройкой зданиями высотой более 25 м</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="пример-расчета-средней-составляющей-ветровой-нагрузки" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="пример-расчета-средней-составляющей-ветровой-нагрузки">Пример расчета средней составляющей ветровой нагрузки</h4>
+<p>Для проектируемого здания для любых направлений ветра <span class="math inline">\(h ≤ d\)</span>, следовательно <span class="math inline">\(z_e = h = 21.5 \text{м}\)</span>, где <span class="math inline">\(h\)</span> – высота здания от поверхности земли.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/ветер_схема_площади.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Фасады к расчету ветровой нагрузки</figcaption>
+</figure>
+</div>
+<p>Нагрузка прикладывается как равномерно распределенная по внешнему контуру перекрытий <span class="math inline">\(W\)</span> [кН/м], расположенных на высоте <span class="math inline">\(H\)</span> от уровня земли. Нагрузка собирается с грузовой площади высотой <span class="math inline">\(a\)</span>, равной расстоянию между серединами смежных этажей.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ветер_схема_фасад.png" class="img-fluid figure-img"></p>
+<figcaption>Схема к расчету ветровой нагрузки</figcaption>
+</figure>
+</div>
+</div></div><table class="table">
+<caption>Пример сбора ветровой нагрузки</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 24%">
+<col style="width: 18%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Район</th>
+<th style="text-align: left;">Тип местности</th>
+<th style="text-align: left;"><span class="math inline">\(w_0\)</span>, кПа</th>
+<th style="text-align: left;"><span class="math inline">\(k_{10}\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">V</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">0.6</td>
+<td style="text-align: left;">0.65</td>
+<td style="text-align: left;">0.2</td>
+<td style="text-align: left;">1.4</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>Пример сбора ветровой нагрузки (продолжение)</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(H\)</span>, м</th>
+<th style="text-align: left;"><span class="math inline">\(a\)</span>, м</th>
+<th style="text-align: left;"><span class="math inline">\(z_e\)</span>, м</th>
+<th style="text-align: left;"><span class="math inline">\(k(z_e)\)</span></th>
+<th style="text-align: left;">Наветренная,</th>
+<th style="text-align: left;"><span class="math inline">\(c = 0.8\)</span></th>
+<th style="text-align: left;">Подветренная,</th>
+<th style="text-align: left;"><span class="math inline">\(с = 0.5\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Норм., кН/м</td>
+<td style="text-align: left;">Расч., кН/м</td>
+<td style="text-align: left;">Норм., кН/м</td>
+<td style="text-align: left;">Расч., кН/м</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0.9</td>
+<td style="text-align: left;">3.06</td>
+<td style="text-align: left;">21.5</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">1.30</td>
+<td style="text-align: left;">1.82</td>
+<td style="text-align: left;">0.81</td>
+<td style="text-align: left;">1.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5.22</td>
+<td style="text-align: left;">4.11</td>
+<td style="text-align: left;">21.5</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">1.74</td>
+<td style="text-align: left;">2.44</td>
+<td style="text-align: left;">1.09</td>
+<td style="text-align: left;">1.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">9.12</td>
+<td style="text-align: left;">3.9</td>
+<td style="text-align: left;">21.5</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">1.65</td>
+<td style="text-align: left;">2.31</td>
+<td style="text-align: left;">1.03</td>
+<td style="text-align: left;">1.45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13.02</td>
+<td style="text-align: left;">3.9</td>
+<td style="text-align: left;">21.5</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">1.65</td>
+<td style="text-align: left;">2.31</td>
+<td style="text-align: left;">1.03</td>
+<td style="text-align: left;">1.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16.92</td>
+<td style="text-align: left;">3.83</td>
+<td style="text-align: left;">21.5</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">1.62</td>
+<td style="text-align: left;">2.27</td>
+<td style="text-align: left;">1.01</td>
+<td style="text-align: left;">1.42</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="пульсационная-составляющая" class="level4">
+<h4 class="anchored" data-anchor-id="пульсационная-составляющая">Пульсационная составляющая</h4>
+<p>Нормативное значение <strong>пульсационной составляющей</strong> основной ветровой нагрузки <span class="math inline">\(w_g\)</span> на эквивалентной высоте <span class="math inline">\(z_e\)</span> определяется как доля от средней составляющей <span class="math inline">\(w_m\)</span> и зависит от частот собственных колебаний <span class="math inline">\(f_s\)</span> и предельного значения собственной частоты <span class="math inline">\(f_{lim}\)</span>.</p>
+<table class="table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Условие</th>
+<th>Формула расчета <span class="math inline">\(w_g\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f_{lim} &lt; f_1\)</span></td>
+<td><span class="math inline">\(= w_m \zeta(z_e) \nu\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(f_1 &lt; f_{lim} &lt; f_2\)</span></td>
+<td><span class="math inline">\(= w_m \xi \zeta(z_e) \nu\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(f_s &lt; f_{lim} &lt; f_{s+1}\)</span></td>
+<td>с учетом <span class="math inline">\(s\)</span> первых форм собственных колебаний</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Пульсационная составляющая, как правило, вычисляется программным комплексом, в том числе вычисляются частоты собственных колебаний (модальный анализ).</p>
+<p>Процедура задания пульсационной составляющей в программном комплексе будет показана на следующих уроках.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="давление-грунта-на-стены-подвала" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="давление-грунта-на-стены-подвала">Давление грунта на стены подвала</h3>
+<p>Актуальные требования к расчету нагрузок на стены подвалов изложены в нормативных документах:</p>
+<ul>
+<li><a href="documents/СП_22.13330.2016_Основания_зданий_и_сооружений_.pdf">СП 22.13330.2016 “Основания зданий и сооружений” Актуализированная редакция СНиП 2.02.01-83* (с изм. 1-5)</a></li>
+<li><a href="cdocuments/СП_381.1325800.2018_Сооружения_подпорные_Правила_проектирования_.pdf">Раздел 9 СП 381.1325800.2018 “Сооружения подпорные. Правила проектирования и строительства” (с изм. 1)</a></li>
+</ul>
+<p>Методика по расчету и конструированию подпорных стен и стен подвалов подробно описана в пособии <a href="documents/Пособие_к_СНиП_Проектирование_подпорных_стен_и_стен_подвалов_.pdf">«Проектирование подпорных стен и стен подвалов»: пособие к СНиП 2.09.03-85 «Сооружения промышленных предприятий»</a>.</p>
+<p>Горизонтальная нагрузка на стены подвала состоит из нескольких составляющих:</p>
+<ul>
+<li>давление от веса грунта <span class="math inline">\(p_{\gamma}\)</span>;</li>
+<li>давление от нагрузки на поверхности <span class="math inline">\(p_q\)</span>;</li>
+<li>давление от веса подземных вод <span class="math inline">\(p_w\)</span> (при наличии).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="images/стена_подвала_рс.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Расчетная схема стены подвала</figcaption>
+</figure>
+</div>
+<p>Для вертикальных стен подвала при горизонтальной поверхности обратной засыпки нормативное значение <strong>давления грунта</strong> на стену подвала <span class="math inline">\(p_{\gamma}\)</span> определяется по формуле</p>
+<p><span class="math display">\[
+p_{\gamma} = \gamma h \lambda,
+\]</span></p>
+<p>где <span class="math inline">\(\gamma\)</span> – удельный вес грунта;<br>
+<span class="math inline">\(h\)</span> – глубина обратной засыпки;<br>
+<span class="math inline">\(\lambda\)</span> – коэффициент горизонтального давления грунта, вычисляемый по формуле</p>
+<p><span class="math display">\[
+\lambda = \tan^2\left(45^\circ - \frac{\phi}{2}\right),
+\]</span></p>
+<p>где <span class="math inline">\(\phi\)</span> – угол внутреннего трения грунта обратной засыпки.</p>
+<p>Согласно п. 6.2.10 <a href="cdocuments/СП_381.1325800.2018_Сооружения_подпорные_Правила_проектирования_.pdf">СП 381</a> давление грунта на подпорные сооружения, устраиваемые с обратной засыпкой из привозного песчаного или гравелистого грунта, допускается определять, принимая расчетные значения характеристик грунтов обратной засыпки (<span class="math inline">\(γ'_I, φ'_I, c'_I\)</span> ), уплотненных до <span class="math inline">\(k_y=0.95\)</span> их максимальной плотности, в зависимости от характеристик тех же грунтов при максимальной плотности (<span class="math inline">\(γ_I, φ_I, c_I\)</span>): <span class="math inline">\(γ'_I =0.95γ_I\)</span>; <span class="math inline">\(φ'_I =0.95φ_I\)</span>; <span class="math inline">\(c'_I = 0\)</span>.</p>
+<p><strong>Коэффициент надежности по нагрузке</strong> <span class="math inline">\(\gamma_f\)</span> от веса насыпного грунта равен 1,15 (таблица 6.2 <a href="cdocuments/СП_381.1325800.2018_Сооружения_подпорные_Правила_проектирования_.pdf">СП 381</a>). Если эта нагрузка оказывает благоприятное влияние, то принимается значение 0,85.</p>
+<p>Интенсивность горизонтального давления грунта от равномерно распределенной нагрузки, расположенной на поверхности призмы обрушения, при сплошном расположении следует определять по формуле</p>
+<p><span class="math display">\[
+p_q = q \lambda,
+\]</span></p>
+<p>Согласно 6.2.21 <a href="cdocuments/СП_381.1325800.2018_Сооружения_подпорные_Правила_проектирования_.pdf">СП 381</a> при отсутствии специальных указаний в задании на проектирование и наличии свободной площадки на бровке проектируемого подпорного сооружения, которая может быть потенциально использована для проезда строительной техники, машин, механизмов, складирования материалов и т.п., расчет подпорного сооружения необходимо выполнять с учетом дополнительной равномерно распределенной нагрузки <span class="math inline">\(q = 20 \text{ кПа}\)</span>, приложенной на поверхности грунта в любом месте данной площадки.</p>
+<p>Данная нагрузка является осредненной, кратковременной и должна приниматься с коэффициентом надежности по нагрузке <span class="math inline">\(γ_f=1.0\)</span>.</p>
+<section id="пример-расчета-давления-на-стены-подвала" class="level4 page-columns page-full">
+<h4 class="anchored" data-anchor-id="пример-расчета-давления-на-стены-подвала">Пример расчета давления на стены подвала</h4>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/грунт_схема_рс.png" class="img-fluid figure-img"></p>
+<figcaption>Схема к расчету давления на стены подвала</figcaption>
+</figure>
+</div>
+</div></div><p>Нагрузка на стены прикладывается как равномерно распределенная по площади [кН/м<sup>2</sup>]. Уровень грунтовых вод находится ниже фундаментной плиты, поэтому расчет давления от веса грунтовых вод не требуется.</p>
+<table class="table">
+<caption>Пример расчета давления <span class="math inline">\(p_{\gamma}\)</span> от веса грунта</caption>
+<colgroup>
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 8%">
+<col style="width: 21%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\phi\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\lambda\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(h\)</span>, м</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma\)</span>, кН/м3</th>
+<th style="text-align: left;">Норм., кН/м2</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f\)</span></th>
+<th style="text-align: left;">Расч., кН/м2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">0.490</td>
+<td style="text-align: left;">2.1</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">18.53</td>
+<td style="text-align: left;">1.15</td>
+<td style="text-align: left;">21.31</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>Пример расчета давления <span class="math inline">\(p_q\)</span> от нагрузки на поверхности</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 4%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\phi\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(\lambda\)</span></th>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><span class="math inline">\(q\)</span>, кН/м2</th>
+<th style="text-align: left;">Норм., кН/м2</th>
+<th style="text-align: left;"><span class="math inline">\(\gamma_f\)</span></th>
+<th style="text-align: left;">Расч., кН/м2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">0.490</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">9.81</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">9.81</td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
