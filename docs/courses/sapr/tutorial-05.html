@@ -523,6 +523,55 @@ k(z_e) = k_{10} (z_e/10)^{2\alpha}, 10 ≤ z_e ≤ 300 \text{ м}
 </div>
 </div>
 </div>
+<p>Расчет средней составляющей может быть произведен в <code>Excel</code> или <code>сателлите Вест пакета SCAD Office</code>.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>В онлайн-калькуляторе <a href="http://webcad.pro/sp20_veter/sp20_veter.html">Webcad</a> реализована только устаревшая версия СП 20.13330.2011.</p>
+</div>
+</div>
+</div>
+<p>Вкладка <code>Местность</code> позволяет определить основную информацию о климатических районах для заданного района строительства.</p>
+<div class="column-page-right">
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/вест.png" class="img-fluid figure-img"></p>
+<figcaption>Вест – Меню</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/вест_местность.png" class="img-fluid figure-img"></p>
+<figcaption>Вест-Местность – Окно сателлита с информацией о Нижнем Новгороде</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Вкладка <code>Ветер</code> позволяет рассчитать ветровое давление на стены и кровлю зданий или сооружений различных форм. Ниже приведен пример задания параметров для учебного проекта школы для V ветрового района и типа местности B.</p>
+<div class="column-page-right">
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/вест_ветер_1.png" class="img-fluid figure-img"></p>
+<figcaption>Вест-Ветер – Вкладка задания общий сведений</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:49%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/вест_ветер_2.png" class="img-fluid figure-img"></p>
+<figcaption>Вест-Ветер – Вкладка задания геометрии и результатов расчета</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="пример-расчета-средней-составляющей-ветровой-нагрузки" class="level4 page-columns page-full">
 <h4 class="anchored" data-anchor-id="пример-расчета-средней-составляющей-ветровой-нагрузки">Пример расчета средней составляющей ветровой нагрузки</h4>
@@ -533,7 +582,8 @@ k(z_e) = k_{10} (z_e/10)^{2\alpha}, 10 ≤ z_e ≤ 300 \text{ м}
 <figcaption class="margin-caption">Фасады к расчету ветровой нагрузки</figcaption>
 </figure>
 </div>
-<p>Нагрузка прикладывается как равномерно распределенная по внешнему контуру перекрытий <span class="math inline">\(W\)</span> [кН/м], расположенных на высоте <span class="math inline">\(H\)</span> от уровня земли. Нагрузка собирается с грузовой площади высотой <span class="math inline">\(a\)</span>, равной расстоянию между серединами смежных этажей.</p>
+<p>Нагрузка в расчетной схеме будет прикладываться как линейная равномерно распределенная по внешнему контуру перекрытий <span class="math inline">\(W_n\)</span> [кН/м], расположенных на высоте <span class="math inline">\(H_n\)</span> от уровня земли. Нагрузка собирается с грузовой полосы высотой <span class="math inline">\(h_n\)</span>, равной расстоянию между серединами смежных этажей.</p>
+<p>Поскольку в <code>сателлите Вест-Ветер пакета SCAD Office</code> ветровую нагрузку можно посчитать только как распределенную по площади, удобнее провести расчет сразу в <code>Excel</code>.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="quarto-figure quarto-figure-center">
@@ -588,7 +638,7 @@ k(z_e) = k_{10} (z_e/10)^{2\alpha}, 10 ≤ z_e ≤ 300 \text{ м}
 <thead>
 <tr class="header">
 <th style="text-align: left;"><span class="math inline">\(H\)</span>, м</th>
-<th style="text-align: left;"><span class="math inline">\(a\)</span>, м</th>
+<th style="text-align: left;"><span class="math inline">\(h\)</span>, м</th>
 <th style="text-align: left;"><span class="math inline">\(z_e\)</span>, м</th>
 <th style="text-align: left;"><span class="math inline">\(k(z_e)\)</span></th>
 <th style="text-align: left;">Наветренная,</th>
