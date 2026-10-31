@@ -410,7 +410,7 @@ window.Quarto = {
 <section id="исходные-данные" class="level2">
 <h2 class="anchored" data-anchor-id="исходные-данные">Исходные данные</h2>
 <p>Сбор снеговой и ветровой нагрузки осуществлять для района строительства согласно варианту. Вариант соответствует порядковому номеру в списке группы.</p>
-<table class="table">
+<table class="caption-top table">
 <caption>Районы строительства по вариантам</caption>
 <colgroup>
 <col style="width: 14%">
@@ -531,7 +531,7 @@ window.Quarto = {
 <p>Вес прочих строительных конструкций рассчитывается на основании данных о составах полов, кровли, ограждающих конструкций.</p>
 <p>Нагрузки от веса полов и кровли рассчитываются как равномерно распределенные по площади. В запас при переходе из <span class="math inline">\(кг\)</span> в <span class="math inline">\(Н\)</span> можно использовать значение ускорения свободного падения <span class="math inline">\(g=10 м/c^2\)</span>.</p>
 <div class="column-page-right page-columns page-full">
-<table class="table">
+<table class="caption-top table">
 <caption>Пример сбора нагрузки от веса конструкции полов</caption>
 <colgroup>
 <col style="width: 23%">
@@ -645,7 +645,7 @@ window.Quarto = {
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Для тонких и/или рулонных материалов, для которых указана масса 1 м<sup>2</sup> слоя, сразу указывается нормативное значение.</p></div></div></div>
 <p>Нагрузки от веса перегородок и фасадных стен рассчитываются как равномерно распределенные по длине. Для этого можно произвести расчет удельного веса на 1 м<sup>2</sup> площади, а затем выполнить расчет с учетом фактической высоты перегородок на этажах. При этом расчет веса внутренних перегородок в запас выполняется, как правило, без учета наличия дверных проемов.</p>
 <div class="column-page-right">
-<table class="table">
+<table class="caption-top table">
 <caption>Пример сбора нагрузки от веса конструкции перегородок на 1 м<sup>2</sup> площади</caption>
 <colgroup>
 <col style="width: 26%">
@@ -732,7 +732,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top table">
 <caption>Пример сбора нагрузки от веса конструкции перегородок на 1 м длины</caption>
 <colgroup>
 <col style="width: 31%">
@@ -790,7 +790,7 @@ window.Quarto = {
 </div>
 <p>Нагрузки от веса наружных стен рассчитываются с учетом фактического расположения и геометрии оконных проемов. При этом нагрузки на уровне перекрытий либо сводятся к эквивалентным равномерно распределенным по длине (с учетом наличия проемов и веса окон) или задаются участками с соответствующими значениями нагрузки под глухими участками стен и участками с оконными проемами.</p>
 <div class="column-page-right">
-<table class="table">
+<table class="caption-top table">
 <caption>Пример сбора нагрузки от веса конструкции наружных стен на 1 м<sup>2</sup> площади</caption>
 <colgroup>
 <col style="width: 30%">
@@ -902,7 +902,7 @@ window.Quarto = {
 <figcaption>Размеры оконных проемов</figcaption>
 </figure>
 </div>
-</div></div><table class="table">
+</div></div><table class="caption-top table">
 <caption>Пример сбора нагрузки от веса конструкции наружных стен на 1 м длины</caption>
 <colgroup>
 <col style="width: 35%">
@@ -1001,7 +1001,7 @@ window.Quarto = {
 <li>1,2 – при нормативном значении 2,0 кПа и более.</li>
 </ul>
 <div class="column-page-right">
-<table class="table">
+<table class="caption-top table">
 <caption>Пример сбора полезных равномерно распределенных нагрузок</caption>
 <colgroup>
 <col style="width: 34%">
@@ -1109,10 +1109,10 @@ S_0 = c_e c_t \mu S_g
 <li>перепада высоты;</li>
 <li>возле парапетов.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="images/кровля_схема_снеговых_мешков.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Схема расположения снеговых мешков</figcaption>
+<figcaption>Схема расположения снеговых мешков</figcaption>
 </figure>
 </div>
 <section id="перепады-высоты" class="level4 page-columns page-full">
@@ -1132,10 +1132,10 @@ S_0 = c_e c_t \mu S_g
 <li>с учетом снегопереноса по трапециевидной эпюре.</li>
 </ul>
 <p>Ниже показан результат расчета снегоотложения в зоне перепада между покрытиями 1, 2 для IV снегового района (<span class="math inline">\(S_g = 2.0\text{ кПа}\)</span>) <a href="documents/sneg_sp20_295472547.pdf">⇲&nbsp;смотреть трассировку расчета</a>. Для расчета использован онлайн-калькулятор <a href="http://webcad.pro/sneg_sp20/sneg_sp20.html">⇲&nbsp;Webcad</a>.</p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
 <p><img src="images/снеговой_мешок_схема_расчет.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">Результат расчета снегоотложения в зоне перепада</figcaption>
+<figcaption>Результат расчета снегоотложения в зоне перепада</figcaption>
 </figure>
 </div>
 </section>
