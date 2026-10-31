@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,14 +305,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#конспект" id="toc-конспект" class="nav-link active" data-scroll-target="#конспект">Конспект</a>
+  <ul class="collapse">
+  <li><a href="#аналитическая-модель" id="toc-аналитическая-модель" class="nav-link" data-scroll-target="#аналитическая-модель">Аналитическая модель</a></li>
+  <li><a href="#загружения" id="toc-загружения" class="nav-link" data-scroll-target="#загружения">Загружения</a></li>
+  </ul></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -344,9 +354,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>В разработке.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><a href="../../courses/sapr/index.html">← К списку уроков</a></p>
+<p><a href="https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link">⇲ Скачать материалы курса</a></p>
+</div></div><section id="конспект" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="конспект">Конспект</h2>
+<section id="аналитическая-модель" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="аналитическая-модель">Аналитическая модель</h3>
+<p>Аналитическая модель – это упрощенное математическое представление конструкций здания, предназначенное для инженерных расчетов. Она состоит из идеализированных элементов: линий (стержни, балки, колонны), поверхностей (плиты, стены), узлов, опор, нагрузок.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images\модель_конструкции.png" class="img-fluid figure-img"></p>
+<figcaption>Физическая (опалубочная) модель</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images\модель_аналитика.png" class="img-fluid figure-img"></p>
+<figcaption>Аналитическая модель</figcaption>
+</figure>
+</div>
+</div></div><p>Эта модель передается напрямую в расчетные комплексы с автоматической триангуляцией и созданием конечных элементов или передается в препроцессоры, например, для SCAD Office в Форум, для Лира-САПР в Сапфир.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>До Revit 2022 (включительно) аналитическая модель была свойством физического элемента. Она создавалась автоматически вместе с несущей колонной, балкой, плитой или стеной и ее нельзя было создать отдельно.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/аналитика_чекбокс.png" class="img-fluid figure-img" width="300"></p>
+<figcaption>Включение аналитической модели у несущей конструкции до Revit 2022</figcaption>
+</figure>
+</div>
+<p>Начиная с Revit 2023 подход изменился. Аналитическая модель стала набором самостоятельных аналитических элементов, которые не связаны с физической моделью и существуют отдельно.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="загружения" class="level3">
+<h3 class="anchored" data-anchor-id="загружения">Загружения</h3>
+<p>Отдельные нагрузки группируют в загружения. Загружение – это совокупность нагрузок, которые действуют на конструкцию одновременно.</p>
+<p>Ниже представлен вариант именования загружений, например:</p>
+<p><code>Код_Наименование_КоэффициентНадежности-ОбратныйКоэффициент</code>,</p>
+<p>где:</p>
+<p><code>Код</code> – код загружения, например, SW – собственный вес (self weight), DL – постоянные и длительные нагрузки (dead load), LL – полезные временные нагрузки (live load), SN – снеговое (snow load), WL – ветровое (wind load), SL – особые нагрузки (пожарная машина, сейсмика и т.д.)(special load).</p>
+<p><code>Наименование</code> - краткое наименование конкретного загружения.</p>
+<p><code>КоэффициентНадежности</code> - коэффициент надежности по нагрузке.</p>
+<p><code>ОбратныйКоэффициент</code> - обратный коэффициент надежности по нагрузке, который используется для расчета нормативной нагрузки из расчетной.</p>
+<p>Таким образом может быть сформирован список загружений:</p>
+<ul>
+<li>SW_Бетон_1,1-0,909</li>
+<li>SW_Сталь_1,05-0,952</li>
+<li>DL_Перегородки_1,28-0,781</li>
+<li>DL_НаружныеСтены_1,23-0,813</li>
+<li>DL_Полы_1,28-0,781</li>
+<li>DL_Покрытие_1,23-0,813</li>
+<li>DL_Грунт_1,15-0,870</li>
+<li>LL_Полезная_1,2-0,833</li>
+<li>LL_Полезная_1,3-0,769</li>
+<li>SN_СнегРавномерная_1,4-0,714</li>
+<li>SN_СнегПерепад_1,4-0,714</li>
+<li>WL_ВетерX+_1,4-0,714</li>
+<li>WL_ВетерX-_1,4-0,714</li>
+<li>WL_ВетерY+_1,4-0,714</li>
+<li>WL_ВетерY-_1,4-0,714</li>
+<li>SL_ПожарнаяМашина</li>
+<li>SL_Сейсмика</li>
+<li>и т.д.</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
