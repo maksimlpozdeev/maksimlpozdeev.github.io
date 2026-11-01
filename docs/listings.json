@@ -1,42 +1,5 @@
 [
   {
-    "listing": "/courses/sapr/index.html",
-    "items": [
-      "/courses/sapr/tutorial-01.html",
-      "/courses/sapr/tutorial-02.html",
-      "/courses/sapr/tutorial-03.html",
-      "/courses/sapr/tutorial-04.html",
-      "/courses/sapr/tutorial-05.html",
-      "/courses/sapr/tutorial-06.html",
-      "/courses/sapr/tutorial-07.html",
-      "/courses/sapr/tutorial-08.html",
-      "/courses/sapr/tutorial-09.html",
-      "/courses/sapr/tutorial-10.html",
-      "/courses/sapr/tutorial-11.html",
-      "/courses/sapr/tutorial-12.html",
-      "/courses/sapr/tutorial-13.html",
-      "/courses/sapr/tutorial-14.html",
-      "/courses/sapr/tutorial-15.html",
-      "/courses/sapr/tutorial-16.html"
-    ]
-  },
-  {
-    "listing": "/blogs/index.html",
-    "items": [
-      "/blogs/2026-01-23/index.html"
-    ]
-  },
-  {
-    "listing": "/apps/index.html",
-    "items": []
-  },
-  {
-    "listing": "/courses/index.html",
-    "items": [
-      "/courses/sapr/index.html"
-    ]
-  },
-  {
     "listing": "/papers/index.html",
     "items": [
       "/papers/2026_Калибровка-модели-пластического-течения_/index.html",
@@ -64,6 +27,43 @@
       "/papers/2021_Критерий-прочности-каменной-кладки-при-плоском_/index.html",
       "/papers/2020_Расчет-каменных-конструкций-по-прочности-на-косое_/index.html",
       "/papers/2020_Разработка-методики-расчета-строительных-каменных_/index.html"
+    ]
+  },
+  {
+    "listing": "/courses/index.html",
+    "items": [
+      "/courses/sapr/index.html"
+    ]
+  },
+  {
+    "listing": "/blogs/index.html",
+    "items": [
+      "/blogs/2026-01-23/index.html"
+    ]
+  },
+  {
+    "listing": "/apps/index.html",
+    "items": []
+  },
+  {
+    "listing": "/courses/sapr/index.html",
+    "items": [
+      "/courses/sapr/tutorial-01.html",
+      "/courses/sapr/tutorial-02.html",
+      "/courses/sapr/tutorial-03.html",
+      "/courses/sapr/tutorial-04.html",
+      "/courses/sapr/tutorial-05.html",
+      "/courses/sapr/tutorial-06.html",
+      "/courses/sapr/tutorial-07.html",
+      "/courses/sapr/tutorial-08.html",
+      "/courses/sapr/tutorial-09.html",
+      "/courses/sapr/tutorial-10.html",
+      "/courses/sapr/tutorial-11.html",
+      "/courses/sapr/tutorial-12.html",
+      "/courses/sapr/tutorial-13.html",
+      "/courses/sapr/tutorial-14.html",
+      "/courses/sapr/tutorial-15.html",
+      "/courses/sapr/tutorial-16.html"
     ]
   }
 ]

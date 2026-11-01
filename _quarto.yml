@@ -15,8 +15,8 @@ website:
         href: blogs/index.qmd
       - text: Курсы
         href: courses/index.qmd
-      - text: Проекты
-        href: projects/index.qmd
+      - text: Научный кружок
+        href: club/index.qmd
       - text: Приложения
         href: apps/index.qmd
     tools:
