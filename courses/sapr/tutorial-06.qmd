@@ -11,6 +11,24 @@ categories: [Excel, Revit]
 [⇲ Скачать материалы курса](https://drive.google.com/drive/folders/1dlvQ6eQCNpVPVrjqIdcA2aRlp87ZvI75?usp=drive_link)
 :::
 
+```{=html}
+<div style="position: relative; width: 100%; padding-top: 56.25%; margin: 1em 0;">
+  <iframe 
+    src="https://vkvideo.ru/video_ext.php?oid=-241507062&id=456239021&hash=ab89ca3e597b0dea&hd=3"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #000;"
+    frameborder="0"
+    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+    allowfullscreen>
+  </iframe>
+</div>
+```
+
+[0:00:00](https://vkvideo.ru/video-241507062_456239021?t=0h0m0s) – Назначение аналитической модели\
+[0:04:20](https://vkvideo.ru/video-241507062_456239021?t=0h4m20s) – Корректировка аналитики в Revit\
+[0:42:13](https://vkvideo.ru/video-241507062_456239021?t=0h42m13s) – Проблема сохранения\
+[0:43:47](https://vkvideo.ru/video-241507062_456239021?t=0h43m47s) – Моделирование нагрузок\
+[1:12:30](https://vkvideo.ru/video-241507062_456239021?t=1h12m30s) – Фильтры для загружений
+
 ## Конспект
 
 ### Аналитическая модель
@@ -45,8 +63,8 @@ categories: [Excel, Revit]
 
 `Код` – код загружения, например,
 
-- SW -- собственный вес (self weight), 
-- DL -- постоянные и длительные нагрузки (dead load), 
+- SW -- собственный вес (self weight),
+- DL -- постоянные и длительные нагрузки (dead load),
 - LL -- полезные временные нагрузки (live load),
 - SN -- снеговая нагрузка (snow load),
 - WL -- ветровое воздействие (wind load),
@@ -78,3 +96,10 @@ categories: [Excel, Revit]
 - SL_ПожарнаяМашина
 - SL_Сейсмика
 - и т.д.
+
+## Вопросы для самоконтроля
+
+1.  Скорректирована аналитическая модель в Revit?
+2.  Созданы нужные загружения в Revit?
+3.  Выполнено моделирование нагрузок в Revit?
+4.  Настроены фильтры отображения нагрузок?
