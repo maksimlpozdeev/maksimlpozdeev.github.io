@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Моделирование физически нелинейных процессов в&nbsp;строительных конструкциях</title>
+<title>Моделирование физически нелинейных процессов в строительных конструкциях</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,6 +37,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../assets/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -48,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-327b389e6d31d8d4ba09eb25d30c675f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-63bdfa4aec35452ce78ff7a59d907287.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-327b389e6d31d8d4ba09eb25d30c675f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-417825df841b8f84d74464979d5ba351.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-98b3f5989b7271c9f7737845f9dbb335.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-417825df841b8f84d74464979d5ba351.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,11 +80,70 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-club-papers .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
+    const options = {
+      valueNames: ['listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-club-papers'] = new List('listing-club-papers', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="timeline.css">
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -305,19 +366,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul class="collapse">
+  <li><a href="#научная-деятельность" id="toc-научная-деятельность" class="nav-link active" data-scroll-target="#научная-деятельность">Научная деятельность</a></li>
+  <li><a href="#образовательная-деятельность" id="toc-образовательная-деятельность" class="nav-link" data-scroll-target="#образовательная-деятельность">Образовательная деятельность</a></li>
+  <li><a href="#руководитель-и-преподаватели" id="toc-руководитель-и-преподаватели" class="nav-link" data-scroll-target="#руководитель-и-преподаватели">Руководитель и преподаватели</a></li>
+  <li><a href="#участники" id="toc-участники" class="nav-link" data-scroll-target="#участники">Участники</a></li>
+  <li><a href="#публикации" id="toc-публикации" class="nav-link" data-scroll-target="#публикации">Публикации</a></li>
+  <li><a href="#вопросы" id="toc-вопросы" class="nav-link" data-scroll-target="#вопросы">Вопросы</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Моделирование физически нелинейных процессов в&nbsp;строительных конструкциях</h1>
+<h1 class="title">Моделирование физически нелинейных процессов в строительных конструкциях</h1>
 </div>
 
 
@@ -334,9 +406,388 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Студенческий научный кружок занимается исследованием и&nbsp;разработкой методов моделирования физически нелинейных процессов в&nbsp;строительных конструкциях.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p><img src="images/cover.png" class="img-fluid"></p>
+</div></div><div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Важное уведомление</span>3 декабря в ННГАСУ пройдет открытая встреча со студентами
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>На встрече мы расскажем о направлениях деятельности кружка и планах работы на следующий год. Время и место сообщим позднее, пройдите <a href="https://forms.yandex.ru/u/6af3059ede8ec3a2c56e3ac5/">регистрацию</a>, мы пришлем вам уведомление.</p>
+</div>
+</div>
+<p>Изучаем, как реальные строительные материалы и конструкции ведут себя за пределами линейной упругости. Пишем код, ставим реальные и численные эксперименты, делаем доклады и публикуем статьи. Деятельность кружка будет наиболее интересна студентам следующих направлений:</p>
+<ul>
+<li>08.03.01 «Строительство» (бакалавриат) 3-4 курс</li>
+<li>08.04.01 «Строительство» (магистратура) 1-2 курс</li>
+<li>08.05.01 «Строительство уникальных зданий и сооружений» (специалитет) 3-6 курс</li>
+</ul>
+<div class="hero-actions">
+<p><a href="https://t.me/maksimlpozdeev" class="btn btn-outline-primary">Задать вопрос</a></p>
+</div>
+<section id="научная-деятельность" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="научная-деятельность">Научная деятельность</h2>
+<p>На данный момент кружок занимается исследовательскими работами в области физической нелинейности строительных конструкций из каменных кладок.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>План работ</p>
+<div class="timeline">
+<div class="tl-item" data-date="2026-10-28">
+<p><span class="tl-date">Октябрь 2026</span></p>
+<p><span class="tl-title">Нижегородский фестиваль науки</span></p>
+</div>
+<div class="tl-item" data-date="2026-12-03">
+<p><span class="tl-date">3 декабря 2026</span></p>
+<p><span class="tl-title">Открытая встреча со студентами</span></p>
+</div>
+<div class="tl-item" data-date="2027-04-15">
+<p><span class="tl-date">Апрель 2027</span></p>
+<p><span class="tl-title">II конференция им. В.В. Найденко, Нижний Новгород</span></p>
+</div>
+<div class="tl-item" data-date="2027-05-15">
+<p><span class="tl-date">Май 2027</span></p>
+<p><span class="tl-title">X Международный симпозиум (APSCSE-2027), Красноярск</span></p>
+</div>
+<div class="tl-item" data-date="2027-09-15">
+<p><span class="tl-date">Сентябрь 2027</span></p>
+<p><span class="tl-title">XV конференция «Золотовские чтения», Москва</span></p>
+</div>
+</div>
+<script>
+// Делит события на прошедшие и будущие по текущей дате.
+(function () {
+  var tl = document.querySelector(".timeline");
+  if (!tl) return;
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var firstFuture = null;
+
+  tl.querySelectorAll(".tl-item[data-date]").forEach(function (el) {
+    var p = el.getAttribute("data-date").split("-");
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    if (d < today) {
+      el.classList.add("is-past");
+    } else if (!firstFuture) {
+      firstFuture = el;
+      el.classList.add("is-next");
+    }
+  });
+})();
+</script>
+</div></div><div class="grid">
+<div class="g-col-12 g-col-md-6">
+<div class="card h-100 accent">
+<div class="card-body">
+<p><img src="images/численное_моделирование.png" class="img-fluid"></p>
+<section id="численное-моделирование" class="level3">
+<h3 class="anchored" data-anchor-id="численное-моделирование">Численное моделирование</h3>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<div class="card h-100 accent">
+<div class="card-body">
+<p><img src="images/калькуляторы.png" class="img-fluid"></p>
+<section id="разработка-инженерных-калькуляторов" class="level3">
+<h3 class="anchored" data-anchor-id="разработка-инженерных-калькуляторов">Разработка инженерных калькуляторов</h3>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<div class="card h-100 accent">
+<div class="card-body">
+<p><img src="images/база_данных.png" class="img-fluid"></p>
+<section id="базы-данных-и-машинное-обучение" class="level3">
+<h3 class="anchored" data-anchor-id="базы-данных-и-машинное-обучение">Базы данных и машинное обучение</h3>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6">
+<div class="card h-100 accent">
+<div class="card-body">
+<p><img src="images/эксперименты.png" class="img-fluid"></p>
+<section id="экспериментальная-работа" class="level3">
+<h3 class="anchored" data-anchor-id="экспериментальная-работа">Экспериментальная работа</h3>
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="образовательная-деятельность" class="level2">
+<h2 class="anchored" data-anchor-id="образовательная-деятельность">Образовательная деятельность</h2>
+<p>В 2027 году планируется проведение серии образовательных мероприятий, которые помогут студентам освоить необходимые навыки для работы в кружке.</p>
+<div class="grid">
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="icon">
+<p><span class="material-symbols-outlined">terminal</span></p>
+</div>
+<section id="основы-python" class="level3">
+<h3 class="anchored" data-anchor-id="основы-python">Основы Python</h3>
+<p>Расскажем основы языка и рассмотрим наиболее популярные библиотеки для выполнения инженерных расчетов и визуализации, такие как NumPy, Matplotlib и другие.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="icon">
+<p><span class="material-symbols-outlined">shape_line</span></p>
+</div>
+<section id="основы-мкэ" class="level3">
+<h3 class="anchored" data-anchor-id="основы-мкэ">Основы МКЭ</h3>
+<p>Напишем собственную программу для расчета простой стержневой конструкции и визуализируем результаты расчета с помощью Python и библиотек.</p>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+<div class="card-body">
+<div class="icon">
+<p><span class="material-symbols-outlined">line_axis</span></p>
+</div>
+<section id="физическая-нелинейность" class="level3">
+<h3 class="anchored" data-anchor-id="физическая-нелинейность">Физическая нелинейность</h3>
+<p>Освоим базовые понятия теории пластичности, а также положения, лежащие в основе нелинейной деформационной модели железобетона и каменной кладки.</p>
+</section>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="руководитель-и-преподаватели" class="level2">
+<h2 class="anchored" data-anchor-id="руководитель-и-преподаватели">Руководитель и преподаватели</h2>
+<p>Руководитель кружка и преподаватели являются сотрудниками кафедр «Железобетонные, каменные и деревянные конструкции», «Теория сооружений и техническая механика» ННГАСУ, а также инженерами-исследователями ГК «SCAD Soft».</p>
+<div class="grid">
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+<div class="card-body">
+<p><img src="images/ПоздеевМЛ.png" class="img-fluid"></p>
+<section id="максим-леонидович-поздеев" class="level3">
+<h3 class="anchored" data-anchor-id="максим-леонидович-поздеев">Максим Леонидович Поздеев</h3>
+<p>руководитель кружка, канд. техн. наук, ст. преп. каф. ЖБКиДК ННГАСУ, инженер-исследователь ГК «SCAD Soft»</p>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+<div class="card-body">
+<p><img src="images/СмагинИВ.png" class="img-fluid"></p>
+<section id="илья-васильевич-смагин" class="level3">
+<h3 class="anchored" data-anchor-id="илья-васильевич-смагин">Илья Васильевич Смагин</h3>
+<p>преподаватель кружка, аспирант, ассистент каф. ТСиТМ ННГАСУ, инженер-исследователь ГК «SCAD Soft»</p>
+</section>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-4">
+<div class="card h-100">
+
+</div>
+</div>
+</div>
+</section>
+<section id="участники" class="level2">
+<h2 class="anchored" data-anchor-id="участники">Участники</h2>
+<p>В работе кружка участвуют студенты ННГАСУ, которые проявляют интерес к исследовательской деятельности в области физической нелинейности строительных конструкций. Также для выполнения отдельных задач кружка привлекаются студенты, занимающиеся разработкой программных средств.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 22%">
+<col style="width: 17%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Члены кружка</th>
+<th style="text-align: left;">Участие</th>
+<th style="text-align: left;">Тезисы РИНЦ</th>
+<th style="text-align: left;">Статьи ВАК</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Сергей Максимович Колос</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Степан Юрьевич Королев</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Иван Дмитриевич Молодцов</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Валерия Игоревна Пестрикова</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Никита Сергеевич Пироговский</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Андрей Эдуардович Романов</td>
+<td style="text-align: left;">2025 – н. вр.</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="публикации" class="level2">
+<h2 class="anchored" data-anchor-id="публикации">Публикации</h2>
+<div id="listing-club-papers" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Фильтр">
+    </div>
+</div>
+<table class="quarto-listing-table table table-hover">
+<thead>
+<tr>
+
+<th>
+Перечень публикаций в рамках кружка
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-categories="JUQwJTlBJUQwJUJFJUQwJUJEJUQxJTg0LiUyMCVEMCVBMCVEMCU5OCVEMCU5RCVEMCVBNiUyQyVEMCU5RCVEMCVCMCVEMSU4MyVEMSU4NyVEMCVCRCVEMSU4QiVEMCVCOSUyMCVEMCVCQSVEMSU4MCVEMSU4MyVEMCVCNiVEMCVCRSVEMCVCQQ==" data-listing-date-sort="1782334800000" data-listing-file-modified-sort="1794518223163" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-description-sort="Королев С. Ю., Поздеев М. Л. Калибровка модели пластического течения Друкера-Прагера в SCAD++ для физически нелинейного расчета неармированной каменной кладки // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 575-579. EDN MZWOLN." onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="../papers/2026_Калибровка-модели-пластического-течения_/index.html" class="description listing-description">Королев С. Ю., Поздеев М. Л. Калибровка модели пластического течения Друкера-Прагера в SCAD++ для физически нелинейного расчета неармированной каменной кладки // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 575-579. EDN MZWOLN.</a>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="JUQwJTlBJUQwJUJFJUQwJUJEJUQxJTg0LiUyMCVEMCVBMCVEMCU5OCVEMCU5RCVEMCVBNiUyQyVEMCU5RCVEMCVCMCVEMSU4MyVEMSU4NyVEMCVCRCVEMSU4QiVEMCVCOSUyMCVEMCVCQSVEMSU4MCVEMSU4MyVEMCVCNiVEMCVCRSVEMCVCQQ==" data-listing-date-sort="1782334800000" data-listing-file-modified-sort="1794518223171" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-description-sort="Пироговский Н. С., Поздеев М. Л. Определение площади сжатой части каменных сечений сложной геометрии при прямоугольной эпюре напряжений // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 628-632. EDN HYGSGR." onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="../papers/2026_Определение-площади-сжатой части_/index.html" class="description listing-description">Пироговский Н. С., Поздеев М. Л. Определение площади сжатой части каменных сечений сложной геометрии при прямоугольной эпюре напряжений // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 628-632. EDN HYGSGR.</a>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="JUQwJTlBJUQwJUJFJUQwJUJEJUQxJTg0LiUyMCVEMCVBMCVEMCU5OCVEMCU5RCVEMCVBNiUyQyVEMCU5RCVEMCVCMCVEMSU4MyVEMSU4NyVEMCVCRCVEMSU4QiVEMCVCOSUyMCVEMCVCQSVEMSU4MCVEMSU4MyVEMCVCNiVEMCVCRSVEMCVCQQ==" data-listing-date-sort="1782334800000" data-listing-file-modified-sort="1794518223172" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-description-sort="Пестрикова В. И., Поздеев М. Л., Кислицын Д. И. Проектирование реляционной базы данных экспериментальных исследований каменной кладки для моделей машинного обучения // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 471-475. EDN MEJOJJ." onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="../papers/2026_Проектирование-реляционной-базы-данных_/index.html" class="description listing-description">Пестрикова В. И., Поздеев М. Л., Кислицын Д. И. Проектирование реляционной базы данных экспериментальных исследований каменной кладки для моделей машинного обучения // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 471-475. EDN MEJOJJ.</a>
+</td>
+
+</tr>
+
+<tr data-index="3" data-categories="JUQwJTlBJUQwJUJFJUQwJUJEJUQxJTg0LiUyMCVEMCVBMCVEMCU5OCVEMCU5RCVEMCVBNiUyQyVEMCU5RCVEMCVCMCVEMSU4MyVEMSU4NyVEMCVCRCVEMSU4QiVEMCVCOSUyMCVEMCVCQSVEMSU4MCVEMSU4MyVEMCVCNiVEMCVCRSVEMCVCQQ==" data-listing-date-sort="1782334800000" data-listing-file-modified-sort="1794516349708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-description-sort="Романов А. Э., Поздеев М. Л. Тензометрия каменных кладок с использованием метода корреляции цифровых изображений // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 633-637. EDN GBLHIG." onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="../papers/2026_Тензометрия-каменных-кладок-с-использованием_/index.html" class="description listing-description">Романов А. Э., Поздеев М. Л. Тензометрия каменных кладок с использованием метода корреляции цифровых изображений // Всероссийская научно-техническая конференция по итогам исследовательских работ студентов архитектурно-строительных специальностей им. В.В. Найденко : Сборник докладов конференции, Нижний Новгород, 22–24 апреля 2026 года. Нижний Новгород: Нижегородский государственный архитектурно-строительный университет, 2026. С. 633-637. EDN GBLHIG.</a>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">Нет подходящих элементов</div>
+</div>
+</section>
+<section id="вопросы" class="level2">
+<h2 class="anchored" data-anchor-id="вопросы">Вопросы</h2>
+<div class="faq callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Уведомление</span>С какого курса можно вступить?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Наиболее комфортно будет с 3 курса бакалавриата или специалитета, но можно начать со 2 курса. Главное – желание и интерес к теме.</p>
+</div>
+</div>
+<div class="faq callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Уведомление</span>Сколько времени занимает участие?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ориентировочно несколько часов в неделю: занятия курсов плюс самостоятельная работа над своей темой. Нагрузку можно согласовать с руководителем.</p>
+</div>
+</div>
+<div class="faq callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Уведомление</span>Что я могу получить?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Опыт исследовательской работы, выступления на конференциях, публикации. Надинженерные навыки: программирование, численные методы, экспериментальная работа. За научную деятельность студент ННГАСУ также вправе претендовать на получение повышенной академической стипендии: <a href="https://vk.com/wall-61860843?id=61860843&amp;q=ПГАС">см. информацию</a>.</p>
+</div>
+</div>
+<div class="faq callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Уведомление</span>Нужно ли уметь программировать или знать МКЭ?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Нет, но такие знания приветствуются. Курсы внутри кружка: «Основы Python» и «Основы МКЭ» рассчитаны на студентов, закончивших 2-3 курс бакалавриата или специалитета.</p>
+</div>
+</div>
+<div class="faq callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Уведомление</span>Вы занимаетесь только каменной кладкой?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Тематика кружка связана с научной деятельностью руководителя, занимающегося вопросами физической нелинейности применительно к каменной кладке: <a href="https://kgeu.ru/struktura-vuza/dissertatsionnye-sovety/dissertatsionnyy-sovet-24-2-310-04/soiskatel-pozdeev-maksim-leonidovich/">см. диссертацию</a>. Но в рамках кружка можно заниматься и другими темами, связанными с физической нелинейностью строительных конструкций. Также вы можете посещать образовательные мероприятия кружка, не участвуя в исследовательской деятельности.</p>
+</div>
+</div>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

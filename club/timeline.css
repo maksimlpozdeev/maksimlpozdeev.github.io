@@ -1,0 +1,72 @@
+/* Таймлайн кружка. Цвета берутся из темы сайта (Bootstrap-переменные),
+   поэтому светлая и тёмная темы работают автоматически. */
+
+.timeline {
+  --tl-accent: var(--bs-link-color, #cc6c5c);
+  --tl-past: var(--bs-secondary-color, #868e96);
+  --tl-line-future: color-mix(in srgb, var(--tl-accent) 45%, transparent);
+  position: relative;
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.9rem;
+}
+
+/* --- общий вид события --- */
+.timeline .tl-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+.timeline .tl-item p { margin: 0; }
+
+/* точка */
+.timeline .tl-item::before {
+  content: "";
+  position: absolute;
+  left: -1.9rem;
+  top: 0.2rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid var(--tl-accent);
+  background: var(--bs-body-bg);
+}
+/* линия вниз до следующего события */
+.timeline .tl-item::after {
+  content: "";
+  position: absolute;
+  left: calc(-1.9rem + 0.45rem - 1px);
+  top: 1.2rem;
+  bottom: -0.1rem;
+  width: 2px;
+  background: var(--tl-line-future);
+}
+.timeline > :last-child::after { display: none; }
+
+/* дата, заголовок, описание */
+.timeline .tl-date {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tl-accent);
+}
+.timeline .tl-title {
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin: 0.1rem 0 0.2rem;
+}
+
+/* --- прошедшие события --- */
+.timeline .tl-item.is-past::before { background: var(--tl-past); border-color: var(--tl-past); }
+.timeline .tl-item.is-past::after { background: var(--tl-past); opacity: 0.5; }
+.timeline .tl-item.is-past .tl-date,
+.timeline .tl-item.is-past .tl-title { color: var(--tl-past); }
+
+/* --- ближайшее событие --- */
+.timeline .tl-item.is-next::before {
+  background: var(--tl-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--tl-accent) 25%, transparent);
+}
+.timeline .tl-item.is-next .tl-title { color: var(--tl-accent); }
