@@ -1,0 +1,161 @@
+/* Настройки презентации (только светлая тема) */
+
+/* Шрифт иконок, как на сайте */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+:root {
+  color-scheme: light;
+
+  --club-accent: #cc6c5c;                  /* красный сайта: ссылки и кликабельные элементы */
+  --club-border: rgba(0, 0, 0, 0.175);     /* обводка карточек, как .card на сайте */
+  --club-radius: 0.4rem;                  /* скругление карточек, как на сайте */
+  --club-card-padding: 1em;                /* внутренний отступ карточки */
+  --club-gap: 0.8em;                       /* промежуток между карточками в ряду */
+  --club-card-size: 1em;               /* текст внутри карточки (от основного) */
+  --club-card-title-size: 1em;             /* заголовок внутри карточки (от текста карточки) */
+  --club-card-img-height: 280px;           /* максимальная высота картинки в карточке */
+
+  --club-font-size: 28px;                  /* основной текст (всё остальное считается от него) */
+  --club-heading-size: 1.65em;             /* заголовок слайда (h2) */
+  --club-table-size: 0.85em;               /* таблицы */
+  --club-callout-size: 0.85em;             /* callout: заголовок, текст, иконка */
+  --club-footer-size: 0.85em;              /* футер и номер слайда */
+
+  --r-main-font-size: var(--club-font-size);
+  --r-link-color: var(--club-accent);
+  --r-link-color-hover: var(--club-accent);
+}
+
+/* Основной текст и расстояния */
+.reveal {
+  font-size: var(--club-font-size);
+}
+
+.reveal .slides section p {
+  margin: 0 0 1em 0;
+}
+
+.reveal .slides section li {
+  margin-bottom: 0.5em;
+}
+
+/* Ссылки */
+.reveal a {
+  color: var(--club-accent);
+  text-decoration: none;
+}
+
+/* Заголовок слайда */
+.reveal .slides section h2 {
+  font-size: var(--club-heading-size);
+}
+
+/* Таблицы */
+.reveal .slides table {
+  font-size: var(--club-table-size);
+}
+
+/* Callout: размер задан один раз, все части наследуют его.
+   Селектор повторяет специфичность правила Quarto (div.callout { 0.7em }),
+   иначе оно перебивает переменную. */
+.reveal .slides section div.callout {
+  font-size: var(--club-callout-size);
+}
+
+.reveal .slides section div.callout *,
+.reveal .slides section div.callout :is(h1, h2, h3, h4, h5, h6) {
+  font-size: inherit;
+}
+
+/* Карточки: ::: {.column .card}
+   Карточки в одном ряду выстраиваются поровну и одной высоты.
+   Если у колонки задан width, она сохраняет свою ширину. */
+.reveal .columns:has(> .column.card) {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: var(--club-gap);
+}
+
+.reveal .columns > .column.card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.reveal .columns > .column.card[style*="width"] {
+  flex: 0 1 auto;
+}
+
+.reveal .column.card {
+  box-sizing: border-box;
+  padding: var(--club-card-padding);
+  background: #fff;
+  border: 1px solid var(--club-border);
+  border-radius: var(--club-radius);
+}
+
+/* Содержимое карточки: размер текста, заголовок, картинки.
+   overflow-wrap не даёт длинным словам вылезать за обводку. */
+.reveal .slides section .column.card {
+  font-size: var(--club-card-size);
+  overflow-wrap: anywhere;
+}
+
+.reveal .slides section .column.card :is(h3, h4) {
+  font-size: var(--club-card-title-size);
+  margin: 0.4em 0;
+}
+
+.reveal .column.card img {
+  max-width: 100%;
+  max-height: var(--club-card-img-height);
+  width: auto;
+  height: auto;
+}
+
+/* Иконки Material Symbols (::: icon / [terminal]{.material-symbols-outlined}) */
+.reveal .material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.8em;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  font-feature-settings: "liga";
+}
+
+.reveal .icon {
+  color: var(--club-accent);
+  line-height: 1;
+}
+
+/* Кликабельные элементы интерфейса: красный акцент сайта */
+.reveal .controls,
+.reveal .progress {
+  color: var(--club-accent);
+}
+
+/* Значок «гамбургер»: перекрашиваем через маску, чтобы цвет брался из переменной */
+.reveal .slide-menu-button .fa-bars::before {
+  background-image: none;
+  background-color: var(--club-accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Футер: размер задан один раз, все элементы наследуют его */
+.reveal .footer,
+.reveal .slide-number {
+  font-size: var(--club-footer-size);
+}
+
+.reveal .footer *,
+.reveal .slide-number * {
+  font-size: inherit;
+}
+
+.reveal .footer a {
+  color: var(--club-accent);
+}

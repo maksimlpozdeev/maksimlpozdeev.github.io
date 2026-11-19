@@ -36,9 +36,12 @@
     ]
   },
   {
-    "listing": "/blogs/index.html",
+    "listing": "/club/index.html",
     "items": [
-      "/blogs/2026-01-23/index.html"
+      "/papers/2026_Калибровка-модели-пластического-течения_/index.html",
+      "/papers/2026_Определение-площади-сжатой части_/index.html",
+      "/papers/2026_Проектирование-реляционной-базы-данных_/index.html",
+      "/papers/2026_Тензометрия-каменных-кладок-с-использованием_/index.html"
     ]
   },
   {
@@ -46,12 +49,9 @@
     "items": []
   },
   {
-    "listing": "/club/index.html",
+    "listing": "/blogs/index.html",
     "items": [
-      "/papers/2026_Калибровка-модели-пластического-течения_/index.html",
-      "/papers/2026_Определение-площади-сжатой части_/index.html",
-      "/papers/2026_Проектирование-реляционной-базы-данных_/index.html",
-      "/papers/2026_Тензометрия-каменных-кладок-с-использованием_/index.html"
+      "/blogs/2026-01-23/index.html"
     ]
   },
   {
